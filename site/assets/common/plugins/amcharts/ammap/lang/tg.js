@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.tg = {"Afghanistan":"ÐÑ„Ò“Ð¾Ð½Ð¸ÑÑ‚Ð°Ð½","Tonga":"Ð¢Ð¾Ð½Ð³Ð°"}

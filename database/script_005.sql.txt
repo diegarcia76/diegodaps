@@ -1,0 +1,15 @@
+INSERT INTO `daps_data`.`estado_turno` (
+`id` ,
+`nombre` ,
+`descripcion`
+)
+VALUES (
+NULL , 'Recepcionado', NULL
+), (
+NULL , 'Cobrado', NULL
+);
+
+ALTER TABLE `estado_turno` ADD `accion` VARCHAR( 50 ) NULL ,
+ADD `accion_siguiente` INT NOT NULL ;
+
+UPDATE `daps_data`.`estado_turno` SET `accion` = 'Reservar', `accion_siguiente` = '6' WHERE `estado_turno`.`id` = 1; UPDATE `daps_data`.`estado_turno` SET `accion` = 'Cancelar', `accion_siguiente` = '1' WHERE `estado_turno`.`id` = 2; UPDATE `daps_data`.`estado_turno` SET `accion` = 'A Pendiente', `accion_siguiente` = '1' WHERE `estado_turno`.`id` = 3; UPDATE `daps_data`.`estado_turno` SET `accion` = 'En Servicio', `accion_siguiente` = '5' WHERE `estado_turno`.`id` = 4; UPDATE `daps_data`.`estado_turno` SET `accion` = 'Terminar', `accion_siguiente` = '7' WHERE `estado_turno`.`id` = 5; UPDATE `daps_data`.`estado_turno` SET `accion` = 'Recepcionar', `accion_siguiente` = '4' WHERE `estado_turno`.`id` = 6; UPDATE `daps_data`.`estado_turno` SET `accion` = 'Cobrar' WHERE `estado_turno`.`id` = 7;

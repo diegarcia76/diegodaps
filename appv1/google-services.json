@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "620576006749",
+    "firebase_url": "https://daps-b2c3a.firebaseio.com",
+    "project_id": "daps-b2c3a",
+    "storage_bucket": "daps-b2c3a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620576006749:android:4f7a7e88b65237dc",
+        "android_client_info": {
+          "package_name": "com.ionicframework.appv1455588"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620576006749-1fmqv1shqpt85pbdrqlujiimibb36sn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM6RawMNoLIMT3HLZQbtCkst91Z0ql318"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

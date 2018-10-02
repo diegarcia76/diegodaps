@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.tt = {"Russia":"Ð Ð¾ÑÑÐ¸Ñ"}

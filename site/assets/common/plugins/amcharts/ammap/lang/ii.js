@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.ii = {"Brazil":"ê€ ê‘­","China":"êê‡©","Germany":"ê„“ê‡©","France":"êƒ”ê‡©","United Kingdom":"ê‘±ê‡©","India":"ê‘´ê„—","Italy":"ê‘´ê„Šê†º","Japan":"êê€ª","Russia":"êŠ‰ê‡†êŒ¦","United States":"ê‚°ê‡©","Unknown or Invalid Region":"êƒ…ê„·ê…‰ê€‹êšêŒ "}

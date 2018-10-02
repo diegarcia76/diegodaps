@@ -1,0 +1,23 @@
+ALTER TABLE `clientes` ADD `telefono` VARCHAR( 100 ) NULL ,
+ADD `profesion_id` INT NULL ,
+ADD `whatsapp` VARCHAR( 100 ) NULL ,
+ADD `facebook` VARCHAR( 255 ) NULL ,
+ADD `twitter` VARCHAR( 255 ) NULL ;
+
+
+CREATE TABLE IF NOT EXISTS `profesiones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `profesiones`
+--
+
+INSERT INTO `profesiones` (`id`, `nombre`) VALUES
+(1, 'Ingeniero'),
+(2, 'Arquitecto'),
+(3, 'Abogado'),
+(4, 'Diseñador'),
+(5, 'Otro');

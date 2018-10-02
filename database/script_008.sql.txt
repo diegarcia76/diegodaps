@@ -1,0 +1,10 @@
+
+CREATE TABLE IF NOT EXISTS `notificaciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci,
+  `tipo` tinyint(4) DEFAULT NULL COMMENT '0-Back / 1-Front',
+  `cliente_id` int(11) DEFAULT NULL,
+  `fecha` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;

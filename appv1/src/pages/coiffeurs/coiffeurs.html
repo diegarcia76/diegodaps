@@ -1,0 +1,27 @@
+<!--
+  Generated template for the Coiffeurs page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header >
+
+  <ion-navbar color="dark">
+    <ion-title>Elegí al coiffeur</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list padding-top>
+	  <ion-item *ngFor="let c of coiffeurs" (click)="goToCalendar(c)">
+	    <ion-avatar item-left>
+	          <img src="{{c.foto}}" />
+	    </ion-avatar>
+	        <h2>{{c.nombre}}</h2>
+	  </ion-item>
+   </ion-list>
+</ion-content>
+
+

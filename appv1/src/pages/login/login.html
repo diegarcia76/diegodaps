@@ -1,0 +1,53 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content id="login">
+		<div class="image-login" margin-bottom></div>
+		<div padding-horizontal margin-top>
+			<h5 text-center>¡Creá ahora tu cuenta!</h5>
+
+			<div text-center padding-horizontal padding-bottom id="registro-button">
+				<button ion-button block outline round (click)=goToRegistro()> <ion-icon padding-right name="list"> </ion-icon> REGISTRATE</button>
+			</div>
+
+
+
+			<!--<h5 padding-left>O ingresá tus datos</h5>
+
+			<form #loginCreds="ngForm" (ngSubmit)="login(loginCreds.value)">
+	          <ion-item>
+				<ion-input type="text" [(ngModel)]="username" name="username" placeholder="E-mail" required></ion-input>
+			  </ion-item>
+
+			  <ion-item>
+				<ion-input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required></ion-input>
+			  </ion-item>
+
+			  <span *ngIf="error" class="error" padding-horizontal margin-top>
+			   	{{ error }}
+			   </span>
+
+	          <button block round ion-button type="submit" class="submit-login">Login</button>
+			  <div class="clearfix"></div>
+			</form> -->
+
+
+
+				<div text-center padding-horizontal padding-bottom id="login-button">
+						<h5 text-center>¿Ya tenés una cuenta?</h5>
+						<button ion-button block margin-top color="info" round (click)="doFbLogin()">  <ion-icon padding-right name="logo-facebook"> </ion-icon> INGRESÁ CON FACEBOOK</button>
+						<button ion-button block margin-top color="primary" round (click)="goToLogin()">  <ion-icon padding-right name="mail"> </ion-icon> INGRESÁ CON TU EMAIL</button>
+				</div>
+
+		  	<!--<div text-center margin-bottom>
+		  		<button ion-button clear (click)=goToOlvido()>No me acuerdo mi clave</button>
+				</div>-->
+
+	</div>
+
+</ion-content>

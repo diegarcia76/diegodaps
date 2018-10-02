@@ -1,0 +1,3 @@
+ALTER TABLE `servicios` ADD `division_grilla` INT NOT NULL DEFAULT '30' AFTER `servicioEnApp` ;
+
+UPDATE `servicios` SET `division_grilla` =15 WHERE `duracion` =15 OR `duracion` =45;

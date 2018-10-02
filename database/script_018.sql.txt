@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `valoraciones_servicio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `turno_id` int(11) NOT NULL,
+  `fecha` datetime DEFAULT NULL,
+  `estrellas` float DEFAULT NULL,
+  `comentario` text COLLATE utf32_spanish_ci,
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`usuario_id`),
+  KEY `sitio_id` (`sitio_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf32 COLLATE=utf32_spanish_ci AUTO_INCREMENT=1;

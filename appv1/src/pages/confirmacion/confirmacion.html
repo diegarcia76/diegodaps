@@ -1,0 +1,59 @@
+<!--
+  Generated template for the Confirmacion page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Confirmar el turno</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding-top text-center>
+  <ion-item *ngIf=(turnito?.espera) class="alert alert-danger lista message" role="alert">
+            TU TURNO ESTÁ EN LISTA DE ESPERA<br>
+            En el caso de que otra persona cancele te avisamos.
+  </ion-item>
+<ion-card *ngIf=(turnito?.status)>
+<ion-list padding-top padding-bottom>
+  <ion-item>
+    <ion-icon name="calendar" small  item-left></ion-icon>
+      {{ turnito?.fecha_sola }}
+  </ion-item>
+  <ion-item>
+    <ion-icon name="clock" small item-left></ion-icon>
+     {{ turnito?.hora_sola }} hs
+  </ion-item>
+  <ion-item>
+    <ion-icon name="cut" small  item-left></ion-icon>
+     {{ turnito?.servicio }}
+  </ion-item>
+  <ion-item>
+    <ion-icon name="person" small  item-left></ion-icon>
+     {{ turnito?.coiffeur }}
+  </ion-item>
+  <ion-item *ngIf=(turnosServ.canje) style="margin-right: 20px; color: #AA9259; font-weight: bold;">
+    <ion-icon name="person" small  item-left></ion-icon>
+     canjeado por puntos
+  </ion-item>
+</ion-list>
+</ion-card>
+
+<ion-card *ngIf=(!turnito?.status)>
+  <ion-item *ngIf=(!turnito?.statusEdicion) class="alert alert-danger lista message" role="alert">
+            Ya Tienes un turno hoy<br>
+            No se puede reservar mas<br>
+            de un turno por día.
+  </ion-item>
+  <ion-item *ngIf=(turnito?.statusEdicion) class="alert alert-danger lista message" role="alert">
+            Turno NO editado<br>
+            No se puede editar mas<br>
+            de una vez el turno.
+  </ion-item>
+</ion-card>
+
+<button *ngIf=(turnito?.status) ion-button color="success" (click)="saveTurno()" class="m-x-auto" round>Confirmar</button>
+
+</ion-content>

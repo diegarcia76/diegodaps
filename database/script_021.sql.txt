@@ -1,0 +1,3 @@
+ALTER TABLE `clientes` ADD `facebookId` VARCHAR( 255 ) NULL ;
+update `clientes` set facebookId=facebook WHERE 1;
+UPDATE `clientes` SET facebook = NULL WHERE 1 ;

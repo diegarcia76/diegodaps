@@ -1,0 +1,136 @@
+<ion-header>
+	<ion-navbar color="dark">
+	  	<ion-buttons start>
+	      <button ion-button menuToggle>
+	        <ion-icon name="menu"></ion-icon>
+	      </button>
+	    </ion-buttons>
+
+	    <ion-title>
+	    	<img src="http://turnos.diegodaps.com/assets/images/logo.png" width="85" height="auto" class="logo">
+	    </ion-title>
+
+	    <ion-buttons end>
+	      <button ion-button icon-only (click)="goToServicios()" color="royal">
+	        <ion-icon name="add"></ion-icon>
+	      </button>
+	    </ion-buttons>
+	</ion-navbar>
+ </ion-header>
+
+<ion-content class="bg-light-gray" >
+<div padding>
+	<div class="user-image m-r-1 pull-left">
+		<div class="image-cover" [style.background-image]="'url(' + auth.foto + ')' | safe: 'style'"></div>
+	<!--<img src="{{ auth.foto }}" alt="default" />-->
+	<!--img src="http://turnos.diegodaps.com/assets/images/default.png" alt="Imagen de perfil" width="80" height="80" /-->
+	</div>
+	<div class="user-text pull-left">
+		<div class="vertical-center">
+			<h3 class="p-y-0 m-b-0">¡Hola {{ auth.user }}!</h3>
+			<p class="m-y-0">¿Qué te gustaría hacerte hoy?</p>
+		</div>
+	</div>
+	<div class="clearfix">
+
+	</div>
+</div>
+
+
+
+
+	<ion-grid class="m-a-0 p-a-0">
+		<ion-row class="bg-primary-light m-t-0" id="puntos">
+		  	<ion-col width-50>
+		  		<p class="puntos-title">Puntos acumulados</p>
+		  		<p class="txt-primary"><strong> {{ auth.puntos }} </strong> PUNTOS</p>
+		  	</ion-col>
+		  	<ion-col width-50>
+		  		<button *ngIf="auth.puntos!=0" ion-button small round class="pull-right" (click)="goToServicios( true )" >CANJEALOS</button>
+		  	</ion-col>
+	  </ion-row>
+	</ion-grid>
+
+
+	<!-- si no hay turnos -->
+	<!--<ion-grid>
+		<ion-row>
+		  	<ion-col class="p-l-1">
+				<h3>No tenés ningún turno agendado</h3>
+				<button ion-button round>Reservá tu turno</button>
+		  	</ion-col>
+	  	</ion-row>
+	</ion-grid>-->
+
+	<!-- si hay turnos -->
+
+
+<ion-grid id="turnos">
+	<!-- REPEATER -->
+	<ion-item *ngFor='let tur of turnos'>
+		<ion-row padding-top>
+		  	<ion-col padding-left>
+				<div class="txt-primary">
+					 <ion-icon name="calendar"></ion-icon> {{ tur.fecha }}
+				</div>
+		  	</ion-col>
+		</ion-row>
+		<ion-card class="m-y-0 p-y-0" >
+			<ion-list>
+			  <ion-item class="separar" *ngFor='let t of tur.turnos'>
+			    <ion-item>
+			     <ion-row class="turno libre">
+					  <ion-col width-33 padding-horizontal class="time">
+					  	<h3>{{ t.fecha_hora }} HS</h3>
+					  	<small>{{ t.servicio_duracion }} min</small>
+					  </ion-col>
+					  <div class="divisor">
+						  <div class="point">
+						  </div>
+					  </div>
+					  <ion-col width-67 padding-horizontal class="servicio">
+					  	<h3>{{ t.servicio }} <span *ngIf=(t.canjeado) class="txt-primary">(canje {{ t.canjeado_puntos }} puntos)</span></h3>
+					  	<small>{{ t.coiffeur }}</small>
+					  </ion-col>
+					</ion-row>
+					<ion-row >
+						<ion-col width-50 p-y-1 padding-horizontal style="padding:7px 0; text-align:center; color: #666;" (click)=goToServicios(false,t.id) >
+							<small> <ion-icon name="create"></ion-icon> EDITAR</small>
+						</ion-col>
+						<ion-col width-50 p-y-1 padding-horizontal style="padding:7px 0; text-align:center; color: #666;" (click)=cancelarTurnoPrevio(t)>
+							<small>  <ion-icon name="trash"></ion-icon> CANCELAR</small>
+						</ion-col>
+					</ion-row>
+			    </ion-item>
+
+			   <!--<ion-item-options side="left">
+			      <button ion-button color="danger" (click)=cancelarTurnoPrevio(t)>
+			        <ion-icon name="trash"></ion-icon>
+			      </button>
+			    </ion-item-options>
+			    <ion-item-options side="right">
+			      <button ion-button color="warning" (click)=goToServicios(false,t.id)>
+			        <ion-icon name="create"></ion-icon>
+			      </button>
+			    </ion-item-options>-->
+			  </ion-item>
+
+
+			</ion-list>
+		</ion-card>
+
+	</ion-item>
+
+		<ion-row *ngIf='(turnos == 0)'>
+		  	<ion-col>
+				<div padding-vertical text-center>
+					 <h4>No tenés turnos reservados</h4>
+					 <button ion-button small round (click)="goToServicios()">RESERVA TU TURNO</button>
+				</div>
+		  	</ion-col>
+		</ion-row>
+
+</ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,1 @@
+ALTER TABLE `clientes` ADD `playerId` VARCHAR( 250 ) NULL AFTER `twitter` ;

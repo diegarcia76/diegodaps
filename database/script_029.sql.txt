@@ -1,0 +1,9 @@
+CREATE TABLE `ausenciasxcoiffeur`(  
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `fecha_inicio` DATE NOT NULL,
+  `fecha_fin` DATE NOT NULL,
+  `fecha_generada` DATETIME,
+  `motivo` TEXT,
+  `coiffeur_id` INT,
+  PRIMARY KEY (`id`)
+);

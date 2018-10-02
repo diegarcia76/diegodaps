@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>An authentication exception occurred.</source>
+                <target>Î£Ï…Î½Î­Î²Î· Î­Î½Î± ÏƒÏ†Î¬Î»Î¼Î± Ï€Î¹ÏƒÏ„Î¿Ï€Î¿Î¯Î·ÏƒÎ·Ï‚.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Authentication credentials could not be found.</source>
+                <target>Î¤Î± ÏƒÏ„Î¿Î¹Ï‡ÎµÎ¯Î± Ï€Î¹ÏƒÏ„Î¿Ï€Î¿Î¯Î·ÏƒÎ·Ï‚ Î´Îµ Î²ÏÎ­Î¸Î·ÎºÎ±Î½.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Authentication request could not be processed due to a system problem.</source>
+                <target>Î¤Î¿ Î±Î¯Ï„Î·Î¼Î± Ï€Î¹ÏƒÏ„Î¿Ï€Î¿Î¯Î·ÏƒÎ·Ï‚ Î´Îµ Î¼Ï€Î¿ÏÎµÎ¯ Î½Î± ÎµÏ€ÎµÎ¾ÎµÏÎ³Î±ÏƒÏ„ÎµÎ¯ Î»ÏŒÎ³Ï‰ ÏƒÏ†Î¬Î»Î¼Î±Ï„Î¿Ï‚ Ï„Î¿Ï… ÏƒÏ…ÏƒÏ„Î®Î¼Î±Ï„Î¿Ï‚.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Invalid credentials.</source>
+                <target>Î›Î±Î½Î¸Î±ÏƒÎ¼Î­Î½Î± ÏƒÏ„Î¿Î¹Ï‡ÎµÎ¯Î± ÏƒÏÎ½Î´ÎµÏƒÎ·Ï‚.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Cookie has already been used by someone else.</source>
+                <target>Î¤Î¿ Cookie Î­Ï‡ÎµÎ¹ Î®Î´Î· Ï‡ÏÎ·ÏƒÎ¹Î¼Î¿Ï€Î¿Î¹Î·Î¸ÎµÎ¯ Î±Ï€ÏŒ ÎºÎ¬Ï€Î¿Î¹Î¿Î½ Î¬Î»Î»Î¿.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Not privileged to request the resource.</source>
+                <target>Î”ÎµÎ½ ÎµÎ¯ÏƒÏ„Îµ ÎµÎ¾Î¿Ï…ÏƒÎ¹Î¿Î´Î¿Ï„Î·Î¼Î­Î½Î¿Ï‚ Î³Î¹Î± Ï€ÏÏŒÏƒÎ²Î±ÏƒÎ· ÏƒÏ„Î¿ ÏƒÏ…Î³ÎºÎµÎºÏÎ¹Î¼Î­Î½Î¿ Ï€ÎµÏÎ¹ÎµÏ‡ÏŒÎ¼ÎµÎ½Î¿.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Invalid CSRF token.</source>
+                <target>ÎœÎ· Î­Î³ÎºÏ…ÏÎ¿ CSRF token.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Digest nonce has expired.</source>
+                <target>Î¤Î¿ digest nonce Î­Ï‡ÎµÎ¹ Î»Î®Î¾ÎµÎ¹.</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>No authentication provider found to support the authentication token.</source>
+                <target>Î”Îµ Î²ÏÎ­Î¸Î·ÎºÎµ ÎºÎ¬Ï€Î¿Î¹Î¿Ï‚ Ï€Î¬ÏÎ¿Ï‡Î¿Ï‚ Ï€Î¹ÏƒÏ„Î¿Ï€Î¿Î¯Î·ÏƒÎ·Ï‚ Ï€Î¿Ï… Î½Î± Ï…Ï€Î¿ÏƒÏ„Î·ÏÎ¯Î¶ÎµÎ¹ Ï„Î¿ token Ï€Î¹ÏƒÏ„Î¿Ï€Î¿Î¯Î·ÏƒÎ·Ï‚.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>No session available, it either timed out or cookies are not enabled.</source>
+                <target>Î”ÎµÎ½ Ï…Ï€Î¬ÏÏ‡ÎµÎ¹ ÎµÎ½ÎµÏÎ³Î® ÏƒÏÎ½Î¿Î´Î¿Ï‚ (session), ÎµÎ¯Ï„Îµ Î­Ï‡ÎµÎ¹ Î»Î®Î¾ÎµÎ¹ Î® Ï„Î± cookies Î´ÎµÎ½ ÎµÎ¯Î½Î±Î¹ ÎµÎ½ÎµÏÎ³Î¿Ï€Î¿Î¹Î·Î¼Î­Î½Î±.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>No token could be found.</source>
+                <target>Î”ÎµÎ½ Î®Ï„Î±Î½ Î´Ï…Î½Î±Ï„ÏŒÎ½ Î½Î± Î²ÏÎµÎ¸ÎµÎ¯ ÎºÎ¬Ï€Î¿Î¹Î¿ token.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Username could not be found.</source>
+                <target>Î¤Î¿ Username Î´Îµ Î²ÏÎ­Î¸Î·ÎºÎµ.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Account has expired.</source>
+                <target>ÎŸ Î»Î¿Î³Î±ÏÎ¹Î±ÏƒÎ¼ÏŒÏ‚ Î­Ï‡ÎµÎ¹ Î»Î®Î¾ÎµÎ¹.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Credentials have expired.</source>
+                <target>Î¤Î± ÏƒÏ„Î¿Î¹Ï‡ÎµÎ¯Î± ÏƒÏÎ½Î´ÎµÏƒÎ·Ï‚ Î­Ï‡Î¿Ï…Î½ Î»Î®Î¾ÎµÎ¹.</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Account is disabled.</source>
+                <target>ÎŸ Î»Î¿Î³Î±ÏÎ¹Î±ÏƒÎ¼ÏŒÏ‚ ÎµÎ¯Î½Î±Î¹ Î±Ï€ÎµÎ½ÎµÏÎ³Î¿Ï€Î¿Î¹Î·Î¼Î­Î½Î¿Ï‚.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Account is locked.</source>
+                <target>ÎŸ Î»Î¿Î³Î±ÏÎ¹Î±ÏƒÎ¼ÏŒÏ‚ ÎµÎ¯Î½Î±Î¹ ÎºÎ»ÎµÎ¹Î´Ï‰Î¼Î­Î½Î¿Ï‚.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

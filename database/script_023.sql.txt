@@ -1,0 +1,2 @@
+ALTER TABLE `servicios`   
+  ADD COLUMN `comision_default` FLOAT NULL AFTER `precio_default`;

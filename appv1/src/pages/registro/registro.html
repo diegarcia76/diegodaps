@@ -1,0 +1,71 @@
+<ion-header >
+
+  <ion-navbar color="dark">
+    <ion-title>Registrarse</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding id="login">
+  <!--div class="logo">
+  	<img src="../../assets/img/logo.png" alt="logo" width="118" height="31" />
+  </div-->
+  		<div text-center id="facelogin">
+			<button ion-button block color="info" round (click)="doFbLogin()">REGISTRATE CON FACEBOOK</button>
+		</div>
+
+		<div>
+
+    	<h5 padding-left>O ingresá tus datos</h5>
+
+        <form #signCreds="ngForm" (ngSubmit)="registroUser(signCreds.value)">
+			<ion-item class="form-control">
+				<ion-input type="text" placeholder="Nombre" [(ngModel)]="nombre" name="nombre" required></ion-input>
+				<ion-icon name="md-create"></ion-icon>
+			</ion-item>
+			<ion-item class="form-control">
+				<ion-input type="email" placeholder="E-mail" [(ngModel)]="email" name="email" required></ion-input>
+				<ion-icon name="md-create"></ion-icon>
+			</ion-item>
+			<ion-item class="form-control">
+				<ion-label stacked>Fecha de nacimiento</ion-label>
+				<ion-datetime displayFormat="DD/MM/YYYY" name="fecha_nacimiento" doneText="Elegir" [(ngModel)]="myDate"></ion-datetime>
+				<ion-icon name="md-create"></ion-icon>
+			</ion-item>
+			<ion-item class="form-control">
+				<ion-input type="text" placeholder="Teléfono" name="telefono" [(ngModel)]="telefono"></ion-input>
+				<ion-icon name="md-create"></ion-icon>
+			</ion-item>
+			<ion-item class="form-control">
+				<ion-label stacked>Sexo</ion-label>
+			  	<ion-select [(ngModel)]="sexo" name="sexo" >
+			    <ion-option value="0">Hombre</ion-option>
+			    <ion-option value="1">Mujer</ion-option>
+			    <ion-option value="2">No quiero decirte</ion-option>
+			  </ion-select>
+			</ion-item>
+			<ion-item class="form-control">
+				<ion-label stacked>Profesión</ion-label>
+			  	<ion-select [(ngModel)]="profesion_id" name="profesion_id" >
+			    <ion-option [value]="profes.id" *ngFor="let profes of profesiones">{{profes.nombre}}</ion-option>
+			  </ion-select>
+			</ion-item>
+
+	        <ion-item>
+	          <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required></ion-input>
+	        </ion-item>
+	        <ion-item>
+	          <ion-input type="password" [(ngModel)]="password2" name="password2" placeholder="Repetir contraseña" required></ion-input>
+	        </ion-item>
+
+	        <div padding-top>
+	          <button block ion-button round type="submit">ENVIAR</button>
+	        </div>
+      </form>
+
+	</div>
+    <div padding>
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </div>
+
+</ion-content>

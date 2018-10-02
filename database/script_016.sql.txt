@@ -1,0 +1,16 @@
+ALTER TABLE `serviciosxcoiffeur` ADD `especial` TINYINT( 1 ) NULL DEFAULT '0';
+
+
+CREATE TABLE IF NOT EXISTS `configuraciones` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descuento_efectivo` float DEFAULT NULL,
+  `comision_productos` float DEFAULT NULL,
+  `descuento_efectivo_productos` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+
+INSERT INTO `configuraciones` (`id`, `descuento_efectivo`, `comision_productos`, `descuento_efectivo_productos`) VALUES
+(1, 9, 5, 4);
+
+ALTER TABLE `servicios` ADD `precio_default` FLOAT NULL AFTER `duracion_espera` ;
+

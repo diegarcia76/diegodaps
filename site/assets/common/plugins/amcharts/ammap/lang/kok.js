@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.kok = {"India":"à¤­à¤¾à¤°à¤¤"}

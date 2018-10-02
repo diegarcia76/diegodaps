@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>An authentication exception occurred.</source>
+                <target>à¸žà¸šà¸„à¸§à¸²à¸¡à¸œà¸´à¸”à¸žà¸¥à¸²à¸”à¹ƒà¸™à¸à¸²à¸£à¸£à¸±à¸šà¸£à¸­à¸‡à¸•à¸±à¸§à¸•à¸™</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Authentication credentials could not be found.</source>
+                <target>à¹„à¸¡à¹ˆà¸žà¸šà¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹ƒà¸™à¸à¸²à¸£à¸£à¸±à¸šà¸£à¸­à¸‡à¸•à¸±à¸§à¸•à¸™ (credentials) </target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Authentication request could not be processed due to a system problem.</source>
+                <target>à¸„à¸³à¸£à¹‰à¸­à¸‡à¹ƒà¸™à¸à¸²à¸£à¸£à¸±à¸šà¸£à¸­à¸‡à¸•à¸±à¸§à¸•à¸™à¹„à¸¡à¹ˆà¸ªà¸²à¸¡à¸²à¸£à¸–à¸”à¸³à¹€à¸™à¸´à¸™à¸à¸²à¸£à¹„à¸”à¹‰ à¹€à¸™à¸·à¹ˆà¸­à¸‡à¸¡à¸²à¸ˆà¸²à¸à¸›à¸±à¸à¸«à¸²à¸‚à¸­à¸‡à¸£à¸°à¸šà¸š</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Invalid credentials.</source>
+                <target>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸£à¸±à¸šà¸£à¸­à¸‡à¸•à¸±à¸§à¸•à¸™à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Cookie has already been used by someone else.</source>
+                <target>Cookie à¸–à¸¹à¸à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¹„à¸›à¹à¸¥à¹‰à¸§à¸”à¹‰à¸§à¸¢à¸œà¸¹à¹‰à¸­à¸·à¹ˆà¸™</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Not privileged to request the resource.</source>
+                <target>à¹„à¸¡à¹ˆà¹„à¸”à¹‰à¸£à¸±à¸šà¸ªà¸´à¸—à¸˜à¸´à¹Œà¹ƒà¸«à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™à¸ªà¹ˆà¸§à¸™à¸™à¸µà¹‰à¹„à¸”à¹‰</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Invalid CSRF token.</source>
+                <target>CSRF token à¹„à¸¡à¹ˆà¸–à¸¹à¸à¸•à¹‰à¸­à¸‡</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Digest nonce has expired.</source>
+                <target>Digest nonce à¸«à¸¡à¸”à¸­à¸²à¸¢à¸¸</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>No authentication provider found to support the authentication token.</source>
+                <target>à¹„à¸¡à¹ˆà¸žà¸š authentication provider à¸—à¸µà¹ˆà¸£à¸­à¸‡à¸£à¸±à¸šà¸ªà¸³à¸«à¸£à¸±à¸š authentication token</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>No session available, it either timed out or cookies are not enabled.</source>
+                <target>à¹„à¸¡à¹ˆà¸¡à¸µ session à¸—à¸µà¹ˆà¸žà¸£à¹‰à¸­à¸¡à¹ƒà¸Šà¹‰à¸‡à¸²à¸™, Session à¸«à¸¡à¸”à¸­à¸²à¸¢à¸¸à¹„à¸›à¹à¸¥à¹‰à¸§à¸«à¸£à¸·à¸­ cookies à¹„à¸¡à¹ˆà¸–à¸¹à¸à¹€à¸›à¸´à¸”à¹ƒà¸Šà¹‰à¸‡à¸²à¸™</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>No token could be found.</source>
+                <target>à¹„à¸¡à¹ˆà¸žà¸š token</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Username could not be found.</source>
+                <target>à¹„à¸¡à¹ˆà¸žà¸š Username</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Account has expired.</source>
+                <target>à¸šà¸±à¸à¸Šà¸µà¸«à¸¡à¸”à¸­à¸²à¸¢à¸¸à¹„à¸›à¹à¸¥à¹‰à¸§</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Credentials have expired.</source>
+                <target>à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸à¸²à¸£à¸£à¸°à¸šà¸¸à¸•à¸±à¸§à¸•à¸™à¸«à¸¡à¸”à¸­à¸²à¸¢à¸¸à¹à¸¥à¹‰à¸§</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Account is disabled.</source>
+                <target>à¸šà¸±à¸à¸Šà¸µà¸–à¸¹à¸à¸£à¸°à¸‡à¸±à¸šà¹à¸¥à¹‰à¸§</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Account is locked.</source>
+                <target>à¸šà¸±à¸à¸Šà¸µà¸–à¸¹à¸à¸¥à¹‡à¸­à¸à¹à¸¥à¹‰à¸§</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

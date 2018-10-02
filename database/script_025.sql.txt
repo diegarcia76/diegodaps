@@ -1,0 +1,4 @@
+ALTER TABLE `pagos` ADD `comentario` TEXT NULL AFTER `cobrado` ;
+UPDATE `servicios` SET duracion=15 WHERE duracion=0;
+ALTER TABLE `detalle_pago` ADD `servicioId` INT NULL ,
+ADD `productoId` INT NULL ;

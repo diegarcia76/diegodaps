@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.pa = {"India":"à¨­à¨¾à¨°à¨¤","Tonga":"TO","Unknown or Invalid Region":"à¨…à¨£à¨œà¨¾à¨£"}

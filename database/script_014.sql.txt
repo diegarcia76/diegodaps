@@ -1,0 +1,7 @@
+ALTER TABLE `detalle_pago`   
+  ADD COLUMN `fecha` DATETIME NULL AFTER `precio`;
+ALTER TABLE `detalle_pago`   
+  CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;  
+ALTER TABLE `detalle_pago`   
+  ADD COLUMN `coiffeur_id` INT NULL AFTER `fecha`,
+  ADD COLUMN `comision` FLOAT NULL AFTER `coiffeur_id`;

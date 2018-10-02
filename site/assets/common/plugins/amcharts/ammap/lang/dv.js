@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.dv = {"Maldives":"Þ‹Þ¨ÞˆÞ¬Þ€Þ¨ ÞƒÞ§Þ‡Þ°Þ–Þ¬"}

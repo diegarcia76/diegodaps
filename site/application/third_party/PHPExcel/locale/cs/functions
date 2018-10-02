@@ -1,0 +1,439 @@
+##
+## PHPExcel
+##
+
+## Copyright (c) 2006 - 2013 PHPExcel
+##
+## This library is free software; you can redistribute it and/or
+## modify it under the terms of the GNU Lesser General Public
+## License as published by the Free Software Foundation; either
+## version 2.1 of the License, or (at your option) any later version.
+##
+## This library is distributed in the hope that it will be useful,
+## but WITHOUT ANY WARRANTY; without even the implied warranty of
+## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+## Lesser General Public License for more details.
+##
+## You should have received a copy of the GNU Lesser General Public
+## License along with this library; if not, write to the Free Software
+## Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+##
+## @category   PHPExcel
+## @package    PHPExcel_Calculation
+## @copyright  Copyright (c) 2006 - 2013 PHPExcel (http://www.codeplex.com/PHPExcel)
+## @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+## @version    ##VERSION##, ##DATE##
+##
+## Data in this file derived from http://www.piuha.fi/excel-function-name-translation/
+##
+##
+
+
+##
+##	Add-in and Automation functions		Funkce doplÅˆkÅ¯ a automatizace
+##
+GETPIVOTDATA		= ZÃSKATKONTDATA	##	VrÃ¡tÃ­ data uloÅ¾enÃ¡ v kontingenÄnÃ­ tabulce. PomocÃ­ funkce ZÃSKATKONTDATA mÅ¯Å¾ete naÄÃ­st souhrnnÃ¡ data z kontingenÄnÃ­ tabulky, pokud jsou tato data v kontingenÄnÃ­ sestavÄ› zobrazena.
+
+
+##
+##	Cube functions				Funkce pro prÃ¡ci s krychlemi
+##
+CUBEKPIMEMBER		= CUBEKPIMEMBER		##	VrÃ¡tÃ­ nÃ¡zev, vlastnost a velikost klÃ­ÄovÃ©ho ukazatele vÃ½konu (KUV) a zobrazÃ­ v buÅˆce nÃ¡zev a vlastnost. KlÃ­ÄovÃ½ ukazatel vÃ½konu je kvantifikovatelnÃ¡ veliÄina, napÅ™Ã­klad hrubÃ½ mÄ›sÃ­ÄnÃ­ zisk nebo ÄtvrtletnÃ­ obrat na zamÄ›stnance, kterÃ¡ se pouÅ¾Ã­vÃ¡ pro sledovÃ¡nÃ­ vÃ½konnosti organizace.
+CUBEMEMBER		= CUBEMEMBER		##	VrÃ¡tÃ­ Älen nebo n-tici v hierarchii krychle. SlouÅ¾Ã­ k ovÄ›Å™enÃ­, zda v krychli existuje Älen nebo n-tice.
+CUBEMEMBERPROPERTY	= CUBEMEMBERPROPERTY	##	VrÃ¡tÃ­ hodnotu vlastnosti Älena v krychli. SlouÅ¾Ã­ k ovÄ›Å™enÃ­, zda v krychli existuje Älen s danÃ½m nÃ¡zvem, a k vrÃ¡cenÃ­ konkrÃ©tnÃ­ vlastnosti tohoto Älena.
+CUBERANKEDMEMBER	= CUBERANKEDMEMBER	##	VrÃ¡tÃ­ n-tÃ½ nebo poÅ™adovÃ½ Älen sady. PouÅ¾ijte ji pro vrÃ¡cenÃ­ jednoho nebo vÃ­ce prvkÅ¯ sady, napÅ™Ã­klad obchodnÃ­ka s nejvyÅ¡Å¡Ã­m obratem nebo deseti nejlepÅ¡Ã­ch studentÅ¯.
+CUBESET			= CUBESET		##	Definuje vypoÄtenou sadu ÄlenÅ¯ nebo n-tic odeslÃ¡nÃ­m vÃ½razu sady do krychle na serveru, kterÃ½ vytvoÅ™Ã­ sadu a potom ji vrÃ¡tÃ­ do aplikace Microsoft Office Excel.
+CUBESETCOUNT		= CUBESETCOUNT		##	VrÃ¡tÃ­ poÄet poloÅ¾ek v mnoÅ¾inÄ›
+CUBEVALUE		= CUBEVALUE		##	VrÃ¡tÃ­ Ãºhrnnou hodnotu z krychle.
+
+
+##
+##	Database functions			Funkce databÃ¡ze
+##
+DAVERAGE		= DPRÅ®MÄšR		##	VrÃ¡tÃ­ prÅ¯mÄ›r vybranÃ½ch poloÅ¾ek databÃ¡ze.
+DCOUNT			= DPOÄŒET		##	SpoÄÃ­tÃ¡ buÅˆky databÃ¡ze obsahujÃ­cÃ­ ÄÃ­sla.
+DCOUNTA			= DPOÄŒET2		##	SpoÄÃ­tÃ¡ buÅˆky databÃ¡ze, kterÃ© nejsou prÃ¡zdnÃ©.
+DGET			= DZÃSKAT		##	Extrahuje z databÃ¡ze jeden zÃ¡znam splÅˆujÃ­cÃ­ zadanÃ¡ kritÃ©ria.
+DMAX			= DMAX			##	VrÃ¡tÃ­ maximÃ¡lnÃ­ hodnotu z vybranÃ½ch poloÅ¾ek databÃ¡ze.
+DMIN			= DMIN			##	VrÃ¡tÃ­ minimÃ¡lnÃ­ hodnotu z vybranÃ½ch poloÅ¾ek databÃ¡ze.
+DPRODUCT		= DSOUÄŒIN		##	VynÃ¡sobÃ­ hodnoty urÄitÃ©ho pole zÃ¡znamÅ¯ v databÃ¡zi, kterÃ© splÅˆujÃ­ danÃ¡ kritÃ©ria.
+DSTDEV			= DSMODCH.VÃBÄšR		##	Odhadne smÄ›rodatnou odchylku vÃ½bÄ›ru vybranÃ½ch poloÅ¾ek databÃ¡ze.
+DSTDEVP			= DSMODCH		##	VypoÄte smÄ›rodatnou odchylku zÃ¡kladnÃ­ho souboru vybranÃ½ch poloÅ¾ek databÃ¡ze.
+DSUM			= DSUMA			##	SeÄte ÄÃ­sla ve sloupcovÃ©m poli zÃ¡znamÅ¯ databÃ¡ze, kterÃ¡ splÅˆujÃ­ danÃ¡ kritÃ©ria.
+DVAR			= DVAR.VÃBÄšR		##	Odhadne rozptyl vÃ½bÄ›ru vybranÃ½ch poloÅ¾ek databÃ¡ze.
+DVARP			= DVAR			##	VypoÄte rozptyl zÃ¡kladnÃ­ho souboru vybranÃ½ch poloÅ¾ek databÃ¡ze.
+
+
+##
+##	Date and time functions			Funkce data a Äasu
+##
+DATE			= DATUM			##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo urÄitÃ©ho data.
+DATEVALUE		= DATUMHODN		##	PÅ™evede datum ve formÄ› textu na poÅ™adovÃ© ÄÃ­slo.
+DAY			= DEN			##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na den v mÄ›sÃ­ci.
+DAYS360			= ROK360		##	VrÃ¡tÃ­ poÄet dnÃ­ mezi dvÄ›ma daty na zÃ¡kladÄ› roku s 360 dny.
+EDATE			= EDATE			##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo data, kterÃ© oznaÄuje urÄenÃ½ poÄet mÄ›sÃ­cÅ¯ pÅ™ed nebo po poÄÃ¡teÄnÃ­m datu.
+EOMONTH			= EOMONTH		##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo poslednÃ­ho dne mÄ›sÃ­ce pÅ™ed nebo po zadanÃ©m poÄtu mÄ›sÃ­cÅ¯.
+HOUR			= HODINA		##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na hodinu.
+MINUTE			= MINUTA		##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na minutu.
+MONTH			= MÄšSÃC			##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na mÄ›sÃ­c.
+NETWORKDAYS		= NETWORKDAYS		##	VrÃ¡tÃ­ poÄet celÃ½ch pracovnÃ­ch dnÃ­ mezi dvÄ›ma daty.
+NOW			= NYNÃ			##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo aktuÃ¡lnÃ­ho data a Äasu.
+SECOND			= SEKUNDA		##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na sekundu.
+TIME			= ÄŒAS			##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo urÄitÃ©ho Äasu.
+TIMEVALUE		= ÄŒASHODN		##	PÅ™evede Äas ve formÄ› textu na poÅ™adovÃ© ÄÃ­slo.
+TODAY			= DNES			##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo dneÅ¡nÃ­ho data.
+WEEKDAY			= DENTÃDNE		##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na den v tÃ½dnu.
+WEEKNUM			= WEEKNUM		##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na ÄÃ­slo pÅ™edstavujÃ­cÃ­ ÄÃ­selnou pozici tÃ½dne v roce.
+WORKDAY			= WORKDAY		##	VrÃ¡tÃ­ poÅ™adovÃ© ÄÃ­slo data pÅ™ed nebo po zadanÃ©m poÄtu pracovnÃ­ch dnÃ­.
+YEAR			= ROK			##	PÅ™evede poÅ™adovÃ© ÄÃ­slo na rok.
+YEARFRAC		= YEARFRAC		##	VrÃ¡tÃ­ ÄÃ¡st roku vyjÃ¡dÅ™enou zlomkem a pÅ™edstavujÃ­cÃ­ poÄet celÃ½ch dnÃ­ mezi poÄÃ¡teÄnÃ­m a koncovÃ½m datem.
+
+
+##
+##	Engineering functions			InÅ¾enÃ½rskÃ© funkce (TechnickÃ© funkce)
+##
+BESSELI			= BESSELI		##	VrÃ¡tÃ­ modifikovanou Besselovu funkci In(x).
+BESSELJ			= BESSELJ		##	VrÃ¡tÃ­ modifikovanou Besselovu funkci Jn(x).
+BESSELK			= BESSELK		##	VrÃ¡tÃ­ modifikovanou Besselovu funkci Kn(x).
+BESSELY			= BESSELY		##	VrÃ¡tÃ­ Besselovu funkci Yn(x).
+BIN2DEC			= BIN2DEC		##	PÅ™evede binÃ¡rnÃ­ ÄÃ­slo na desÃ­tkovÃ©.
+BIN2HEX			= BIN2HEX		##	PÅ™evede binÃ¡rnÃ­ ÄÃ­slo na Å¡estnÃ¡ctkovÃ©.
+BIN2OCT			= BIN2OCT		##	PÅ™evede binÃ¡rnÃ­ ÄÃ­slo na osmiÄkovÃ©.
+COMPLEX			= COMPLEX		##	PÅ™evede reÃ¡lnou a imaginÃ¡rnÃ­ ÄÃ¡st na komplexnÃ­ ÄÃ­slo.
+CONVERT			= CONVERT		##	PÅ™evede ÄÃ­slo do jinÃ©ho jednotkovÃ©ho mÄ›rnÃ©ho systÃ©mu.
+DEC2BIN			= DEC2BIN		##	PÅ™evede desÃ­tkovÃ©ho ÄÃ­sla na dvojkovÃ©
+DEC2HEX			= DEC2HEX		##	PÅ™evede desÃ­tkovÃ© ÄÃ­slo na Å¡estnÃ¡ctkovÃ©.
+DEC2OCT			= DEC2OCT		##	PÅ™evede desÃ­tkovÃ© ÄÃ­slo na osmiÄkovÃ©.
+DELTA			= DELTA			##	Testuje rovnost dvou hodnot.
+ERF			= ERF			##	VrÃ¡tÃ­ chybovou funkci.
+ERFC			= ERFC			##	VrÃ¡tÃ­ doplÅˆkovou chybovou funkci.
+GESTEP			= GESTEP		##	Testuje, zda je ÄÃ­slo vÄ›tÅ¡Ã­ neÅ¾ meznÃ­ hodnota.
+HEX2BIN			= HEX2BIN		##	PÅ™evede Å¡estnÃ¡ctkovÃ© ÄÃ­slo na binÃ¡rnÃ­.
+HEX2DEC			= HEX2DEC		##	PÅ™evede Å¡estnÃ¡ctkovÃ© ÄÃ­slo na desÃ­tkovÃ©.
+HEX2OCT			= HEX2OCT		##	PÅ™evede Å¡estnÃ¡ctkovÃ© ÄÃ­slo na osmiÄkovÃ©.
+IMABS			= IMABS			##	VrÃ¡tÃ­ absolutnÃ­ hodnotu (modul) komplexnÃ­ho ÄÃ­sla.
+IMAGINARY		= IMAGINARY		##	VrÃ¡tÃ­ imaginÃ¡rnÃ­ ÄÃ¡st komplexnÃ­ho ÄÃ­sla.
+IMARGUMENT		= IMARGUMENT		##	VrÃ¡tÃ­ argument thÃ©ta, Ãºhel vyjÃ¡dÅ™enÃ½ v radiÃ¡nech.
+IMCONJUGATE		= IMCONJUGATE		##	VrÃ¡tÃ­ komplexnÄ› sdruÅ¾enÃ© ÄÃ­slo ke komplexnÃ­mu ÄÃ­slu.
+IMCOS			= IMCOS			##	VrÃ¡tÃ­ kosinus komplexnÃ­ho ÄÃ­sla.
+IMDIV			= IMDIV			##	VrÃ¡tÃ­ podÃ­l dvou komplexnÃ­ch ÄÃ­sel.
+IMEXP			= IMEXP			##	VrÃ¡tÃ­ exponenciÃ¡lnÃ­ tvar komplexnÃ­ho ÄÃ­sla.
+IMLN			= IMLN			##	VrÃ¡tÃ­ pÅ™irozenÃ½ logaritmus komplexnÃ­ho ÄÃ­sla.
+IMLOG10			= IMLOG10		##	VrÃ¡tÃ­ dekadickÃ½ logaritmus komplexnÃ­ho ÄÃ­sla.
+IMLOG2			= IMLOG2		##	VrÃ¡tÃ­ logaritmus komplexnÃ­ho ÄÃ­sla pÅ™i zÃ¡kladu 2.
+IMPOWER			= IMPOWER		##	VrÃ¡tÃ­ komplexnÃ­ ÄÃ­slo umocnÄ›nÃ© na celÃ© ÄÃ­slo.
+IMPRODUCT		= IMPRODUCT		##	VrÃ¡tÃ­ souÄin komplexnÃ­ch ÄÃ­sel.
+IMREAL			= IMREAL		##	VrÃ¡tÃ­ reÃ¡lnou ÄÃ¡st komplexnÃ­ho ÄÃ­sla.
+IMSIN			= IMSIN			##	VrÃ¡tÃ­ sinus komplexnÃ­ho ÄÃ­sla.
+IMSQRT			= IMSQRT		##	VrÃ¡tÃ­ druhou odmocninu komplexnÃ­ho ÄÃ­sla.
+IMSUB			= IMSUB			##	VrÃ¡tÃ­ rozdÃ­l mezi dvÄ›ma komplexnÃ­mi ÄÃ­sly.
+IMSUM			= IMSUM			##	VrÃ¡tÃ­ souÄet dvou komplexnÃ­ch ÄÃ­sel.
+OCT2BIN			= OCT2BIN		##	PÅ™evede osmiÄkovÃ© ÄÃ­slo na binÃ¡rnÃ­.
+OCT2DEC			= OCT2DEC		##	PÅ™evede osmiÄkovÃ© ÄÃ­slo na desÃ­tkovÃ©.
+OCT2HEX			= OCT2HEX		##	PÅ™evede osmiÄkovÃ© ÄÃ­slo na Å¡estnÃ¡ctkovÃ©.
+
+
+##
+##	Financial functions			FinanÄnÃ­ funkce
+##
+ACCRINT			= ACCRINT		##	VrÃ¡tÃ­ nahromadÄ›nÃ½ Ãºrok z cennÃ©ho papÃ­ru, ze kterÃ©ho je Ãºrok placen v pravidelnÃ½ch termÃ­nech.
+ACCRINTM		= ACCRINTM		##	VrÃ¡tÃ­ nahromadÄ›nÃ½ Ãºrok z cennÃ©ho papÃ­ru, ze kterÃ©ho je Ãºrok placen k datu splatnosti.
+AMORDEGRC		= AMORDEGRC		##	VrÃ¡tÃ­ lineÃ¡rnÃ­ amortizaci v kaÅ¾dÃ©m ÃºÄetnÃ­m obdobÃ­ pomocÃ­ koeficientu amortizace.
+AMORLINC		= AMORLINC		##	VrÃ¡tÃ­ lineÃ¡rnÃ­ amortizaci v kaÅ¾dÃ©m ÃºÄetnÃ­m obdobÃ­.
+COUPDAYBS		= COUPDAYBS		##	VrÃ¡tÃ­ poÄet dnÅ¯ od zaÄÃ¡tku obdobÃ­ placenÃ­ kupÃ³nÅ¯ do data splatnosti.
+COUPDAYS		= COUPDAYS		##	VrÃ¡tÃ­ poÄet dnÅ¯ v obdobÃ­ placenÃ­ kupÃ³nÅ¯, kterÃ© obsahuje den zÃºÄtovÃ¡nÃ­.
+COUPDAYSNC		= COUPDAYSNC		##	VrÃ¡tÃ­ poÄet dnÅ¯ od data zÃºÄtovÃ¡nÃ­ do nÃ¡sledujÃ­cÃ­ho data placenÃ­ kupÃ³nu.
+COUPNCD			= COUPNCD		##	VrÃ¡tÃ­ nÃ¡sledujÃ­cÃ­ datum placenÃ­ kupÃ³nu po datu zÃºÄtovÃ¡nÃ­.
+COUPNUM			= COUPNUM		##	VrÃ¡tÃ­ poÄet kupÃ³nÅ¯ splatnÃ½ch mezi datem zÃºÄtovÃ¡nÃ­ a datem splatnosti.
+COUPPCD			= COUPPCD		##	VrÃ¡tÃ­ pÅ™edchozÃ­ datum placenÃ­ kupÃ³nu pÅ™ed datem zÃºÄtovÃ¡nÃ­.
+CUMIPMT			= CUMIPMT		##	VrÃ¡tÃ­ kumulativnÃ­ Ãºrok splacenÃ½ mezi dvÄ›ma obdobÃ­mi.
+CUMPRINC		= CUMPRINC		##	VrÃ¡tÃ­ kumulativnÃ­ jistinu splacenou mezi dvÄ›ma obdobÃ­mi pÅ¯jÄky.
+DB			= ODPIS.ZRYCH		##	VrÃ¡tÃ­ odpis aktiva za urÄitÃ© obdobÃ­ pomocÃ­ degresivnÃ­ metody odpisu s pevnÃ½m zÅ¯statkem.
+DDB			= ODPIS.ZRYCH2		##	VrÃ¡tÃ­ odpis aktiva za urÄitÃ© obdobÃ­ pomocÃ­ dvojitÃ© degresivnÃ­ metody odpisu nebo jinÃ© metody, kterou zadÃ¡te.
+DISC			= DISC			##	VrÃ¡tÃ­ diskontnÃ­ sazbu cennÃ©ho papÃ­ru.
+DOLLARDE		= DOLLARDE		##	PÅ™evede ÄÃ¡stku v korunÃ¡ch vyjÃ¡dÅ™enou zlomkem na ÄÃ¡stku v korunÃ¡ch vyjÃ¡dÅ™enou desetinnÃ½m ÄÃ­slem.
+DOLLARFR		= DOLLARFR		##	PÅ™evede ÄÃ¡stku v korunÃ¡ch vyjÃ¡dÅ™enou desetinnÃ½m ÄÃ­slem na ÄÃ¡stku v korunÃ¡ch vyjÃ¡dÅ™enou zlomkem.
+DURATION		= DURATION		##	VrÃ¡tÃ­ roÄnÃ­ dobu cennÃ©ho papÃ­ru s pravidelnÃ½mi ÃºrokovÃ½mi sazbami.
+EFFECT			= EFFECT		##	VrÃ¡tÃ­ efektivnÃ­ roÄnÃ­ Ãºrokovou sazbu.
+FV			= BUDHODNOTA		##	VrÃ¡tÃ­ budoucÃ­ hodnotu investice.
+FVSCHEDULE		= FVSCHEDULE		##	VrÃ¡tÃ­ budoucÃ­ hodnotu poÄÃ¡teÄnÃ­ jistiny po pouÅ¾itÃ­ sÃ©rie sazeb sloÅ¾itÃ©ho Ãºroku.
+INTRATE			= INTRATE		##	VrÃ¡tÃ­ Ãºrokovou sazbu plnÄ› investovanÃ©ho cennÃ©ho papÃ­ru.
+IPMT			= PLATBA.ÃšROK		##	VrÃ¡tÃ­ vÃ½Å¡ku Ãºroku investice za danÃ© obdobÃ­.
+IRR			= MÃRA.VÃNOSNOSTI	##	VrÃ¡tÃ­ vnitÅ™nÃ­ vÃ½nosovÃ© procento sÃ©rie penÄ›Å¾nÃ­ch tokÅ¯.
+ISPMT			= ISPMT			##	VypoÄte vÃ½Å¡i Ãºroku z investice zaplacenÃ©ho bÄ›hem urÄitÃ©ho obdobÃ­.
+MDURATION		= MDURATION		##	VrÃ¡tÃ­ Macauleyho modifikovanou dobu cennÃ©ho papÃ­ru o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ.
+MIRR			= MOD.MÃRA.VÃNOSNOSTI	##	VrÃ¡tÃ­ vnitÅ™nÃ­ sazbu vÃ½nosu, pÅ™iÄemÅ¾ kladnÃ© a zÃ¡pornÃ© hodnoty penÄ›Å¾nÃ­ch prostÅ™edkÅ¯ jsou financovÃ¡ny podle rÅ¯znÃ½ch sazeb.
+NOMINAL			= NOMINAL		##	VrÃ¡tÃ­ nominÃ¡lnÃ­ roÄnÃ­ Ãºrokovou sazbu.
+NPER			= POÄŒET.OBDOBÃ		##	VrÃ¡tÃ­ poÄet obdobÃ­ pro investici.
+NPV			= ÄŒISTÃ.SOUÄŒHODNOTA	##	VrÃ¡tÃ­ Äistou souÄasnou hodnotu investice vypoÄÃ­tanou na zÃ¡kladÄ› sÃ©rie pravidelnÃ½ch penÄ›Å¾nÃ­ch tokÅ¯ a diskontnÃ­ sazby.
+ODDFPRICE		= ODDFPRICE		##	VrÃ¡tÃ­ cenu cennÃ©ho papÃ­ru o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ s odliÅ¡nÃ½m prvnÃ­m obdobÃ­m.
+ODDFYIELD		= ODDFYIELD		##	VrÃ¡tÃ­ vÃ½nos cennÃ©ho papÃ­ru s odliÅ¡nÃ½m prvnÃ­m obdobÃ­m.
+ODDLPRICE		= ODDLPRICE		##	VrÃ¡tÃ­ cenu cennÃ©ho papÃ­ru o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ s odliÅ¡nÃ½m poslednÃ­m obdobÃ­m.
+ODDLYIELD		= ODDLYIELD		##	VrÃ¡tÃ­ vÃ½nos cennÃ©ho papÃ­ru s odliÅ¡nÃ½m poslednÃ­m obdobÃ­m.
+PMT			= PLATBA		##	VrÃ¡tÃ­ hodnotu pravidelnÃ© splÃ¡tky anuity.
+PPMT			= PLATBA.ZÃKLAD		##	VrÃ¡tÃ­ hodnotu splÃ¡tky jistiny pro zadanou investici za danÃ© obdobÃ­.
+PRICE			= PRICE			##	VrÃ¡tÃ­ cenu cennÃ©ho papÃ­ru o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ, ze kterÃ©ho je Ãºrok placen v pravidelnÃ½ch termÃ­nech.
+PRICEDISC		= PRICEDISC		##	VrÃ¡tÃ­ cenu diskontnÃ­ho cennÃ©ho papÃ­ru o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ.
+PRICEMAT		= PRICEMAT		##	VrÃ¡tÃ­ cenu cennÃ©ho papÃ­ru o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ, ze kterÃ©ho je Ãºrok placen k datu splatnosti.
+PV			= SOUÄŒHODNOTA		##	VrÃ¡tÃ­ souÄasnou hodnotu investice.
+RATE			= ÃšROKOVÃ.MÃRA		##	VrÃ¡tÃ­ Ãºrokovou sazbu vztaÅ¾enou na obdobÃ­ anuity.
+RECEIVED		= RECEIVED		##	VrÃ¡tÃ­ ÄÃ¡stku obdrÅ¾enou k datu splatnosti plnÄ› investovanÃ©ho cennÃ©ho papÃ­ru.
+SLN			= ODPIS.LIN		##	VrÃ¡tÃ­ pÅ™Ã­mÃ© odpisy aktiva pro jedno obdobÃ­.
+SYD			= ODPIS.NELIN		##	VrÃ¡tÃ­ smÄ›rnÃ© ÄÃ­slo roÄnÃ­ch odpisÅ¯ aktiva pro zadanÃ© obdobÃ­.
+TBILLEQ			= TBILLEQ		##	VrÃ¡tÃ­ vÃ½nos smÄ›nky stÃ¡tnÃ­ pokladny ekvivalentnÃ­ vÃ½nosu obligace.
+TBILLPRICE		= TBILLPRICE		##	VrÃ¡tÃ­ cenu smÄ›nky stÃ¡tnÃ­ pokladny o nominÃ¡lnÃ­ hodnotÄ› 100 KÄ.
+TBILLYIELD		= TBILLYIELD		##	VrÃ¡tÃ­ vÃ½nos smÄ›nky stÃ¡tnÃ­ pokladny.
+VDB			= ODPIS.ZA.INT		##	VrÃ¡tÃ­ odpis aktiva pro urÄitÃ© obdobÃ­ nebo ÄÃ¡st obdobÃ­ pomocÃ­ degresivnÃ­ metody odpisu.
+XIRR			= XIRR			##	VrÃ¡tÃ­ vnitÅ™nÃ­ vÃ½nosnost pro harmonogram penÄ›Å¾nÃ­ch tokÅ¯, kterÃ½ nemusÃ­ bÃ½t nutnÄ› periodickÃ½.
+XNPV			= XNPV			##	VrÃ¡tÃ­ Äistou souÄasnou hodnotu pro harmonogram penÄ›Å¾nÃ­ch tokÅ¯, kterÃ½ nemusÃ­ bÃ½t nutnÄ› periodickÃ½.
+YIELD			= YIELD			##	VrÃ¡tÃ­ vÃ½nos cennÃ©ho papÃ­ru, ze kterÃ©ho je Ãºrok placen v pravidelnÃ½ch termÃ­nech.
+YIELDDISC		= YIELDDISC		##	VrÃ¡tÃ­ roÄnÃ­ vÃ½nos diskontnÃ­ho cennÃ©ho papÃ­ru, napÅ™Ã­klad smÄ›nky stÃ¡tnÃ­ pokladny.
+YIELDMAT		= YIELDMAT		##	VrÃ¡tÃ­ roÄnÃ­ vÃ½nos cennÃ©ho papÃ­ru, ze kterÃ©ho je Ãºrok placen k datu splatnosti.
+
+
+##
+##	Information functions			InformaÄnÃ­ funkce
+##
+CELL			= POLÃÄŒKO		##	VrÃ¡tÃ­ informace o formÃ¡tovÃ¡nÃ­, umÃ­stÄ›nÃ­ nebo obsahu buÅˆky.
+ERROR.TYPE		= CHYBA.TYP		##	VrÃ¡tÃ­ ÄÃ­slo odpovÃ­dajÃ­cÃ­ typu chyby.
+INFO			= O.PROSTÅ˜EDÃ		##	VrÃ¡tÃ­ informace o aktuÃ¡lnÃ­m pracovnÃ­m prostÅ™edÃ­.
+ISBLANK			= JE.PRÃZDNÃ‰		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud se argument hodnota odkazuje na prÃ¡zdnou buÅˆku.
+ISERR			= JE.CHYBA		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota libovolnÃ¡ chybovÃ¡ hodnota (kromÄ› #N/A).
+ISERROR			= JE.CHYBHODN		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota libovolnÃ¡ chybovÃ¡ hodnota.
+ISEVEN			= ISEVEN		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je ÄÃ­slo sudÃ©.
+ISLOGICAL		= JE.LOGHODN		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota logickÃ¡ hodnota.
+ISNA			= JE.NEDEF		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota chybovÃ¡ hodnota #N/A.
+ISNONTEXT		= JE.NETEXT		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud argument hodnota nenÃ­ text.
+ISNUMBER		= JE.ÄŒÃSLO		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota ÄÃ­slo.
+ISODD			= ISODD			##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je ÄÃ­slo lichÃ©.
+ISREF			= JE.ODKAZ		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota odkaz.
+ISTEXT			= JE.TEXT		##	VrÃ¡tÃ­ hodnotu PRAVDA, pokud je argument hodnota text.
+N			= N			##	VrÃ¡tÃ­ hodnotu pÅ™evedenou na ÄÃ­slo.
+NA			= NEDEF			##	VrÃ¡tÃ­ chybovou hodnotu #N/A.
+TYPE			= TYP			##	VrÃ¡tÃ­ ÄÃ­slo oznaÄujÃ­cÃ­ datovÃ½ typ hodnoty.
+
+
+##
+##	Logical functions			LogickÃ© funkce
+##
+AND			= A			##	VrÃ¡tÃ­ hodnotu PRAVDA, majÃ­-li vÅ¡echny argumenty hodnotu PRAVDA.
+FALSE			= NEPRAVDA		##	VrÃ¡tÃ­ logickou hodnotu NEPRAVDA.
+IF			= KDYÅ½			##	UrÄÃ­, kterÃ½ logickÃ½ test mÃ¡ probÄ›hnout.
+IFERROR			= IFERROR		##	Pokud je vzorec vyhodnocen jako chyba, vrÃ¡tÃ­ zadanou hodnotu. V opaÄnÃ©m pÅ™Ã­padÄ› vrÃ¡tÃ­ vÃ½sledek vzorce.
+NOT			= NE			##	Provede logickou negaci argumentu funkce.
+OR			= NEBO			##	VrÃ¡tÃ­ hodnotu PRAVDA, je-li alespoÅˆ jeden argument roven hodnotÄ› PRAVDA.
+TRUE			= PRAVDA		##	VrÃ¡tÃ­ logickou hodnotu PRAVDA.
+
+
+##
+##	Lookup and reference functions		VyhledÃ¡vacÃ­ funkce
+##
+ADDRESS			= ODKAZ			##	VrÃ¡tÃ­ textovÃ½ odkaz na jednu buÅˆku listu.
+AREAS			= POÄŒET.BLOKÅ®		##	VrÃ¡tÃ­ poÄet oblastÃ­ v odkazu.
+CHOOSE			= ZVOLIT		##	ZvolÃ­ hodnotu ze seznamu hodnot.
+COLUMN			= SLOUPEC		##	VrÃ¡tÃ­ ÄÃ­slo sloupce odkazu.
+COLUMNS			= SLOUPCE		##	VrÃ¡tÃ­ poÄet sloupcÅ¯ v odkazu.
+HLOOKUP			= VVYHLEDAT		##	ProhledÃ¡ hornÃ­ Å™Ã¡dek matice a vrÃ¡tÃ­ hodnotu urÄenÃ© buÅˆky.
+HYPERLINK		= HYPERTEXTOVÃ.ODKAZ	##	VytvoÅ™Ã­ zÃ¡stupce nebo odkaz, kterÃ½ otevÅ™e dokument uloÅ¾enÃ½ na sÃ­Å¥ovÃ©m serveru, v sÃ­ti intranet nebo Internet.
+INDEX			= INDEX			##	PomocÃ­ rejstÅ™Ã­ku zvolÃ­ hodnotu z odkazu nebo matice.
+INDIRECT		= NEPÅ˜ÃMÃ.ODKAZ		##	VrÃ¡tÃ­ odkaz urÄenÃ½ textovou hodnotou.
+LOOKUP			= VYHLEDAT		##	VyhledÃ¡ hodnoty ve vektoru nebo matici.
+MATCH			= POZVYHLEDAT		##	VyhledÃ¡ hodnoty v odkazu nebo matici.
+OFFSET			= POSUN			##	VrÃ¡tÃ­ posun odkazu od zadanÃ©ho odkazu.
+ROW			= Å˜ÃDEK			##	VrÃ¡tÃ­ ÄÃ­slo Å™Ã¡dku odkazu.
+ROWS			= Å˜ÃDKY			##	VrÃ¡tÃ­ poÄet Å™Ã¡dkÅ¯ v odkazu.
+RTD			= RTD			##	NaÄte data reÃ¡lnÃ©ho Äasu z programu, kterÃ½ podporuje automatizaci modelu COM (Automatizace: ZpÅ¯sob prÃ¡ce s objekty urÄitÃ© aplikace z jinÃ© aplikace nebo nÃ¡stroje pro vÃ½voj. Automatizace (dÅ™Ã­ve nazÃ½vanÃ¡ automatizace OLE) je poÄÃ­taÄovÃ½m standardem a je funkcÃ­ modelu COM (Component Object Model).).
+TRANSPOSE		= TRANSPOZICE		##	VrÃ¡tÃ­ transponovanou matici.
+VLOOKUP			= SVYHLEDAT		##	ProhledÃ¡ prvnÃ­ sloupec matice, pÅ™esune kurzor v Å™Ã¡dku a vrÃ¡tÃ­ hodnotu buÅˆky.
+
+
+##
+##	Math and trigonometry functions		MatematickÃ© a trigonometrickÃ© funkce
+##
+ABS			= ABS			##	VrÃ¡tÃ­ absolutnÃ­ hodnotu ÄÃ­sla.
+ACOS			= ARCCOS		##	VrÃ¡tÃ­ arkuskosinus ÄÃ­sla.
+ACOSH			= ARCCOSH		##	VrÃ¡tÃ­ hyperbolickÃ½ arkuskosinus ÄÃ­sla.
+ASIN			= ARCSIN		##	VrÃ¡tÃ­ arkussinus ÄÃ­sla.
+ASINH			= ARCSINH		##	VrÃ¡tÃ­ hyperbolickÃ½ arkussinus ÄÃ­sla.
+ATAN			= ARCTG			##	VrÃ¡tÃ­ arkustangens ÄÃ­sla.
+ATAN2			= ARCTG2		##	VrÃ¡tÃ­ arkustangens x-ovÃ© a y-ovÃ© souÅ™adnice.
+ATANH			= ARCTGH		##	VrÃ¡tÃ­ hyperbolickÃ½ arkustangens ÄÃ­sla.
+CEILING			= ZAOKR.NAHORU		##	ZaokrouhlÃ­ ÄÃ­slo na nejbliÅ¾Å¡Ã­ celÃ© ÄÃ­slo nebo na nejbliÅ¾Å¡Ã­ nÃ¡sobek zadanÃ© hodnoty.
+COMBIN			= KOMBINACE		##	VrÃ¡tÃ­ poÄet kombinacÃ­ pro danÃ½ poÄet poloÅ¾ek.
+COS			= COS			##	VrÃ¡tÃ­ kosinus ÄÃ­sla.
+COSH			= COSH			##	VrÃ¡tÃ­ hyperbolickÃ½ kosinus ÄÃ­sla.
+DEGREES			= DEGREES		##	PÅ™evede radiÃ¡ny na stupnÄ›.
+EVEN			= ZAOKROUHLIT.NA.SUDÃ‰	##	ZaokrouhlÃ­ ÄÃ­slo nahoru na nejbliÅ¾Å¡Ã­ celÃ© sudÃ© ÄÃ­slo.
+EXP			= EXP			##	VrÃ¡tÃ­ zÃ¡klad pÅ™irozenÃ©ho logaritmu e umocnÄ›nÃ½ na zadanÃ© ÄÃ­slo.
+FACT			= FAKTORIÃL		##	VrÃ¡tÃ­ faktoriÃ¡l ÄÃ­sla.
+FACTDOUBLE		= FACTDOUBLE		##	VrÃ¡tÃ­ dvojitÃ½ faktoriÃ¡l ÄÃ­sla.
+FLOOR			= ZAOKR.DOLÅ®		##	ZaokrouhlÃ­ ÄÃ­slo dolÅ¯, smÄ›rem k nule.
+GCD			= GCD			##	VrÃ¡tÃ­ nejvÄ›tÅ¡Ã­ spoleÄnÃ½ dÄ›litel.
+INT			= CELÃ.ÄŒÃST		##	ZaokrouhlÃ­ ÄÃ­slo dolÅ¯ na nejbliÅ¾Å¡Ã­ celÃ© ÄÃ­slo.
+LCM			= LCM			##	VrÃ¡tÃ­ nejmenÅ¡Ã­ spoleÄnÃ½ nÃ¡sobek.
+LN			= LN			##	VrÃ¡tÃ­ pÅ™irozenÃ½ logaritmus ÄÃ­sla.
+LOG			= LOGZ			##	VrÃ¡tÃ­ logaritmus ÄÃ­sla pÅ™i zadanÃ©m zÃ¡kladu.
+LOG10			= LOG			##	VrÃ¡tÃ­ dekadickÃ½ logaritmus ÄÃ­sla.
+MDETERM			= DETERMINANT		##	VrÃ¡tÃ­ determinant matice.
+MINVERSE		= INVERZE		##	VrÃ¡tÃ­ inverznÃ­ matici.
+MMULT			= SOUÄŒIN.MATIC		##	VrÃ¡tÃ­ souÄin dvou matic.
+MOD			= MOD			##	VrÃ¡tÃ­ zbytek po dÄ›lenÃ­.
+MROUND			= MROUND		##	VrÃ¡tÃ­ ÄÃ­slo zaokrouhlenÃ© na poÅ¾adovanÃ½ nÃ¡sobek.
+MULTINOMIAL		= MULTINOMIAL		##	VrÃ¡tÃ­ mnohoÄlen z mnoÅ¾iny ÄÃ­sel.
+ODD			= ZAOKROUHLIT.NA.LICHÃ‰	##	ZaokrouhlÃ­ ÄÃ­slo nahoru na nejbliÅ¾Å¡Ã­ celÃ© lichÃ© ÄÃ­slo.
+PI			= PI			##	VrÃ¡tÃ­ hodnotu ÄÃ­sla pÃ­.
+POWER			= POWER			##	UmocnÃ­ ÄÃ­slo na zadanou mocninu.
+PRODUCT			= SOUÄŒIN		##	VynÃ¡sobÃ­ argumenty funkce.
+QUOTIENT		= QUOTIENT		##	VrÃ¡tÃ­ celou ÄÃ¡st dÄ›lenÃ­.
+RADIANS			= RADIANS		##	PÅ™evede stupnÄ› na radiÃ¡ny.
+RAND			= NÃHÄŒÃSLO		##	VrÃ¡tÃ­ nÃ¡hodnÃ© ÄÃ­slo mezi 0 a 1.
+RANDBETWEEN		= RANDBETWEEN		##	VrÃ¡tÃ­ nÃ¡hodnÃ© ÄÃ­slo mezi zadanÃ½mi ÄÃ­sly.
+ROMAN			= ROMAN			##	PÅ™evede arabskou ÄÃ­slici na Å™Ã­mskou ve formÃ¡tu textu.
+ROUND			= ZAOKROUHLIT		##	ZaokrouhlÃ­ ÄÃ­slo na zadanÃ½ poÄet ÄÃ­slic.
+ROUNDDOWN		= ROUNDDOWN		##	ZaokrouhlÃ­ ÄÃ­slo dolÅ¯, smÄ›rem k nule.
+ROUNDUP			= ROUNDUP		##	ZaokrouhlÃ­ ÄÃ­slo nahoru, smÄ›rem od nuly.
+SERIESSUM		= SERIESSUM		##	VrÃ¡tÃ­ souÄet mocninnÃ© Å™ady urÄenÃ© podle vzorce.
+SIGN			= SIGN			##	VrÃ¡tÃ­ znamÃ©nko ÄÃ­sla.
+SIN			= SIN			##	VrÃ¡tÃ­ sinus danÃ©ho Ãºhlu.
+SINH			= SINH			##	VrÃ¡tÃ­ hyperbolickÃ½ sinus ÄÃ­sla.
+SQRT			= ODMOCNINA		##	VrÃ¡tÃ­ kladnou druhou odmocninu.
+SQRTPI			= SQRTPI		##	VrÃ¡tÃ­ druhou odmocninu vÃ½razu (ÄÃ­slo * pÃ­).
+SUBTOTAL		= SUBTOTAL		##	VrÃ¡tÃ­ souhrn v seznamu nebo databÃ¡zi.
+SUM			= SUMA			##	SeÄte argumenty funkce.
+SUMIF			= SUMIF			##	SeÄte buÅˆky vybranÃ© podle zadanÃ½ch kritÃ©riÃ­.
+SUMIFS			= SUMIFS		##	SeÄte buÅˆky urÄenÃ© vÃ­ce zadanÃ½mi podmÃ­nkami.
+SUMPRODUCT		= SOUÄŒIN.SKALÃRNÃ	##	VrÃ¡tÃ­ souÄet souÄinÅ¯ odpovÃ­dajÃ­cÃ­ch prvkÅ¯ matic.
+SUMSQ			= SUMA.ÄŒTVERCÅ®		##	VrÃ¡tÃ­ souÄet ÄtvercÅ¯ argumentÅ¯.
+SUMX2MY2		= SUMX2MY2		##	VrÃ¡tÃ­ souÄet rozdÃ­lu ÄtvercÅ¯ odpovÃ­dajÃ­cÃ­ch hodnot ve dvou maticÃ­ch.
+SUMX2PY2		= SUMX2PY2		##	VrÃ¡tÃ­ souÄet souÄtu ÄtvercÅ¯ odpovÃ­dajÃ­cÃ­ch hodnot ve dvou maticÃ­ch.
+SUMXMY2			= SUMXMY2		##	VrÃ¡tÃ­ souÄet ÄtvercÅ¯ rozdÃ­lÅ¯ odpovÃ­dajÃ­cÃ­ch hodnot ve dvou maticÃ­ch.
+TAN			= TGTG			##	VrÃ¡tÃ­ tangens ÄÃ­sla.
+TANH			= TGH			##	VrÃ¡tÃ­ hyperbolickÃ½ tangens ÄÃ­sla.
+TRUNC			= USEKNOUT		##	ZkrÃ¡tÃ­ ÄÃ­slo na celÃ© ÄÃ­slo.
+
+
+##
+##	Statistical functions			StatistickÃ© funkce
+##
+AVEDEV			= PRÅ®MODCHYLKA		##	VrÃ¡tÃ­ prÅ¯mÄ›rnou hodnotu absolutnÃ­ch odchylek datovÃ½ch bodÅ¯ od jejich stÅ™ednÃ­ hodnoty.
+AVERAGE			= PRÅ®MÄšR		##	VrÃ¡tÃ­ prÅ¯mÄ›rnou hodnotu argumentÅ¯.
+AVERAGEA		= AVERAGEA		##	VrÃ¡tÃ­ prÅ¯mÄ›rnou hodnotu argumentÅ¯ vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+AVERAGEIF		= AVERAGEIF		##	VrÃ¡tÃ­ prÅ¯mÄ›rnou hodnotu (aritmetickÃ½ prÅ¯mÄ›r) vÅ¡ech bunÄ›k v oblasti, kterÃ© vyhovujÃ­ pÅ™Ã­sluÅ¡nÃ© podmÃ­nce.
+AVERAGEIFS		= AVERAGEIFS		##	VrÃ¡tÃ­ prÅ¯mÄ›rnou hodnotu (aritmetickÃ½ prÅ¯mÄ›r) vÅ¡ech bunÄ›k vyhovujÃ­cÃ­ch nÄ›kolika podmÃ­nkÃ¡m.
+BETADIST		= BETADIST		##	VrÃ¡tÃ­ hodnotu souÄtovÃ©ho rozdÄ›lenÃ­ beta.
+BETAINV			= BETAINV		##	VrÃ¡tÃ­ inverznÃ­ hodnotu souÄtovÃ©ho rozdÄ›lenÃ­ pro zadanÃ© rozdÄ›lenÃ­ beta.
+BINOMDIST		= BINOMDIST		##	VrÃ¡tÃ­ hodnotu binomickÃ©ho rozdÄ›lenÃ­ pravdÄ›podobnosti jednotlivÃ½ch veliÄin.
+CHIDIST			= CHIDIST		##	VrÃ¡tÃ­ jednostrannou pravdÄ›podobnost rozdÄ›lenÃ­ chÃ­-kvadrÃ¡t.
+CHIINV			= CHIINV		##	VrÃ¡tÃ­ hodnotu funkce inverznÃ­ k distribuÄnÃ­ funkci jednostrannÃ© pravdÄ›podobnosti rozdÄ›lenÃ­ chÃ­-kvadrÃ¡t.
+CHITEST			= CHITEST		##	VrÃ¡tÃ­ test nezÃ¡vislosti.
+CONFIDENCE		= CONFIDENCE		##	VrÃ¡tÃ­ interval spolehlivosti pro stÅ™ednÃ­ hodnotu zÃ¡kladnÃ­ho souboru.
+CORREL			= CORREL		##	VrÃ¡tÃ­ korelaÄnÃ­ koeficient mezi dvÄ›ma mnoÅ¾inami dat.
+COUNT			= POÄŒET			##	VrÃ¡tÃ­ poÄet ÄÃ­sel v seznamu argumentÅ¯.
+COUNTA			= POÄŒET2		##	VrÃ¡tÃ­ poÄet hodnot v seznamu argumentÅ¯.
+COUNTBLANK		= COUNTBLANK		##	SpoÄÃ­tÃ¡ poÄet prÃ¡zdnÃ½ch bunÄ›k v oblasti.
+COUNTIF			= COUNTIF		##	SpoÄÃ­tÃ¡ buÅˆky v oblasti, kterÃ© odpovÃ­dajÃ­ zadanÃ½m kritÃ©riÃ­m.
+COUNTIFS		= COUNTIFS		##	SpoÄÃ­tÃ¡ buÅˆky v oblasti, kterÃ© odpovÃ­dajÃ­ vÃ­ce kritÃ©riÃ­m.
+COVAR			= COVAR			##	VrÃ¡tÃ­ hodnotu kovariance, prÅ¯mÄ›rnou hodnotu souÄinÅ¯ pÃ¡rovÃ½ch odchylek
+CRITBINOM		= CRITBINOM		##	VrÃ¡tÃ­ nejmenÅ¡Ã­ hodnotu, pro kterou mÃ¡ souÄtovÃ© binomickÃ© rozdÄ›lenÃ­ hodnotu vÄ›tÅ¡Ã­ nebo rovnu hodnotÄ› kritÃ©ria.
+DEVSQ			= DEVSQ			##	VrÃ¡tÃ­ souÄet ÄtvercÅ¯ odchylek.
+EXPONDIST		= EXPONDIST		##	VrÃ¡tÃ­ hodnotu exponenciÃ¡lnÃ­ho rozdÄ›lenÃ­.
+FDIST			= FDIST			##	VrÃ¡tÃ­ hodnotu rozdÄ›lenÃ­ pravdÄ›podobnosti F.
+FINV			= FINV			##	VrÃ¡tÃ­ hodnotu inverznÃ­ funkce k distribuÄnÃ­ funkci rozdÄ›lenÃ­ F.
+FISHER			= FISHER		##	VrÃ¡tÃ­ hodnotu Fisherovy transformace.
+FISHERINV		= FISHERINV		##	VrÃ¡tÃ­ hodnotu inverznÃ­ funkce k FisherovÄ› transformaci.
+FORECAST		= FORECAST		##	VrÃ¡tÃ­ hodnotu lineÃ¡rnÃ­ho trendu.
+FREQUENCY		= ÄŒETNOSTI		##	VrÃ¡tÃ­ Äetnost rozdÄ›lenÃ­ jako svislou matici.
+FTEST			= FTEST			##	VrÃ¡tÃ­ vÃ½sledek F-testu.
+GAMMADIST		= GAMMADIST		##	VrÃ¡tÃ­ hodnotu rozdÄ›lenÃ­ gama.
+GAMMAINV		= GAMMAINV		##	VrÃ¡tÃ­ hodnotu inverznÃ­ funkce k distribuÄnÃ­ funkci souÄtovÃ©ho rozdÄ›lenÃ­ gama.
+GAMMALN			= GAMMALN		##	VrÃ¡tÃ­ pÅ™irozenÃ½ logaritmus funkce gama, Î“(x).
+GEOMEAN			= GEOMEAN		##	VrÃ¡tÃ­ geometrickÃ½ prÅ¯mÄ›r.
+GROWTH			= LOGLINTREND		##	VrÃ¡tÃ­ hodnoty exponenciÃ¡lnÃ­ho trendu.
+HARMEAN			= HARMEAN		##	VrÃ¡tÃ­ harmonickÃ½ prÅ¯mÄ›r.
+HYPGEOMDIST		= HYPGEOMDIST		##	VrÃ¡tÃ­ hodnotu hypergeometrickÃ©ho rozdÄ›lenÃ­.
+INTERCEPT		= INTERCEPT		##	VrÃ¡tÃ­ Ãºsek lineÃ¡rnÃ­ regresnÃ­ ÄÃ¡ry.
+KURT			= KURT			##	VrÃ¡tÃ­ hodnotu excesu mnoÅ¾iny dat.
+LARGE			= LARGE			##	VrÃ¡tÃ­ k-tou nejvÄ›tÅ¡Ã­ hodnotu mnoÅ¾iny dat.
+LINEST			= LINREGRESE		##	VrÃ¡tÃ­ parametry lineÃ¡rnÃ­ho trendu.
+LOGEST			= LOGLINREGRESE		##	VrÃ¡tÃ­ parametry exponenciÃ¡lnÃ­ho trendu.
+LOGINV			= LOGINV		##	VrÃ¡tÃ­ inverznÃ­ funkci k distribuÄnÃ­ funkci logaritmicko-normÃ¡lnÃ­ho rozdÄ›lenÃ­.
+LOGNORMDIST		= LOGNORMDIST		##	VrÃ¡tÃ­ hodnotu souÄtovÃ©ho logaritmicko-normÃ¡lnÃ­ho rozdÄ›lenÃ­.
+MAX			= MAX			##	VrÃ¡tÃ­ maximÃ¡lnÃ­ hodnotu seznamu argumentÅ¯.
+MAXA			= MAXA			##	VrÃ¡tÃ­ maximÃ¡lnÃ­ hodnotu seznamu argumentÅ¯ vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+MEDIAN			= MEDIAN		##	VrÃ¡tÃ­ stÅ™ednÃ­ hodnotu zadanÃ½ch ÄÃ­sel.
+MIN			= MIN			##	VrÃ¡tÃ­ minimÃ¡lnÃ­ hodnotu seznamu argumentÅ¯.
+MINA			= MINA			##	VrÃ¡tÃ­ nejmenÅ¡Ã­ hodnotu v seznamu argumentÅ¯ vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+MODE			= MODE			##	VrÃ¡tÃ­ hodnotu, kterÃ¡ se v mnoÅ¾inÄ› dat vyskytuje nejÄastÄ›ji.
+NEGBINOMDIST		= NEGBINOMDIST		##	VrÃ¡tÃ­ hodnotu negativnÃ­ho binomickÃ©ho rozdÄ›lenÃ­.
+NORMDIST		= NORMDIST		##	VrÃ¡tÃ­ hodnotu normÃ¡lnÃ­ho souÄtovÃ©ho rozdÄ›lenÃ­.
+NORMINV			= NORMINV		##	VrÃ¡tÃ­ inverznÃ­ funkci k funkci normÃ¡lnÃ­ho souÄtovÃ©ho rozdÄ›lenÃ­.
+NORMSDIST		= NORMSDIST		##	VrÃ¡tÃ­ hodnotu standardnÃ­ho normÃ¡lnÃ­ho souÄtovÃ©ho rozdÄ›lenÃ­.
+NORMSINV		= NORMSINV		##	VrÃ¡tÃ­ inverznÃ­ funkci k funkci standardnÃ­ho normÃ¡lnÃ­ho souÄtovÃ©ho rozdÄ›lenÃ­.
+PEARSON			= PEARSON		##	VrÃ¡tÃ­ PearsonÅ¯v vÃ½slednÃ½ momentovÃ½ korelaÄnÃ­ koeficient.
+PERCENTILE		= PERCENTIL		##	VrÃ¡tÃ­ hodnotu k-tÃ©ho percentilu hodnot v oblasti.
+PERCENTRANK		= PERCENTRANK		##	VrÃ¡tÃ­ poÅ™adÃ­ hodnoty v mnoÅ¾inÄ› dat vyjÃ¡dÅ™enÃ© procentuÃ¡lnÃ­ ÄÃ¡stÃ­ mnoÅ¾iny dat.
+PERMUT			= PERMUTACE		##	VrÃ¡tÃ­ poÄet permutacÃ­ pro zadanÃ½ poÄet objektÅ¯.
+POISSON			= POISSON		##	VrÃ¡tÃ­ hodnotu distribuÄnÃ­ funkce Poissonova rozdÄ›lenÃ­.
+PROB			= PROB			##	VrÃ¡tÃ­ pravdÄ›podobnost vÃ½skytu hodnot v oblasti mezi dvÄ›ma meznÃ­mi hodnotami.
+QUARTILE		= QUARTIL		##	VrÃ¡tÃ­ hodnotu kvartilu mnoÅ¾iny dat.
+RANK			= RANK			##	VrÃ¡tÃ­ poÅ™adÃ­ ÄÃ­sla v seznamu ÄÃ­sel.
+RSQ			= RKQ			##	VrÃ¡tÃ­ druhou mocninu Pearsonova vÃ½slednÃ©ho momentovÃ©ho korelaÄnÃ­ho koeficientu.
+SKEW			= SKEW			##	VrÃ¡tÃ­ zeÅ¡ikmenÃ­ rozdÄ›lenÃ­.
+SLOPE			= SLOPE			##	VrÃ¡tÃ­ smÄ›rnici lineÃ¡rnÃ­ regresnÃ­ ÄÃ¡ry.
+SMALL			= SMALL			##	VrÃ¡tÃ­ k-tou nejmenÅ¡Ã­ hodnotu mnoÅ¾iny dat.
+STANDARDIZE		= STANDARDIZE		##	VrÃ¡tÃ­ normalizovanou hodnotu.
+STDEV			= SMODCH.VÃBÄšR		##	VypoÄte smÄ›rodatnou odchylku vÃ½bÄ›ru.
+STDEVA			= STDEVA		##	VypoÄte smÄ›rodatnou odchylku vÃ½bÄ›ru vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+STDEVP			= SMODCH		##	VypoÄte smÄ›rodatnou odchylku zÃ¡kladnÃ­ho souboru.
+STDEVPA			= STDEVPA		##	VypoÄte smÄ›rodatnou odchylku zÃ¡kladnÃ­ho souboru vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+STEYX			= STEYX			##	VrÃ¡tÃ­ standardnÃ­ chybu pÅ™edpovÄ›zenÃ© hodnoty y pro kaÅ¾dou hodnotu x v regresi.
+TDIST			= TDIST			##	VrÃ¡tÃ­ hodnotu Studentova t-rozdÄ›lenÃ­.
+TINV			= TINV			##	VrÃ¡tÃ­ inverznÃ­ funkci k distribuÄnÃ­ funkci Studentova t-rozdÄ›lenÃ­.
+TREND			= LINTREND		##	VrÃ¡tÃ­ hodnoty lineÃ¡rnÃ­ho trendu.
+TRIMMEAN		= TRIMMEAN		##	VrÃ¡tÃ­ stÅ™ednÃ­ hodnotu vnitÅ™nÃ­ ÄÃ¡sti mnoÅ¾iny dat.
+TTEST			= TTEST			##	VrÃ¡tÃ­ pravdÄ›podobnost spojenou se StudentovÃ½m t-testem.
+VAR			= VAR.VÃBÄšR		##	VypoÄte rozptyl vÃ½bÄ›ru.
+VARA			= VARA			##	VypoÄte rozptyl vÃ½bÄ›ru vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+VARP			= VAR			##	VypoÄte rozptyl zÃ¡kladnÃ­ho souboru.
+VARPA			= VARPA			##	VypoÄte rozptyl zÃ¡kladnÃ­ho souboru vÄetnÄ› ÄÃ­sel, textu a logickÃ½ch hodnot.
+WEIBULL			= WEIBULL		##	VrÃ¡tÃ­ hodnotu Weibullova rozdÄ›lenÃ­.
+ZTEST			= ZTEST			##	VrÃ¡tÃ­ jednostrannou P-hodnotu z-testu.
+
+
+##
+##	Text functions				TextovÃ© funkce
+##
+ASC			= ASC			##	ZmÄ›nÃ­ znaky s plnou Å¡Ã­Å™kou (dvoubajtovÃ©)v Å™etÄ›zci znakÅ¯ na znaky s poloviÄnÃ­ Å¡Ã­Å™kou (jednobajtovÃ©).
+BAHTTEXT		= BAHTTEXT		##	PÅ™evede ÄÃ­slo na text ve formÃ¡tu, mÄ›ny ÃŸ (baht).
+CHAR			= ZNAK			##	VrÃ¡tÃ­ znak urÄenÃ½ ÄÃ­slem kÃ³du.
+CLEAN			= VYÄŒISTIT		##	Odebere z textu vÅ¡echny netisknutelnÃ© znaky.
+CODE			= KÃ“D			##	VrÃ¡tÃ­ ÄÃ­selnÃ½ kÃ³d prvnÃ­ho znaku zadanÃ©ho textovÃ©ho Å™etÄ›zce.
+CONCATENATE		= CONCATENATE		##	SpojÃ­ nÄ›kolik textovÃ½ch poloÅ¾ek do jednÃ©.
+DOLLAR			= KÄŒ			##	PÅ™evede ÄÃ­slo na text ve formÃ¡tu mÄ›ny KÄ (ÄeskÃ¡ koruna).
+EXACT			= STEJNÃ‰		##	Zkontroluje, zda jsou dvÄ› textovÃ© hodnoty shodnÃ©.
+FIND			= NAJÃT			##	Nalezne textovou hodnotu uvnitÅ™ jinÃ© (rozliÅ¡uje malÃ¡ a velkÃ¡ pÃ­smena).
+FINDB			= FINDB			##	Nalezne textovou hodnotu uvnitÅ™ jinÃ© (rozliÅ¡uje malÃ¡ a velkÃ¡ pÃ­smena).
+FIXED			= ZAOKROUHLIT.NA.TEXT	##	ZformÃ¡tuje ÄÃ­slo jako text s pevnÃ½m poÄtem desetinnÃ½ch mÃ­st.
+JIS			= JIS			##	ZmÄ›nÃ­ znaky s poloviÄnÃ­ Å¡Ã­Å™kou (jednobajtovÃ©) v Å™etÄ›zci znakÅ¯ na znaky s plnou Å¡Ã­Å™kou (dvoubajtovÃ©).
+LEFT			= ZLEVA			##	VrÃ¡tÃ­ prvnÃ­ znaky textovÃ© hodnoty umÃ­stÄ›nÃ© nejvÃ­ce vlevo.
+LEFTB			= LEFTB			##	VrÃ¡tÃ­ prvnÃ­ znaky textovÃ© hodnoty umÃ­stÄ›nÃ© nejvÃ­ce vlevo.
+LEN			= DÃ‰LKA			##	VrÃ¡tÃ­ poÄet znakÅ¯ textovÃ©ho Å™etÄ›zce.
+LENB			= LENB			##	VrÃ¡tÃ­ poÄet znakÅ¯ textovÃ©ho Å™etÄ›zce.
+LOWER			= MALÃ			##	PÅ™evede text na malÃ¡ pÃ­smena.
+MID			= ÄŒÃST			##	VrÃ¡tÃ­ urÄitÃ½ poÄet znakÅ¯ textovÃ©ho Å™etÄ›zce poÄÃ­naje zadanÃ½m mÃ­stem.
+MIDB			= MIDB			##	VrÃ¡tÃ­ urÄitÃ½ poÄet znakÅ¯ textovÃ©ho Å™etÄ›zce poÄÃ­naje zadanÃ½m mÃ­stem.
+PHONETIC		= ZVUKOVÃ‰		##	Extrahuje fonetickÃ© znaky (furigana) z textovÃ©ho Å™etÄ›zce.
+PROPER			= VELKÃ2		##	PÅ™evede prvnÃ­ pÃ­smeno kaÅ¾dÃ©ho slova textovÃ© hodnoty na velkÃ©.
+REPLACE			= NAHRADIT		##	NahradÃ­ znaky uvnitÅ™ textu.
+REPLACEB		= NAHRADITB		##	NahradÃ­ znaky uvnitÅ™ textu.
+REPT			= OPAKOVAT		##	Zopakuje text podle zadanÃ©ho poÄtu opakovÃ¡nÃ­.
+RIGHT			= ZPRAVA		##	VrÃ¡tÃ­ prvnÃ­ znaky textovÃ© hodnoty umÃ­stÄ›nÃ© nejvÃ­ce vpravo.
+RIGHTB			= RIGHTB		##	VrÃ¡tÃ­ prvnÃ­ znaky textovÃ© hodnoty umÃ­stÄ›nÃ© nejvÃ­ce vpravo.
+SEARCH			= HLEDAT		##	Nalezne textovou hodnotu uvnitÅ™ jinÃ© (malÃ¡ a velkÃ¡ pÃ­smena nejsou rozliÅ¡ovÃ¡na).
+SEARCHB			= SEARCHB		##	Nalezne textovou hodnotu uvnitÅ™ jinÃ© (malÃ¡ a velkÃ¡ pÃ­smena nejsou rozliÅ¡ovÃ¡na).
+SUBSTITUTE		= DOSADIT		##	V textovÃ©m Å™etÄ›zci nahradÃ­ starÃ½ text novÃ½m.
+T			= T			##	PÅ™evede argumenty na text.
+TEXT			= HODNOTA.NA.TEXT	##	ZformÃ¡tuje ÄÃ­slo a pÅ™evede ho na text.
+TRIM			= PROÄŒISTIT		##	OdstranÃ­ z textu mezery.
+UPPER			= VELKÃ			##	PÅ™evede text na velkÃ¡ pÃ­smena.
+VALUE			= HODNOTA		##	PÅ™evede textovÃ½ argument na ÄÃ­slo.

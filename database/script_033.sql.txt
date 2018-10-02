@@ -1,0 +1,5 @@
+ALTER TABLE `turnos` ADD `telefono` VARCHAR( 255 ) NULL ;
+
+ALTER TABLE `pagos` ADD `fecha_pago` DATETIME NULL AFTER `fecha` ;
+
+UPDATE pagos p SET p.fecha_pago=(SELECT dp.fecha FROM detalle_pago dp WHERE dp.pago_id = p.id ORDER BY dp.fecha DESC LIMIT 1) WHERE p.cobrado=1;

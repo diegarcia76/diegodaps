@@ -1,0 +1,539 @@
+/* here you can put your own css to customize and override the theme */
+$amarillo: #AA9259;
+$amarillo-claro: rgba(170,146,89,0.4);
+$marron: #180807;
+$marron-claro: #230c0a;
+
+
+.login {
+
+	.btn-primary {
+    	color: #fff;
+    	background-color: #AA9259;
+    	border-color: transparent;
+    	    border-radius: 40px !important;
+    	    &:hover {
+	    	        color: #fff;
+    background-color: #8a7646;
+    border-color: transparent;
+    	    }
+	}
+
+
+	.inner {
+		border-radius:0 !important;
+	}
+
+	.float-btn {
+		position: absolute;
+		right: 30px;
+		top: 50px;
+	}
+	.login-box {
+		h3 {
+			font-size: 28px;
+		}
+		h5 {
+			font-weight: normal;
+		}
+
+	}
+	background: url('../../images/login-bg.jpg') top center no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+
+		.btn-face {
+			background: #4A6EE2;
+			color: #fff;
+		}
+		.btn-face:hover {
+			background: #3754AF;
+			color:#fff;
+		}
+
+		.form-control {
+			background: none !important;
+			border: none !important;
+			border-bottom: 2px solid #ccc !important;
+			border-radius: 0 !important;
+
+		}
+
+}
+.dashboard {
+	@media (max-width: 760px) {
+		.col-lg-2.col-md-6.p-b-2.p-t-2 {
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+		.col-md-7 {
+			.m-y-0.p-b-2.p-t-2 {
+				padding-top: 0 !important;
+			padding-bottom: 0 !important;
+			}
+
+		}
+	}
+}
+
+
+.table{
+	.panel-body {
+			padding: 0;
+	}
+	position:relative;
+}
+	@media (max-width: 760px) {
+	.tabla-responsive {
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr, .table-scrollable {
+			display: block;
+			border: none !important;
+
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		tr {
+			margin-bottom: 10px;
+			border: 1px solid #e7ecf1!important;
+			    box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+		}
+
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			position: relative;
+			padding-left: 30% !important;
+			min-height: 20px;
+			border-bottom: 1px solid #e4e4e4 !important;
+		}
+
+		td:before {
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%;
+			padding-right: 10px;
+			white-space: nowrap;
+			font-weight: bold;
+		}
+		#tblProductos {
+			td:nth-of-type(1):before { content: "CÃ³digo"; }
+			td:nth-of-type(2):before { content: "Producto"; }
+			td:nth-of-type(3):before { content: "DescripciÃ³n"; }
+			td:nth-of-type(4):before { content: "Precio"; }
+			td:nth-of-type(5):before { content: "Acciones"; }
+			td:nth-of-type(5) {border:none !important;}
+		}
+		#tblServicios {
+			td:nth-of-type(1):before { content: "CÃ³digo"; }
+			td:nth-of-type(2):before { content: "Nombre"; }
+			td:nth-of-type(3):before { content: "Precio Puntos"; }
+			td:nth-of-type(4):before { content: "Puntos Premio"; }
+			td:nth-of-type(5):before { content: "DuraciÃ³n"; }
+			td:nth-of-type(6):before { content: "Tiempo de espera"; }
+			td:nth-of-type(6) {border:none !important;}
+		}
+		#tblClientes {
+			td:nth-of-type(1):before { content: "Foto"; }
+			td:nth-of-type(2):before { content: "Cliente"; }
+			td:nth-of-type(3):before { content: "Email"; }
+			td:nth-of-type(4):before { content: "Fecha de nacimiento"; }
+			td:nth-of-type(5):before { content: "Puntos acumulados"; }
+			td:nth-of-type(6):before { content: "Acciones"; }
+			td:nth-of-type(6) {border:none !important;}
+		}
+
+		#tblCobros {
+			td:nth-of-type(1):before { content: "Fecha"; }
+			td:nth-of-type(2):before { content: "Cliente"; }
+			td:nth-of-type(3):before { content: "Coiffeur"; }
+			td:nth-of-type(4):before { content: "Comentario"; }
+			td:nth-of-type(5):before { content: "Acciones"; }
+			td:nth-of-type(5) {border:none !important;}
+		}
+	}
+}
+#tblDashboard {
+	td {
+		padding-left: 30px !important;
+		padding-right: 30px !important;
+	}
+	td:before {
+		width: 0;
+	}
+}
+#tab-turnos {
+	a.fc-bg {
+		color:#fff !important;
+		&:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+	}
+	.fc-bg.btn.cancelado {
+		display: none !important;
+	}
+
+
+
+
+
+}
+
+.list-group-item {
+	border-radius: 0px;
+	border-top-left-radius:0 !important;
+    border-top-right-radius:0 !important;
+}
+.nav-tabs {
+    margin-bottom: 0px;
+    border-bottom: 0;
+
+}
+.dashboard {
+	.panel-body {
+	    padding: 8px 18px 5px;
+	}
+}
+
+$verde: #8ae49c;
+$cyan: #8bd6e3;
+$azul: #8b8fe3;
+$rojo:#e38b8b;
+$violeta: #b271db;
+$magenta: #e38bd9;
+
+.reservado {
+	background-color: $verde;
+}
+.recepcionado {
+	background-color: $cyan;
+}
+.enservicio {
+	background-color: $azul;
+}
+.cancelado {
+	background-color: $rojo;
+}
+.cobrado {
+	background-color: $violeta;
+}
+.terminadoÂ {
+	background-color: $magenta;
+}
+.panel-heading {
+	&.reservado {
+	background-color: rgba($verde, 0.3);
+	}
+	&.recepcionado {
+	background-color: rgba($cyan, 0.3);
+	}
+	&.enservicio {
+	background-color: rgba($azul, 0.3);
+	}
+	&.cancelado {
+	background-color: rgba($rojo, 0.3);
+	}
+	&.cobrado {
+	background-color: rgba($violeta, 0.3);
+	}
+	&.terminadoÂ {
+		background-color: rgba($magenta, 0.5);
+	}
+
+}
+.dataTables_processing {
+	position: absolute;
+	margin-top: 100px;
+}
+.disponible {
+	background-color: $verde;
+	border:none;
+}
+.ocupado {
+	background-color: $rojo;
+	border:none;
+}
+.reservado_cliente {
+	background-color:#b271db;
+	border:none;
+}
+
+
+.input-group {
+	width: 100%;
+}
+
+
+$pixel: 10px;
+//GRILLAS
+
+.w-100 {
+  width: 100% !important;
+}
+.h-100 {
+  height: 100% !important;
+
+}
+
+.m-x-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.m-a-0 {
+  margin: 0 0 !important;
+}
+
+.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-r-0 {
+  margin-right: 0 !important;
+}
+
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+
+.m-l-0 {
+  margin-left: 0 !important;
+}
+
+.m-x-0 {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.m-y-0 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.m-a-1 {
+  margin: $pixel !important;
+}
+
+.m-t-1 {
+  margin-top: $pixel !important;
+}
+
+.m-r-1 {
+  margin-right: $pixel !important;
+}
+
+.m-b-1 {
+  margin-bottom: $pixel !important;
+}
+
+.m-l-1 {
+  margin-left: $pixel !important;
+}
+
+.m-x-1 {
+  margin-right: $pixel !important;
+  margin-left: $pixel !important;
+}
+
+.m-y-1 {
+  margin-top: $pixel !important;
+  margin-bottom: $pixel !important;
+}
+
+.m-a-2 {
+  margin: $pixel*2 $pixel*2 !important;
+}
+
+.m-t-2 {
+  margin-top: $pixel*2 !important;
+}
+
+.m-r-2 {
+  margin-right: $pixel*2 !important;
+}
+
+.m-b-2 {
+  margin-bottom: $pixel*2 !important;
+}
+
+.m-l-2 {
+  margin-left: $pixel*2 !important;
+}
+
+.m-x-2 {
+  margin-right: $pixel*2 !important;
+  margin-left: $pixel*2 !important;
+}
+
+.m-y-2 {
+  margin-top: $pixel*2 !important;
+  margin-bottom: $pixel*2 !important;
+}
+
+.m-a-3 {
+  margin: $pixel*3 $pixel*3 !important;
+}
+
+.m-t-3 {
+  margin-top: $pixel*3 !important;
+}
+
+.m-r-3 {
+  margin-right: $pixel*3 !important;
+}
+
+.m-b-3 {
+  margin-bottom: $pixel*3 !important;
+}
+
+.m-l-3 {
+  margin-left: $pixel*3 !important;
+}
+
+.m-x-3 {
+  margin-right: $pixel*3 !important;
+  margin-left: $pixel*3 !important;
+}
+
+.m-y-3 {
+  margin-top: $pixel*3 !important;
+  margin-bottom: $pixel*3 !important;
+}
+
+.p-a-0 {
+  padding: 0 0 !important;
+}
+
+.p-t-0 {
+  padding-top: 0 !important;
+}
+
+.p-r-0 {
+  padding-right: 0 !important;
+}
+
+.p-b-0 {
+  padding-bottom: 0 !important;
+}
+
+.p-l-0 {
+  padding-left: 0 !important;
+}
+
+.p-x-0 {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.p-y-0 {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.p-a-1 {
+  padding: $pixel $pixel !important;
+}
+
+.p-t-1 {
+  padding-top: $pixel !important;
+}
+
+.p-r-1 {
+  padding-right: $pixel !important;
+}
+
+.p-b-1 {
+  padding-bottom: $pixel !important;
+}
+
+.p-l-1 {
+  padding-left: $pixel !important;
+}
+
+.p-x-1 {
+  padding-right: $pixel !important;
+  padding-left: $pixel !important;
+}
+
+.p-y-1 {
+  padding-top: $pixel !important;
+  padding-bottom: $pixel !important;
+}
+
+.p-a-2 {
+  padding: $pixel*2 $pixel*2 !important;
+}
+
+.p-t-2 {
+  padding-top: $pixel*2 !important;
+}
+
+.p-r-2 {
+  padding-right: $pixel*2 !important;
+}
+
+.p-b-2 {
+  padding-bottom: $pixel*2 !important;
+}
+
+.p-l-2 {
+  padding-left: $pixel*2 !important;
+}
+
+.p-x-2 {
+  padding-right: $pixel*2 !important;
+  padding-left: $pixel*2 !important;
+}
+
+.p-y-2 {
+  padding-top: $pixel*2 !important;
+  padding-bottom: $pixel*2 !important;
+}
+
+.p-a-3 {
+  padding: $pixel*3 $pixel*3 !important;
+}
+
+.p-t-3 {
+  padding-top: $pixel*3 !important;
+}
+
+.p-r-3 {
+  padding-right: $pixel*3 !important;
+}
+
+.p-b-3 {
+  padding-bottom: $pixel*3 !important;
+}
+
+.p-l-3 {
+  padding-left: $pixel*3 !important;
+}
+
+.p-x-3 {
+  padding-right: $pixel*3 !important;
+  padding-left: $pixel*3 !important;
+}
+
+.p-y-3 {
+  padding-top: $pixel*3 !important;
+  padding-bottom: $pixel*3 !important;
+  
+
+.pos-f-t {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}

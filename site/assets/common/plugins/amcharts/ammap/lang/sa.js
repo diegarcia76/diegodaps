@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.sa = {"India":"à¤­à¤¾à¤°à¤¤à¤®à¥"}

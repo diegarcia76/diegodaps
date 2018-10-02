@@ -1,0 +1,8 @@
+ALTER TABLE `estado_turno` ADD `className` VARCHAR( 50 ) NULL ;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'reservado' WHERE `estado_turno`.`id` =1;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'cancelado' WHERE `estado_turno`.`id` =2;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'pendiente' WHERE `estado_turno`.`id` =3;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'enservicio' WHERE `estado_turno`.`id` =4;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'terminado' WHERE `estado_turno`.`id` =5;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'recepcionado' WHERE `estado_turno`.`id` =6;
+UPDATE `daps_data`.`estado_turno` SET `className` = 'cobrado' WHERE `estado_turno`.`id` =7;

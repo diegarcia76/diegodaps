@@ -1,0 +1,23 @@
+/* Compiled Less CSS File */
+/* Generated from "custom.css" */
+
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+.has-success .help-block.help-block-error.ok {
+  display: none !important;
+}
+.wpr-image {
+  min-height: 100px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f5f5f5;
+  margin-bottom: 10px;
+}
+.wpr-image img.img-preview,
+.wpr-image canvas {
+  float: left;
+  margin-right: 10px;
+}
+.wpr-image .btn-process {
+  margin-top: 10px;
+}

@@ -1,0 +1,240 @@
+@import 'myvariables';
+@import 'helpers';
+
+.user-image {
+	width: 80px;
+	height: 80px;
+}
+#puntos {
+	margin: 0px;
+	padding: 8px 10px;
+	.puntos-title {
+		padding-top: 5px;
+	}
+}
+h2, h3, h4 {
+	font-weight: 300;
+}
+.logo {
+	padding-top: 5px;
+}
+#login {
+
+	.error {
+		color: $danger;
+		margin-bottom: -16px;
+		display: block;
+	}
+	.item {
+		background: none;
+		padding-left: 16px;
+		padding-right: 16px;
+		color:#fff;
+	}
+	background:#180807;
+	.image-login {
+		background:url('http://turnos.diegodaps.com/assets/images/isologo-daps.png') center center no-repeat;
+		background-size: cover;
+		height: 200px;
+		width:100%;
+	}
+
+	h5 {
+		padding-bottom: 0;
+		padding-top: 0;
+		color: #999;
+		font-weight: 300;
+	}
+	.submit-login {
+		margin-top: 30px;
+	}
+	#facelogin {
+		padding: 10px 30px 16px;
+		//border-bottom: 1px solid #efefef;
+		margin-bottom: 20px;
+	}
+}
+#turnos {
+	padding: 0;
+	.turno {
+		border-top: 1px solid #efefef;
+
+		border-bottom: 1px solid #efefef;
+		padding: 5px;
+		position: relative;
+	}
+	.divisor {
+		border-left: 1px solid #efefef;
+		height: 100%;
+		left: 33%;
+		margin-left: -5px;
+		position: absolute;
+		top: 0;
+	}
+	.point {
+
+		width: 12px;
+		height: 12px;
+		border-radius: 100%;
+		top: 20px;
+		left: 33%;
+		margin-left: -6px;
+		position: absolute;
+	}
+	.reservado .point {
+		background: $danger;
+	}
+	.libre .point {
+		background: $success;
+	}
+	h3 {
+		padding: 0px;
+		margin: 0px;
+		text-transform: uppercase;
+	}
+	.servicio {
+
+	}
+	ion-label {
+		margin: 0;
+		padding: 0;
+	}
+	.item-block{
+		padding-left: 0;
+	}
+	ion-card {
+		width: 100%;
+		margin: 0;
+	}
+	ion-item-options .button {
+		padding: 2px 50px 0;
+		font-size: 2rem;
+		height: 100%;
+		margin: 0;
+		ion-icon {
+			padding-bottom: 0;
+		}
+	}
+	ion-item-options {
+		border: none;
+	}
+
+}
+
+.user-image{
+	 border-radius: 100%;
+	 border: 6px solid $primary;
+	 overflow: hidden;
+}
+.user-text {
+	height: 80px;
+	width: 200px;
+	position: relative;
+	.vertical-center {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	h3 {
+		font-size: 1.8rem;
+	}
+}
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+button.libre {
+	background-color: #dff0d8;
+    color: #4CAF50;
+}
+button.ocupado {
+	background-color: #f9bdbb;
+    color: #e51c23;
+		display: none;
+}
+.button-round-md, .button-round-ios {
+	padding: 1.6rem 1rem !important;
+}
+
+.segment-md .segment-button {
+	color:white !important;
+}
+.hour-line {
+	height: 12px;
+	line-height: 0;
+	border-bottom: 1px solid #FFCCFF;
+	float:left;
+}
+.hour {
+	float:left;
+	height: 24px;
+}
+button {
+	text-transform: uppercase;
+}
+.perfil {
+	.header {
+		height: 100px;
+		background: $primary-light;
+	}
+	.imagen-perfil {
+		width: 182px;
+		height: 182px;
+		border: 6px solid $primary;
+		margin-top: -90px;
+		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		border-radius: 100%;
+		overflow: hidden;
+		img {
+			border-radius: 100%;
+		}
+		.edit {
+			position: absolute;
+			bottom: 5px;
+			right: 10px;
+			background: $primary;
+			color: #fff;
+			width: 40px;
+			height: 40px;
+			text-align: center;
+			border-radius: 100%;
+			font-size: 20px;
+			padding-top: 7px;
+		}
+	}
+}
+.image-cover {
+	width: 100%;
+	height: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.user-image{
+	width: 69px;
+	height: 69px;
+}
+.toolbar-content {
+	.user-image{
+		width: 80px;
+		height: 80px;
+	}
+}
+
+	.imagen-perfil{
+		width: 170px;
+		height: 170px;
+	}

@@ -1,0 +1,317 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.10deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 16, 2016 at 11:53 AM
+-- Server version: 5.5.53-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `daps_data`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
+  `password` text COLLATE utf8_spanish_ci,
+  `nombre` varchar(250) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha_nacimiento` datetime DEFAULT NULL,
+  `fecha_alta` datetime DEFAULT NULL,
+  `ptos_acumulados` int(11) DEFAULT NULL,
+  `foto_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `clientes`
+--
+
+INSERT INTO `clientes` (`id`, `email`, `password`, `nombre`, `fecha_nacimiento`, `fecha_alta`, `ptos_acumulados`, `foto_id`) VALUES
+(1, 'ighirlanda@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Ignacio Ghirlanda', '1979-07-04 00:00:00', '2016-11-02 00:00:00', 10, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coiffeures`
+--
+
+DROP TABLE IF EXISTS `coiffeures`;
+CREATE TABLE IF NOT EXISTS `coiffeures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(250) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci,
+  `foto_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `coiffeures`
+--
+
+INSERT INTO `coiffeures` (`id`, `nombre`, `descripcion`, `foto_id`) VALUES
+(1, 'Diego Daps', 'Excelente servicio y calidad', NULL),
+(2, 'Nacho Albanex', 'Te puede cortar la pierna. Guarda!', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detalle_pago`
+--
+
+DROP TABLE IF EXISTS `detalle_pago`;
+CREATE TABLE IF NOT EXISTS `detalle_pago` (
+  `id` int(11) NOT NULL,
+  `pago_id` int(11) NOT NULL,
+  `descripcion` varchar(200) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cantidad` int(11) DEFAULT '1',
+  `precio` float DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `pago_id` (`pago_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `estado_turno`
+--
+
+DROP TABLE IF EXISTS `estado_turno`;
+CREATE TABLE IF NOT EXISTS `estado_turno` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `estado_turno`
+--
+
+INSERT INTO `estado_turno` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'Reservado', NULL),
+(2, 'Cancelado', ''),
+(3, 'Pendiente', NULL),
+(4, 'En Servicio', NULL),
+(5, 'Terminado', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fotos`
+--
+
+DROP TABLE IF EXISTS `fotos`;
+CREATE TABLE IF NOT EXISTS `fotos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `temporal` tinyint(1) DEFAULT NULL,
+  `turno_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `turno_id` (`turno_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pagos`
+--
+
+DROP TABLE IF EXISTS `pagos`;
+CREATE TABLE IF NOT EXISTS `pagos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha` datetime DEFAULT NULL,
+  `total` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `perfiles`
+--
+
+DROP TABLE IF EXISTS `perfiles`;
+CREATE TABLE IF NOT EXISTS `perfiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `perfiles`
+--
+
+INSERT INTO `perfiles` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'Administrador', NULL),
+(2, 'Secretario', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `productos`
+--
+
+DROP TABLE IF EXISTS `productos`;
+CREATE TABLE IF NOT EXISTS `productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `codigo` char(20) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci,
+  `precio` float DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `productos`
+--
+
+INSERT INTO `productos` (`id`, `codigo`, `nombre`, `descripcion`, `precio`) VALUES
+(1, '00001', 'Shampoo Anti Caspa', NULL, 40.5),
+(2, '00002', 'Crema de Enjuague', 'Super suave', 35.75);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `servicios`
+--
+
+DROP TABLE IF EXISTS `servicios`;
+CREATE TABLE IF NOT EXISTS `servicios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `precio_puntos` int(11) NOT NULL,
+  `puntos_premio` int(11) DEFAULT '0',
+  `duracion` int(11) DEFAULT NULL,
+  `duracion_espera` int(11) DEFAULT '0',
+  `activo` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `servicios`
+--
+
+INSERT INTO `servicios` (`id`, `nombre`, `precio_puntos`, `puntos_premio`, `duracion`, `duracion_espera`, `activo`) VALUES
+(1, 'Corte de Pelo', 500, 50, 30, 0, 1),
+(2, 'Coloración', 150, 30, 45, 15, 1),
+(3, 'Lavado', 200, 35, 20, 5, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `serviciosxcoiffeur`
+--
+
+DROP TABLE IF EXISTS `serviciosxcoiffeur`;
+CREATE TABLE IF NOT EXISTS `serviciosxcoiffeur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `coiffeur_id` int(11) NOT NULL,
+  `servicio_id` int(11) NOT NULL,
+  `precio` float DEFAULT NULL,
+  `comision` float DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `serviciosxcoiffeur`
+--
+
+INSERT INTO `serviciosxcoiffeur` (`id`, `coiffeur_id`, `servicio_id`, `precio`, `comision`) VALUES
+(1, 1, 1, 150, 5),
+(2, 1, 2, 110, 4),
+(3, 1, 3, 100, 3.5),
+(4, 2, 1, 120, 4),
+(5, 2, 3, 80, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `turnos`
+--
+
+DROP TABLE IF EXISTS `turnos`;
+CREATE TABLE IF NOT EXISTS `turnos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pago_id` int(11) DEFAULT NULL,
+  `coiffeur_id` int(11) NOT NULL,
+  `estado_turno_id` int(11) NOT NULL,
+  `servicio_id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `fecha_hora` datetime DEFAULT NULL,
+  `prioridad` int(11) DEFAULT '0' COMMENT 'La pririodad 0 es un turno sin espera, que se debe atender, cuanto más alta la prioridad serían sobreturnos.. siempre y cuando se decida esperar.',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `cliente_id` (`cliente_id`),
+  KEY `servicio_id` (`servicio_id`),
+  KEY `coiffeur_id` (`coiffeur_id`),
+  KEY `pago_id` (`pago_id`),
+  KEY `estado_turno_id` (`estado_turno_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `turnos`
+--
+
+INSERT INTO `turnos` (`id`, `pago_id`, `coiffeur_id`, `estado_turno_id`, `servicio_id`, `cliente_id`, `fecha_hora`, `prioridad`) VALUES
+(1, NULL, 1, 1, 1, 1, '2016-11-24 15:00:00', 0),
+(2, NULL, 2, 1, 2, 1, '2016-11-30 10:00:00', 1),
+(3, NULL, 1, 5, 3, 1, '2016-11-01 13:00:00', 0),
+(4, NULL, 2, 5, 2, 1, '2016-11-05 11:20:00', 0),
+(5, NULL, 2, 1, 1, 1, '2016-11-16 12:00:00', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `perfil_id` int(11) NOT NULL,
+  `email` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `password` text COLLATE utf8_spanish_ci NOT NULL,
+  `nombre` varchar(250) COLLATE utf8_spanish_ci NOT NULL,
+  `fecha_alta` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  UNIQUE KEY `email` (`email`),
+  KEY `perfil_id` (`perfil_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `perfil_id`, `email`, `password`, `nombre`, `fecha_alta`) VALUES
+(1, 1, 'ddaps@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'Diego Daps', NULL);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

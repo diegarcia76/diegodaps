@@ -1,0 +1,2 @@
+ALTER TABLE `clientes` ADD `sexo` INT NULL COMMENT '0-Masculino / 1-Femenino / 2-No te quiero decir',
+ADD `activo` TINYINT NOT NULL DEFAULT '0';

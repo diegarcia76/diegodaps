@@ -1,0 +1,92 @@
+<!--
+  Generated template for the Perfil page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="dark">
+  	<ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Mi perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content margin-bottom class="perfil">
+	<div class="header bg-primary-light"></div>
+	<div class="imagen-perfil">
+	    <div class="image-cover" [style.background-image]="'url(' + auth.foto + ')' | safe: 'style'">
+			</div>
+    <!--<img src="{{ auth.foto }}" alt="default" width="170" height="170" />-->
+		<!--img *ngIf="!auth.foto" src="http://turnos.diegodaps.com/assets/images/default.png" alt="default" width="170" height="170" /-->
+		<!--<div class="edit"><ion-icon name="md-create" (click)="presentAlert2()"></ion-icon></div>-->
+	</div>
+  <div text-center>
+    <button ion-button outline  class="p-r-1" (click)="takePicture('CAMERA')"><small> <ion-icon name="camera"></ion-icon>
+   USAR CÁMARA</small></button>
+    <button ion-button outline (click)="takePicture('GALERIA')"><small>  <ion-icon name="create"></ion-icon>
+   ELEGIR IMAGEN</small></button>
+  </div>
+	<div class="form" text-center>
+		<form #updateUserForm="ngForm" (ngSubmit)="updateUser(updateUserForm.value)">
+			<ion-list padding-right padding-vertical>
+			  <ion-item class="form-control">
+			    <ion-label stacked>NOMBRE</ion-label>
+			    <ion-input type="text" placeholder="Nombre" [ngModel]="userActual?.nombre" (ngModelChange)="userActual.nombre=$event" name="nombre"></ion-input>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			  <ion-item class="form-control">
+			    <ion-label stacked>EMAIL</ion-label>
+			    <ion-input type="email" placeholder="E-mail" [ngModel]="userActual?.email" (ngModelChange)="userActual.email=$event" name="email"></ion-input>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			  <ion-item class="form-control">
+			    <ion-label stacked>FECHA DE NACIMIENTO</ion-label>
+			    <ion-datetime displayFormat="DD/MM/YYYY" name="fecha_nacimiento" doneText="Elegir" [(ngModel)]="myDate"></ion-datetime>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			  <ion-item class="form-control">
+			    <ion-label stacked>TELÉFONO</ion-label>
+			    <ion-input type="text" placeholder="Teléfono" name="telefono" [ngModel]="userActual?.telefono" (ngModelChange)="userActual.telefono=$event"></ion-input>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			  <ion-item class="form-control">
+			  	<ion-label stacked>Profesión</ion-label>
+				  <ion-select [ngModel]="userActual?.profesion_id" (ngModelChange)="onChangeProfesion($event)" name="profesion_id" >
+				    <ion-option [value]="profes.id" *ngFor="let profes of profesiones">{{profes.nombre}}</ion-option>
+				  </ion-select>
+			  </ion-item>
+			  <ion-item class="form-control">
+			    <ion-label stacked>WHATSAPP</ion-label>
+			    <ion-input type="text" placeholder="Whatsapp" name="whatsapp" [ngModel]="userActual?.whatsapp" (ngModelChange)="userActual.whatsapp=$event"></ion-input>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			  <ion-item class="form-control">
+			    <ion-label stacked>FACEBOOK</ion-label>
+			    <ion-input type="text" placeholder="Facebook" name="facebook" [ngModel]="userActual?.facebook" (ngModelChange)="userActual.facebook=$event"></ion-input>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			    <ion-item class="form-control">
+			    <ion-label stacked>TWITTER</ion-label>
+			    <ion-input type="text" placeholder="twitter" name="twitter" [ngModel]="userActual?.twitter" (ngModelChange)="userActual.twitter=$event"></ion-input>
+			    <ion-icon name="md-create"></ion-icon>
+			  </ion-item>
+			</ion-list>
+			<button ion-button margin-bottom color="success" type="submit" round>Guardar cambios</button>
+		</form>
+
+	</div>
+</ion-content>
+
+<!--
+<ion-item class="form-control">
+			  	<ion-label stacked>Profesión</ion-label>
+				  <ion-select [ngModel]="userActual?.profesion" (ngModelChange)="onChangeProfesion($event)" name="profesion" >
+				    <ion-option [value]="profes.id" selected="{{ profes.id == user.profesion_id}}" *ngFor="let profes of profesiones">{{profes.nombre}}</ion-option>
+				  </ion-select>
+			  </ion-item>
+-->

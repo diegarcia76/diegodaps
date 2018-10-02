@@ -1,0 +1,3 @@
+fr{
+    symfony{"Symfony est gÃ©nial"}
+}

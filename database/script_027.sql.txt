@@ -1,0 +1,1 @@
+ALTER TABLE `pagos` ADD COLUMN `nombre` VARCHAR( 255 ) NULL AFTER `cliente_id` ;

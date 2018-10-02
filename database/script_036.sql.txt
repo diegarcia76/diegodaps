@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS `horarios_especiales` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fecha_desde` date NOT NULL,
+  `fecha_hasta` date NOT NULL,
+  `activo` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `horariosdeatencionespecialxcoiffeur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `diasemana_id` int(11) NOT NULL,
+  `coiffeur_id` int(11) NOT NULL,
+  `horario_especial_id` int(11) NOT NULL,
+  `horaDesde` time NOT NULL,
+  `horaHasta` time NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=34 ;

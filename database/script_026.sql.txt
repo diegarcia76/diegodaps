@@ -1,0 +1,4 @@
+ALTER TABLE `turnos`   
+  ADD COLUMN `nombre` VARCHAR(255) NULL AFTER `editado`;
+ALTER TABLE `turnos`   
+  CHANGE `cliente_id` `cliente_id` INT(11) NULL;

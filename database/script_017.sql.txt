@@ -1,0 +1,5 @@
+ALTER TABLE `pagos` CHANGE `total` `total` FLOAT NULL DEFAULT NULL ;
+
+ALTER TABLE `detalle_pago` ADD `tipo` VARCHAR( 50 ) NULL AFTER `descripcion` ;
+
+ALTER TABLE `detalle_pago` ADD `descuento` FLOAT NULL ;

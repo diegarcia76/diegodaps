@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.ky = {"Kyrgyzstan":"ÐšÑ‹Ñ€Ð³Ñ‹Ð·ÑÑ‚Ð°Ð½"}

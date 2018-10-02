@@ -1,0 +1,1 @@
+ALTER TABLE `notificaciones` ADD `visto` TINYINT NULL DEFAULT '0';

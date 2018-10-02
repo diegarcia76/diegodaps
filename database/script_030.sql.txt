@@ -1,0 +1,12 @@
+ALTER TABLE `productos`   
+  ADD COLUMN `precio_efectivo` FLOAT DEFAULT 0  NULL AFTER `precio`;
+ALTER TABLE `serviciosxcoiffeur`   
+  ADD COLUMN `precio_efectivo` FLOAT NULL AFTER `precio`;
+UPDATE serviciosxcoiffeur 
+SET precio_efectivo = precio * 0.9;
+UPDATE productos 
+SET precio_efectivo = precio * 0.9;
+ALTER TABLE `servicios`   
+  ADD COLUMN `precio_efectivo_default` FLOAT NULL AFTER `precio_default`;
+UPDATE servicios 
+SET precio_efectivo_default = precio_default * 0.9;

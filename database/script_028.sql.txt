@@ -1,0 +1,1 @@
+ALTER TABLE `dispositivos_x_cliente` CHANGE `clienteId` `clienteId` INT NOT NULL ;

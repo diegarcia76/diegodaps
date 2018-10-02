@@ -1,0 +1,19 @@
+ALTER TABLE `configuraciones` ADD `cancelar_antes` INT NULL ,
+ADD `dias_bloqueado` INT NULL ;
+
+INSERT INTO `daps_data`.`estado_turno` (
+`id` ,
+`nombre` ,
+`descripcion` ,
+`accion` ,
+`accion_siguiente` ,
+`color` ,
+`className`
+)
+VALUES (
+NULL , 'Ausente', NULL , 'Ausentar', '1', '#BFBFBF', 'cancelado'
+);
+
+ALTER TABLE `clientes` ADD `bloqueado` TINYINT NOT NULL DEFAULT '0',
+ADD `fecha_bloqueo` DATETIME NULL ,
+ADD `fecha_desbloqueo` DATETIME NULL ;

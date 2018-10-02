@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.syr = {"Syria":"Ü£Ü˜ÜªÜÜÜ"}

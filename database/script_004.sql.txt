@@ -1,0 +1,5 @@
+ALTER TABLE `fotos` ADD `extension` VARCHAR( 10 ) NULL AFTER `temporal` ;
+
+ALTER TABLE `turnos` ADD `canjeado` TINYINT NOT NULL DEFAULT '0';
+
+ALTER TABLE `turnos` ADD `canjeado_puntos` INT NULL DEFAULT '0';

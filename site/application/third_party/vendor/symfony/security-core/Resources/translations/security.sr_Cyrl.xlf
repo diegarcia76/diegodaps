@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>An authentication exception occurred.</source>
+                <target>Ð˜Ð·ÑƒÐ·ÐµÑ‚Ð°Ðº Ð¿Ñ€Ð¸ Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ˜Ð¸.</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Authentication credentials could not be found.</source>
+                <target>ÐÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¾Ð½Ð¸ Ð¿Ð¾Ð´Ð°Ñ†Ð¸ Ð½Ð¸ÑÑƒ Ð¿Ñ€Ð¾Ð½Ð°Ñ’ÐµÐ½Ð¸.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Authentication request could not be processed due to a system problem.</source>
+                <target>Ð—Ð°Ñ…Ñ‚ÐµÐ² Ð·Ð° Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ˜Ñƒ Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±Ð¸Ñ‚Ð¸ Ð¾Ð±Ñ€Ð°Ñ’ÐµÐ½ Ð·Ð±Ð¾Ð³ ÑÐ¸ÑÑ‚ÐµÐ¼ÑÐºÐ¸Ñ… Ð¿Ñ€Ð¾Ð±Ð»ÐµÐ¼Ð°.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Invalid credentials.</source>
+                <target>ÐÐµÐ²Ð°Ð»Ð¸Ð´Ð½Ð¸ Ð¿Ð¾Ð´Ð°Ñ†Ð¸ Ð·Ð° Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ˜Ñƒ.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Cookie has already been used by someone else.</source>
+                <target>ÐšÐ¾Ð»Ð°Ñ‡Ð¸Ñ› Ñ˜Ðµ Ð²ÐµÑ› Ð¸ÑÐºÐ¾Ñ€Ð¸ÑˆÑ›ÐµÐ½ Ð¾Ð´ ÑÑ‚Ñ€Ð°Ð½Ðµ Ð½ÐµÐºÐ¾Ð³ Ð´Ñ€ÑƒÐ³Ð¾Ð³.</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Not privileged to request the resource.</source>
+                <target>ÐÐµÐ¼Ð°Ñ‚Ðµ Ð¿Ñ€Ð°Ð²Ð° Ð¿Ñ€Ð¸ÑÑ‚ÑƒÐ¿Ð° Ð¾Ð²Ð¾Ð¼ Ñ€ÐµÑÑƒÑ€ÑÑƒ.</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Invalid CSRF token.</source>
+                <target>ÐÐµÐ²Ð°Ð»Ð¸Ð´Ð°Ð½ CSRF Ñ‚Ð¾ÐºÐµÐ½.</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Digest nonce has expired.</source>
+                <target>Ð’Ñ€ÐµÐ¼Ðµ ÐºÑ€Ð¸Ð¿Ñ‚Ð¾Ð³Ñ€Ð°Ñ„ÑÐºÐ¾Ð³ ÐºÑ™ÑƒÑ‡Ð° Ñ˜Ðµ Ð¸ÑÑ‚ÐµÐºÐ»Ð¾.</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>No authentication provider found to support the authentication token.</source>
+                <target>ÐÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ð¾Ð½Ð¸ Ð¿Ñ€Ð¾Ð²Ð°Ñ˜Ð´ÐµÑ€ Ð·Ð° Ð¿Ð¾Ð´Ñ€ÑˆÐºÑƒ Ñ‚Ð¾ÐºÐµÐ½Ð° Ð½Ð¸Ñ˜Ðµ Ð¿Ñ€Ð¾Ð½Ð°Ñ’ÐµÐ½.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>No session available, it either timed out or cookies are not enabled.</source>
+                <target>Ð¡ÐµÑÐ¸Ñ˜Ð° Ð½Ð¸Ñ˜Ðµ Ð´Ð¾ÑÑ‚ÑƒÐ¿Ð½Ð°, Ð¸ÑÑ‚ÐµÐºÐ»Ð° Ñ˜Ðµ Ð¸Ð»Ð¸ ÑÑƒ ÐºÐ¾Ð»Ð°Ñ‡Ð¸Ñ›Ð¸ Ð¸ÑÐºÑ™ÑƒÑ‡ÐµÐ½Ð¸.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>No token could be found.</source>
+                <target>Ð¢Ð¾ÐºÐµÐ½ Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±Ð¸Ñ‚Ð¸ Ð¿Ñ€Ð¾Ð½Ð°Ñ’ÐµÐ½.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Username could not be found.</source>
+                <target>ÐšÐ¾Ñ€Ð¸ÑÐ½Ð¸Ñ‡ÐºÐ¾ Ð¸Ð¼Ðµ Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±Ð¸Ñ‚Ð¸ Ð¿Ñ€Ð¾Ð½Ð°Ñ’ÐµÐ½Ð¾.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Account has expired.</source>
+                <target>ÐÐ°Ð»Ð¾Ð³ Ñ˜Ðµ Ð¸ÑÑ‚ÐµÐºÐ°Ð¾.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Credentials have expired.</source>
+                <target>ÐŸÐ¾Ð´Ð°Ñ†Ð¸ Ð·Ð° Ð°ÑƒÑ‚ÐµÐ½Ñ‚Ð¸Ñ„Ð¸ÐºÐ°Ñ†Ð¸Ñ˜Ñƒ ÑÑƒ Ð¸ÑÑ‚ÐµÐºÐ»Ð¸.</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Account is disabled.</source>
+                <target>ÐÐ°Ð»Ð¾Ð³ Ñ˜Ðµ Ð¾Ð½ÐµÐ¼Ð¾Ð³ÑƒÑ›ÐµÐ½.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>Account is locked.</source>
+                <target>ÐÐ°Ð»Ð¾Ð³ Ñ˜Ðµ Ð·Ð°ÐºÑ™ÑƒÑ‡Ð°Ð½.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

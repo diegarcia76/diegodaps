@@ -1,0 +1,9 @@
+ALTER TABLE `pagos`   
+ADD COLUMN `canje` BOOL DEFAULT 0  NULL AFTER `nombre`;
+
+ALTER TABLE `coiffeures`   
+ADD COLUMN `borrado` BOOL DEFAULT 0  NULL;
+
+UPDATE pagos
+SET canje = TRUE
+WHERE total = 0;

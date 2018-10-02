@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `horariosdeatencionXCoiffeur` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `diasemana_id` int(11) NOT NULL,
+  `coiffeur_id` int(11) NOT NULL,
+  `horaDesde` time NOT NULL,
+  `horaHasta` time NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;

@@ -1,0 +1,1 @@
+AmCharts.mapTranslations.si = {"Sri Lanka":"à·à·Šâ€à¶»à·“ à¶½à¶‚à¶šà·à·€"}
