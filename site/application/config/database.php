@@ -70,6 +70,7 @@ $db['default'] = array(
 	//'password' => 'Daps3030',
 	'password' => '',
 	//'database' => 'diegodaps_daps_wp',
+	//'database' => 'daps_data',
 	'database' => 'daps_data',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
