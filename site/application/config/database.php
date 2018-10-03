@@ -68,6 +68,7 @@ $db['default'] = array(
 	//'username' => 'diegodaps_user',
 	'username' => 'root',
 	//'password' => 'Daps3030',
+	//'password' => '',
 	'password' => '',
 	//'database' => 'diegodaps_daps_wp',
 	//'database' => 'daps_data',
