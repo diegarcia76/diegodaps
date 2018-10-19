@@ -183,7 +183,7 @@ var Balance = function() {
 					searchable: true,
 					className: 'dt-right'
 				},
-				{   // 7
+				{   // 8
 					data: 'hidden',
 					name: 'c.id',
 					orderable: false,
@@ -203,7 +203,14 @@ var Balance = function() {
 					orderable: false,
 					searchable: false,
 					visible: false
-				}
+				},
+				{   // 11
+					data: 'hidden',
+					name: 's.id',
+					orderable: false,
+					searchable: true,
+					visible: false
+				},
 
 			]
 		});
@@ -293,6 +300,18 @@ var Balance = function() {
 			}
 			var datatable = $("#tblBalance").DataTable();
 			datatable.column(8)
+                    .search(clienten)
+                    .draw();
+			//handleSubt();
+		});
+		
+		$('#filtro-servicio').change(function(){
+			var clienten = $(this).val();
+			if (!clienten){
+				clienten = '';
+			}
+			var datatable = $("#tblBalance").DataTable();
+			datatable.column(11)
                     .search(clienten)
                     .draw();
 			//handleSubt();

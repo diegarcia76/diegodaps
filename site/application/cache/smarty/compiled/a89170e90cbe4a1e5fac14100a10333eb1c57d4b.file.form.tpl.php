@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:41:53
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-11 23:06:58
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\turnos\form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:170445bb3e621b85084-89957236%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a89170e90cbe4a1e5fac14100a10333eb1c57d4b' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\turnos\\form.tpl',
-      1 => 1538514863,
+      1 => 1539292010,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -27,14 +27,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bb3e6220c5d75_91295085',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb3e6220c5d75_91295085',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bb3e6220c5d75_91295085')) {function content_5bb3e6220c5d75_91295085($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
 ?><!DOCTYPE html>
@@ -351,10 +351,15 @@ $_smarty_tpl->tpl_vars['sub']->_loop = true;
 					                <?php }?>
 				                </select>
 				                <div id="cliente_nuevo" class="form-group <?php if ($_smarty_tpl->tpl_vars['editUser']->value->nombre=='') {?> hidden <?php }?>" >
-									<input type="text" class="form-control cliente_nuevo" placeholder="escribe el nombre del nuevo cliente" value="<?php echo $_smarty_tpl->tpl_vars['editUser']->value->nombre;?>
+									<input type="text" class="form-control cliente_nuevo" placeholder="Escribe el nombre del nuevo cliente" value="<?php echo $_smarty_tpl->tpl_vars['editUser']->value->nombre;?>
 " id="nombreturno" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->nombre!='') {?> disabled="disabled" <?php }?>/>
-									<input type="text" class="form-control cliente_nuevo " placeholder="escribe el teléfono del nuevo cliente" value="<?php echo $_smarty_tpl->tpl_vars['editUser']->value->telefono;?>
+									<input type="text" class="form-control cliente_nuevo " placeholder="Escribe el teléfono del nuevo cliente" value="<?php echo $_smarty_tpl->tpl_vars['editUser']->value->telefono;?>
 " id="telefonoturno" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->telefono!='') {?> disabled="disabled" <?php }?>/>
+									<input type="text" class="form-control cliente_nuevo " placeholder="Escribe el email del nuevo cliente" value="<?php echo $_smarty_tpl->tpl_vars['editUser']->value->email;?>
+" id="emailturno" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->email!='') {?> disabled="disabled" <?php }?>/>
+									<?php if ($_smarty_tpl->tpl_vars['accion']->value=='add') {?>
+									<a href="#" class="nocliente" id="nocliente" >Guardar</a>
+									<?php }?>
 								</div>
 							</div>
 
@@ -490,7 +495,7 @@ admin/turnos" class="btn btn-link btn-lg pull-right">Cancelar</a>
 <?php /*  Call merged included template "admin/turnos/item-horario-add.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/turnos/item-horario-add.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '170445bb3e621b85084-89957236');
-content_5bb3e621ee0035_69740751($_smarty_tpl);
+content_5bbfbb7299cd61_83583662($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/turnos/item-horario-add.tpl" */?>
 
@@ -724,9 +729,9 @@ assets/admin/js/turnos.js?version=20180628"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:41:53
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-11 23:06:58
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\turnos\item-horario-add.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bb3e621ee0035_69740751')) {function content_5bb3e621ee0035_69740751($_smarty_tpl) {?><?php echo '<script'; ?>
+<?php if ($_valid && !is_callable('content_5bbfbb7299cd61_83583662')) {function content_5bbfbb7299cd61_83583662($_smarty_tpl) {?><?php echo '<script'; ?>
  id="template_horario" type="text/x-jsrender">
 	
 		<table class="table">

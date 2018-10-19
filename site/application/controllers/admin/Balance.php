@@ -40,6 +40,7 @@ class Balance extends BaseAdmin_Controller {
 		$diaActual = new DateTime('now');
 
 		$this->data['coiffeurs'] = \Managers\CoiffeurManager::getInstance()->getAll();
+		$this->data['servicios'] = Managers\ServicioManager::getInstance()->getAll();
 //		$this->data['pagos'] = \Managers\DetallePagoManager::getInstance()->getAll();
 
 		$this->data['submenuactive'] = '';
@@ -62,6 +63,7 @@ class Balance extends BaseAdmin_Controller {
 		$fechaActualHasta = DateTime::createFromFormat('d/m/Y', $fechaActualHasta);	
 
 		\Managers\DetallePagoManager::getInstance()->setJoinDeCoiffeur();
+		\Managers\DetallePagoManager::getInstance()->setJoinDeServicio();
 		\Managers\DetallePagoManager::getInstance()->setJoinDePago();
 		\Managers\DetallePagoManager::getInstance()->setJoinDeFecha($fechaActualDesde,$fechaActualHasta);
 
@@ -90,13 +92,39 @@ class Balance extends BaseAdmin_Controller {
 		$fechas_start = DateTime::createFromFormat('d/m/Y', $fechas[0]);
 		$fechas_end = DateTime::createFromFormat('d/m/Y', $fechas[1]);
 
-		$aBalance = \Managers\DetallePagoManager::getInstance()->getBalancexFechas($fechas_start, $fechas_end);
+		//$aBalance = \Managers\DetallePagoManager::getInstance()->getBalancexFechas($fechas_start, $fechas_end);
+		
+		//$aBalance2 = \Managers\DetallePagoManager::getInstance()->getBalancexFechas2($fechas_start, $fechas_end);
+		
+		$aPeluquero = \Managers\CoiffeurManager::getInstance()->getAll();
 		/*echo "<pre>";
-		print_r($aBalance);
-		echo "</pre>";*/
-		$this->data['aBalance'] = $aBalance;
-		$this->data['fechas_start'] = $fechas[0];
-		$this->data['fechas_end'] = $fechas[1];
+		print_r($aBalance2);
+		echo "</pre>";
+		var_dump($aPeluquero);
+		die();*/
+		$aBalance2 = array();
+		foreach ($aPeluquero as $pel){
+			if (count($aBalance2)== 0){
+				$aBalance2 = \Managers\DetallePagoManager::getInstance()->getBalancexFechas3($fechas_start, $fechas_end, $pel->id);
+			}else{
+				$aBalance2_temp = \Managers\DetallePagoManager::getInstance()->getBalancexFechas3($fechas_start, $fechas_end, $pel->id);
+				$aBalance2 = array_merge($aBalance2, $aBalance2_temp); 
+			}
+			
+			//array_push($pila ,$aBalance2);
+			//
+		}
+		
+		/*var_dump($aBalance2);
+		die();*/
+	
+		
+		//$this->data['aBalance'] = $aBalance;
+		$this->data['aBalance2'] = $aBalance2;
+		$this->data['aPeluquero'] = $aPeluquero;
+		$this->data['fechas_start'] = $fechas_start;
+		$this->data['fechas_end'] = $fechas_end;
+		
 		
 		$this->parser->parse($this->parsePath.'imprimir.tpl', $this->data);
 

@@ -74,6 +74,47 @@
                     </div>
                 </div>
     </div>
+	
+	
+ <div id="busqueda_avanzada" class="">
+                <div class="panel-body">
+
+                    <div class="form-body form-bordered form-horizontal">
+                        <div class="row">
+                            <div class="col-md-3 m-r-2">
+                                <div class="form-group">
+                                    <label class="control-label m-b-1 ">Servicio</label>
+									
+                                        <select id="filtro-servicio" name="filtro-servicio" class="form-control select2 " placeholder='Seleccione Servicio'>
+                                            <option value="">Sin filtrar</option>
+                                        {foreach $servicios as $aSe}
+                                            <option value="{$aSe->id}">{$aSe->nombre}</option>
+                                        {/foreach}
+                                        </select>
+                                </div>
+                            </div>
+							
+							 <div class="col-md-3 m-r-2">
+                                <div class="form-group">
+                                    <label class="control-label m-b-1 ">Forma de Pago</label>
+                                        <select id="filtro-pago" name="filtro-pago" class="form-control select2 " placeholder='Seleccione tipo de pago'>
+                                            <option value="">Sin filtrar</option>
+                                        
+                                            <option value="1">Efectivo</option>
+											 <option value="2">Tarjeta</option>
+                                      
+                                        </select>
+                                </div>
+                            </div>
+                          
+						  
+						  
+						  
+						  
+                        </div>
+                    </div>
+                </div>
+    </div>	
 
 <div class="row">
 <div class="panel-body">

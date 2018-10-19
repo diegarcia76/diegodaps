@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title">Agregar Comentario a Pago</h4>
+		        <h4 class="modal-title">Agregar Observacion al Cliente o al Pago</h4>
             </div>
             <div class="modal-body">
                 <input type="hidden" name="turno_id_modal" id="turno_id_modal">

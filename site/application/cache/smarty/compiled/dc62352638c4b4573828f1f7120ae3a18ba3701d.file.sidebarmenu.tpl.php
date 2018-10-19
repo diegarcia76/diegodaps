@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:41:23
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-17 21:49:47
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\include\sidebarmenu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:160025bb3e60360ba51-19449584%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dc62352638c4b4573828f1f7120ae3a18ba3701d' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\include\\sidebarmenu.tpl',
-      1 => 1538514863,
+      1 => 1539805673,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bb3e60389bb21_47397417',
   'variables' => 
   array (
     'menuactive' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'submenuactive' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb3e60389bb21_47397417',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bb3e60389bb21_47397417')) {function content_5bb3e60389bb21_47397417($_smarty_tpl) {?><ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='Dashboard') {?>active<?php }?>">
@@ -108,6 +108,13 @@ admin/configuracion"> <i class="fa fa-money"></i> <span class="title">Configurac
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='comentarios') {?>active<?php }?>">
         <a href="<?php echo site_url();?>
 admin/comentarios"> <i class="fa fa-comments"></i> <span class="title">Comentarios</span></a>
+    </li>
+    <?php }?>
+	
+	<?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1))) {?>
+    <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='comments') {?>active<?php }?>">
+        <a href="<?php echo site_url();?>
+admin/comments"> <i class="fa fa-comments"></i> <span class="title">Observaciones clientes</span></a>
     </li>
     <?php }?>
 

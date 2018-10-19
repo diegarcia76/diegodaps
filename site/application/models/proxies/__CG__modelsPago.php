@@ -195,12 +195,12 @@ class Pago extends \models\Pago implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur = NULL, $comision = NULL, $descuento = NULL, $id = NULL)
+    public function addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur = NULL, $comision = NULL, $descuento = NULL, $id = NULL, $fecha)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addDetallePago', array($detalle, $cantidad, $precio, $tipo, $aCoiffeur, $comision, $descuento, $id));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addDetallePago', array($detalle, $cantidad, $precio, $tipo, $aCoiffeur, $comision, $descuento, $id, $fecha));
 
-        return parent::addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur, $comision, $descuento, $id);
+        return parent::addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur, $comision, $descuento, $id, $fecha);
     }
 
     /**

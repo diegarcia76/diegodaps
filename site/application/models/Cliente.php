@@ -147,8 +147,9 @@ class Cliente extends My_Models
      * @JoinColumn(name="foto_id", referencedColumnName="id")
      **/
     protected $foto = null;
-
-    /**
+	
+	
+	    /**
      * @OneToMany(targetEntity="Turno", mappedBy="cliente", orphanRemoval=true)
      * @OrderBy({"fecha_hora" = "DESC"})
      **/

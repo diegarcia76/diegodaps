@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:41:22
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-17 17:02:24
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\dashboard\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:245045bb3e602e81080-57735150%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -19,7 +19,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5da857bf46aea96370686729da8cb06be6591b23' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\dashboard\\modal-agregar-comentario.tpl',
-      1 => 1538514863,
+      1 => 1539805623,
       2 => 'file',
     ),
   ),
@@ -27,14 +27,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bb3e6034fbb67_79296115',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb3e6034fbb67_79296115',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bb3e6034fbb67_79296115')) {function content_5bb3e6034fbb67_79296115($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
 ?><!DOCTYPE html>
@@ -414,7 +414,7 @@ admin/turnos/editar/<?php echo $_smarty_tpl->tpl_vars['th']->value->id;?>
 <?php /*  Call merged included template "admin/dashboard/modal-agregar-comentario.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/dashboard/modal-agregar-comentario.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '245045bb3e602e81080-57735150');
-content_5bb3e6033e8985_44744712($_smarty_tpl);
+content_5bc795519ecd07_07971805($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/dashboard/modal-agregar-comentario.tpl" */?>
 
@@ -563,14 +563,14 @@ assets/admin/js/home.js"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:41:23
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-17 17:02:25
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\dashboard\modal-agregar-comentario.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bb3e6033e8985_44744712')) {function content_5bb3e6033e8985_44744712($_smarty_tpl) {?><div id="modal-agregar-comentario" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-comentario-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bc795519ecd07_07971805')) {function content_5bc795519ecd07_07971805($_smarty_tpl) {?><div id="modal-agregar-comentario" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-comentario-label" aria-hidden="true" data-backdrop='static'>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		        <h4 class="modal-title">Agregar Comentario a Pago</h4>
+		        <h4 class="modal-title">Agregar Observacion al Cliente o al Pago</h4>
             </div>
             <div class="modal-body">
                 <input type="hidden" name="turno_id_modal" id="turno_id_modal">

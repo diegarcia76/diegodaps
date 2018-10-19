@@ -79,14 +79,20 @@ class Cobros extends BaseAdmin_Controller
         if ($aPago = \Managers\PagoManager::getInstance()->get($pago_id)) {
 
             $canje = false;
+			
+			$aPago->fecha_pago = new \DateTime('now');
+
+            if($cb_modificar_fecha == 1){
+                $aPago->fecha = Datetime::createFromFormat('Y-m-d', $fecha_cobro);
+            }
 
             if ($tipo=='efectivo') {
                 $descuento = $aPago->total - $monto_efectivo;
-                $aPago->addDetallePago('Descuento por Pago en Efectivo', 1, $descuento, 'descuento', null, null, null);
+                $aPago->addDetallePago('Descuento por Pago en Efectivo', 1, $descuento, 'descuento', null, null, null,null, $aPago->fecha);
             } else {
                 $descuento = $aPago->total - $monto_tarjeta ;
                 if ($descuento != 0){
-                    $aPago->addDetallePago('Descuento Especial', 1, $descuento, 'descuento', null, null, null);                
+                    $aPago->addDetallePago('Descuento Especial', 1, $descuento, 'descuento', null, null, null,null, $aPago->fecha);                
                 }
 
                 if ($aPago->total == 0 && $monto_tarjeta == 0){
@@ -96,11 +102,7 @@ class Cobros extends BaseAdmin_Controller
             $aPago -> cobrado = true;
             $aPago -> canje = $canje;
 
-            $aPago->fecha_pago = new \DateTime('now');
-
-            if($cb_modificar_fecha == 1){
-                $aPago->fecha = Datetime::createFromFormat('Y-m-d', $fecha_cobro);
-            }
+            
 
             foreach ($aPago->turnos as $turno) {
                 $turno->estadoTurno = \Managers\EstadoTurnoManager::getInstance()->get(ESTADO_TURNO_COBRADO);
@@ -188,13 +190,17 @@ class Cobros extends BaseAdmin_Controller
 
         if ($aPago) {
             $configuracion = \Managers\ConfiguracionManager::getInstance()->get(1);
-            if ($tipo == 'servicio') {
+            
+			if ($tipo == 'servicio') {
                 $descuento = $precio * ($configuracion->descuento_efectivo / 100);
             } else {
                 $descuento = $precio * ($configuracion->descuento_efectivo_productos / 100);
             }
+			
+			//$descuento = 0; 
+			$fecha = new \DateTime('now');
             $descuento = $descuento * $cantidad;
-            $aPago->addDetallePago($descripcion, $cantidad, $precio, $tipo, null, null, $descuento);
+            $aPago->addDetallePago($descripcion, $cantidad, $precio, $tipo, null, null, $descuento,null,$fecha );
             $aPago = \Managers\PagoManager::getInstance()->save($aPago);
             $result['status'] = true;
             $result['message'] = 'Se ha agregado el item con éxito';
@@ -241,7 +247,7 @@ class Cobros extends BaseAdmin_Controller
             $aDetallePago->precio = $precio;
             $aDetallePago->cantidad = $cantidad;
             $aDetallePago->descuento = $descuento;
-            //$aDetallePago->comision = $comision;
+            //$aDetallePago->fecha = $fecha = new \DateTime('now');
             //$aDetallePago->producto = $aProducto;
             //$aDetallePago->coiffeur = $aCoiffeur;
             $aDetallePago = \Managers\DetallePagoManager::getInstance()->save($aDetallePago);
@@ -275,6 +281,11 @@ class Cobros extends BaseAdmin_Controller
         $coiffeur_id = $this->input->post('coiffeur-id');
 
         $nombrecobro = trim($this->input->post('nombrecobro'));
+		
+		
+		 $precio = $this->input->post('precio');
+		 
+		 //echo $precio;
 
         $result['status'] = false;
         $result['message'] = 'Error';
@@ -309,11 +320,12 @@ class Cobros extends BaseAdmin_Controller
             $comision = ($aProducto->precio - $descuento) * ($configuracion->comision_productos / 100);
 
             $descripcion = $aProducto->nombre;
-            $precio = $aProducto->precio;
-            $descuento = $descuento * $cantidad;
+            //$precio = $aProducto->precio;
+            $precio = $precio;
+			$descuento = $descuento * $cantidad;
             $comision = $comision * $cantidad;
-
-            $aPago->addDetallePago($descripcion, $cantidad, $precio, 'producto', $aCoiffeur, $comision, $descuento, $producto_id);
+			$fecha = new \DateTime('now');
+            $aPago->addDetallePago($descripcion, $cantidad, $precio, 'producto', $aCoiffeur, $comision, $descuento, $producto_id, $fecha);
             $aPago = \Managers\PagoManager::getInstance()->save($aPago);
             $result['status'] = true;
             $result['message'] = 'Se ha agregado el item con éxito';
@@ -330,6 +342,7 @@ class Cobros extends BaseAdmin_Controller
         $cantidad = $this->input->post('cantidad');
         $cliente_id  = $this->input->post('cliente-id');
         $producto_id = $this->input->post('producto-id');
+		$precio = $this->input->post('precio');
 
         $coiffeur_id = $this->input->post('coiffeur-id');
 
@@ -359,7 +372,8 @@ class Cobros extends BaseAdmin_Controller
             $comision = ($aProducto->precio - $descuento) * ($configuracion->comision_productos / 100);
 
             $descripcion = $aProducto->nombre;
-            $precio = $aProducto->precio;
+            $precio = $precio;
+			//$precio = $aProducto->precio;
             $descuento = $descuento * $cantidad;
             $comision = $comision * $cantidad;
 
@@ -455,6 +469,8 @@ class Cobros extends BaseAdmin_Controller
         $cantidad = $this->input->post('cantidad');
         $cliente_id  = $this->input->post('cliente-id');
         $servicio_id = $this->input->post('servicio-id');
+		
+		 $precio = $this->input->post('precio');
 
         $coiffeur_id = $this->input->post('coiffeur-id');
 
@@ -462,6 +478,8 @@ class Cobros extends BaseAdmin_Controller
 
         $result['status'] = false;
         $result['message'] = 'Error';
+		
+		//echo $servicio_id; die();
 
         if (!$aPago = \Managers\PagoManager::getInstance()->get($pago_id)) {
             if ($aCliente = \Managers\ClienteManager::getInstance()->get($cliente_id)) {
@@ -478,26 +496,43 @@ class Cobros extends BaseAdmin_Controller
                 }
             }
         }
-
+		
+	if ($coiffeur_id != 8){		
         if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
             $aPago = null;
             $result['message'] = 'Servicio no encontrado';
         }
-
+	}else{
+		 $aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
+	}
+	       
+			
         if ($aPago) {
             $configuracion = \Managers\ConfiguracionManager::getInstance()->get(1);
 
             $aCoiffeur = \Managers\CoiffeurManager::getInstance()->get($coiffeur_id);
 
-            $descuento = $aServicioXCoiffeur->descuento_efectivo;
-            $comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
-
-            $descripcion = $aServicioXCoiffeur->servicio->nombre;
-            $precio = $aServicioXCoiffeur->precio;
+			if ($coiffeur_id != 8){		
+            	$descuento = $aServicioXCoiffeur->descuento_efectivo;
+            	$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
+				$descripcion = $aServicioXCoiffeur->servicio->nombre;
+			}else{
+				$descuento = 0;
+            	$comision = 0;
+				$descripcion = $aServicio->nombre;
+			}
+            //$descripcion = $aServicio->nombre;
+            //$precio = $aServicioXCoiffeur->precio;
+			$precio = $precio;
             $descuento = $descuento * $cantidad;
             $comision = $comision * $cantidad;
-
-            $aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicioXCoiffeur->servicio->id);
+			$fecha = new \DateTime('now');
+			
+			if ($coiffeur_id != 8){	
+            $aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicioXCoiffeur->servicio->id, $fecha);
+			}else{
+			 $aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicio->id, $fecha);
+			}
             $aPago = \Managers\PagoManager::getInstance()->save($aPago);
             $result['status'] = true;
             $result['message'] = 'Se ha agregado el servicio con éxito';
@@ -516,6 +551,8 @@ class Cobros extends BaseAdmin_Controller
         $servicio_id = $this->input->post('servicio-id');
 
         $coiffeur_id = $this->input->post('coiffeur-id');
+		
+		 $precio = $this->input->post('precio');
 
         $result['status'] = false;
         $result['message'] = 'Error';
@@ -528,22 +565,30 @@ class Cobros extends BaseAdmin_Controller
                 $result['message'] = 'Cliente no encontrado';
             }
         }
-
+if ($coiffeur_id != 8){	
         if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
             $aPago = null;
             $result['message'] = 'Servicio no encontrado';
         }
+}
 
+$aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
         if ($aPago) {
             $configuracion = \Managers\ConfiguracionManager::getInstance()->get(1);
 
             $aCoiffeur = \Managers\CoiffeurManager::getInstance()->get($coiffeur_id);
-
-            $descuento = $aServicioXCoiffeur->descuento_efectivo;
-            $comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
-
-            $descripcion = $aServicioXCoiffeur->servicio->nombre;
-            $precio = $aServicioXCoiffeur->precio;
+			if ($coiffeur_id != 8){		
+            	$descuento = $aServicioXCoiffeur->descuento_efectivo;
+            	$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
+				$descripcion = $aServicioXCoiffeur->servicio->nombre;
+			}else{
+				$descuento = 0;
+            	$comision = 0;
+				$descripcion = $aServicio->nombre;
+			}
+           // $descripcion = $aServicio->nombre;
+        //    $precio = $aServicioXCoiffeur->precio;
+			$precio = $precio;
             $descuento = $descuento * $cantidad;
             $comision = $comision * $cantidad;
 
@@ -554,7 +599,11 @@ class Cobros extends BaseAdmin_Controller
             $aDetallePago->cantidad = $cantidad;
             $aDetallePago->descuento = $descuento;
             $aDetallePago->comision = $comision;
-            $aDetallePago->servicio = $aServicioXCoiffeur->servicio;
+			if ($coiffeur_id == 8){
+			   $aDetallePago->servicio = $aServicio;
+			 }else{
+			 	$aDetallePago->servicio = $aServicioXCoiffeur->servicio;
+			}  
             $aDetallePago->coiffeur = $aCoiffeur;
             $aDetallePago = \Managers\DetallePagoManager::getInstance()->save($aDetallePago);
 

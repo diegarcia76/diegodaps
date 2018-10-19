@@ -68,7 +68,13 @@ class Turno extends My_Models
      * @var string $telefono
      * @Column(name="telefono", type="string", length=255)
      */
-    protected $telefono;          
+    protected $telefono;     
+	
+	/**
+     * @var string $email
+     * @Column(name="email", type="string", length=255)
+     */
+    protected $email;          
 
     /**
      * @ManyToOne(targetEntity="Cliente", inversedBy="turnos")

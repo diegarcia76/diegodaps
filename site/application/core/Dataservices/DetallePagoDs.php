@@ -91,6 +91,19 @@ class DetallePagoDs extends BaseDataService {
             $this->qb->andWhere($this->qb->expr()->eq('c.id', $this->aCoiffeur->id));
         }
     }
+	
+	
+	 public function setJoinDeServicio($aServicio = null){
+        $this->aServicio = $aServicio;
+        $this->miFuncion[] = 'setDatasourceJoinsServicio';
+    }
+	
+	protected function setDatasourceJoinsServicio(){        
+        $this->qb->leftjoin('d.servicio','s');
+        if($this->aServicio){ 
+            $this->qb->andWhere($this->qb->expr()->eq('s.id', $this->aServicio->id));
+        }
+    }
 
     public function setJoinDePago($aPago = null){
         $this->aPago = $aPago;
@@ -142,10 +155,71 @@ class DetallePagoDs extends BaseDataService {
 	public function getBalancexFechas($fecha_start, $fecha_end){
 
 		$this->qb = $this->em->createQueryBuilder();
-		$this->qb->select(' c.nombre, sum(d.precio*d.cantidad) as total, sum(d.comision) as comision') 
+		$this->qb->select(' c.nombre, sum(d.precio*d.cantidad) as total, sum(d.comision) as comision, sum(d.descuento*d.cantidad) as descuento') 
  			     ->from($this->tbl_name, 'd')
  			     ->innerjoin('d.coiffeur','c')
  			     ->groupBy("c.id");
+
+		if($fecha_start){
+            $this->qb->andWhere('d.fecha BETWEEN :fecha1 AND :fecha2');
+            $this->qb->setParameter('fecha1', $fecha_start->format('Y-m-d 00:00:00'));
+            $this->qb->setParameter('fecha2', $fecha_end->format('Y-m-d 23:59:59'));
+            
+        }
+
+        
+		$query = $this->qb->getQuery();
+		//var_dump($query->getSql());die();
+		$obj = $query->getResult();
+		
+		if(!empty($obj))
+			return $obj;
+			// return $obj;
+		
+		//return false;
+		return array();
+
+    }
+	
+	public function getBalancexFechas3($fecha_start, $fecha_end, $pel){
+
+		$this->qb = $this->em->createQueryBuilder();
+		$this->qb->select('c.id, c.nombre, sum(d.precio*d.cantidad) as total, sum(d.comision) as comision, sum(d.descuento*d.cantidad) as descuento, d.descripcion, sum(d.cantidad) as cantidad, d.precio') 
+ 			     ->from($this->tbl_name, 'd')
+ 			     ->innerjoin('d.coiffeur','c')
+				  ->where(
+					$this->qb->expr()->eq('c.id', $pel)
+					)
+ 			     ->groupBy("d.descripcion");
+
+		if($fecha_start){
+            $this->qb->andWhere('d.fecha BETWEEN :fecha1 AND :fecha2');
+            $this->qb->setParameter('fecha1', $fecha_start->format('Y-m-d 00:00:00'));
+            $this->qb->setParameter('fecha2', $fecha_end->format('Y-m-d 23:59:59'));
+            
+        }
+
+        
+		$query = $this->qb->getQuery();
+		//var_dump($query->getSql());die();
+		$obj = $query->getResult();
+		
+		if(!empty($obj))
+			return $obj;
+			// return $obj;
+		
+		//return false;
+		return array();
+
+    }
+	
+	public function getBalancexFechas2($fecha_start, $fecha_end){
+
+		$this->qb = $this->em->createQueryBuilder();
+		$this->qb->select(' c.nombre,c.id, d.precio, d.cantidad, d.comision, d.descuento, d.descripcion') 
+ 			     ->from($this->tbl_name, 'd')
+ 			     ->innerjoin('d.coiffeur','c')
+ 			     ->orderBy("c.id");
 
 		if($fecha_start){
             $this->qb->andWhere('d.fecha BETWEEN :fecha1 AND :fecha2');

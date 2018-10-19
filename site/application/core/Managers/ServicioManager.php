@@ -25,6 +25,22 @@ class ServicioManager extends BaseManager{
 		
 		return $arrayData;
 	}
+	
+	public function toArray2($data){
+		$arrayData = array();
+		$arrayData["id"] = 8;
+		$arrayData["servicioXCoiffeur_id"] = $data->id;
+		$arrayData["nombre"] = "Diego Dap's";
+		$arrayData["servicio"] = $data->id;
+		$arrayData["nombre_servicio"] = $data->nombre;
+		$arrayData["precio"] = $data->precio_default;
+		//$arrayData["foto"] = ImagenManager::getInstance()->getUrl($data->coiffeur->foto,"55x55");
+		$arrayData["hashdata"] = $this->doHash($data);
+		
+		return $arrayData;
+		
+		return $arrayData;
+	}
 
 	public function doHash($data){
 		return md5($data->id.'|'.$data->nombre);
@@ -76,6 +92,10 @@ class ServicioManager extends BaseManager{
 
 	public function getAllEnApp(){
 		return \Dataservices\ServicioDs::getInstance()->getAllEnApp();
+	}
+	
+	public function getAllDiego(){
+		return \Dataservices\ServicioDs::getInstance()->getAllDiego();
 	}
 	
 

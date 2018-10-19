@@ -274,7 +274,7 @@ class Turnos extends BaseAdmin_Controller
 
 
 
-
+ 
 
     public function add()
     {
@@ -288,6 +288,7 @@ class Turnos extends BaseAdmin_Controller
             $this->data['clientes'] = Managers\ClienteManager::getInstance()->getAll();
 
             $this->data['submenuactive'] = 'add';
+			 $this->data['accion'] = 'add';
             $this->data['pageTitle'] = 'Agregar nuevo Turno';
             $this->parser->parse($this->parsePath.'form.tpl', $this->data);
         /*} else {
@@ -359,7 +360,7 @@ class Turnos extends BaseAdmin_Controller
                 $this->data['coiffeurs'] = Managers\CoiffeurManager::getInstance()->getActiveAll();
                 $this->data['clientes'] = Managers\ClienteManager::getInstance()->getAll();
                 $this->data['estados'] = Managers\EstadoTurnoManager::getInstance()->getAll();
-
+				$this->data['accion'] = 'edit';
                 $this->data['submenuactive'] = '';
                 $this->data['pageTitle'] = 'Editar Turno';
                 $this->parser->parse($this->parsePath.'form.tpl', $this->data);
@@ -412,6 +413,7 @@ class Turnos extends BaseAdmin_Controller
         $turno_id = trim($this->input->post('turno_id'));
         $turno_nombre = trim($this->input->post('nombreturno'));
         $turno_telefono = trim($this->input->post('telefonoturno'));
+		$email = trim($this->input->post('email'));
         
         // $puntos = trim($this->input->post('puntos_servicio'));
 
@@ -420,11 +422,13 @@ class Turnos extends BaseAdmin_Controller
             $result["message"] = 'No se ha podido reservar el turno! <br/> Debe seleccionar un <strong>Cliente</strong>.';
             $clienteOk = true;
             if (!$aCliente = Managers\ClienteManager::getInstance()->get($id_cliente)){
-                if (empty($turno_nombre)){
-                    $clienteOk = false;
-                }
+					if (!$aCliente = Managers\ClienteManager::getInstance()->getByUsername($email)){
+						if (empty($turno_nombre)){
+							$clienteOk = false;
+						}
                 $aCliente = null;                
-            } 
+            		} 
+			}
 
             $result["message"] = 'No se ha podido reservar el turno! <br/> Debe seleccionar un <strong>Cliente</strong> o ingresar un nombre.';
             if ($clienteOk){
@@ -493,6 +497,7 @@ class Turnos extends BaseAdmin_Controller
                     $aTurno->prioridad = $prioridad;
                     $aTurno->nombre = $turno_nombre;
                     $aTurno->telefono = $turno_telefono;
+					 $aTurno->email = $email;
                     $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
 
                     //noti
@@ -981,6 +986,44 @@ class Turnos extends BaseAdmin_Controller
         //$turnos = array('Turnos' => $turnos );
         echo json_encode($jsonTurnos);
     }
+	
+	public function altaNoTurno(){
+			$nombre = $_POST['nombre'];
+			$telefono = $_POST['telefono'];
+			$email = $_POST['email'];
+			$resultado = Managers\ClienteManager::getInstance()->getByUsernameEmail($email);
+			if (!$resultado){
+				$editUser = Managers\ClienteManager::getInstance()->create();
+				$editUser->nombre = $nombre;
+				$editUser->email  = $email;
+				$editUser->telefono  = $telefono;
+				$editUser->activo  = 1;
+				$editUser->bloqueado  = 0;
+				$editUser->fecha_desbloqueo  = null;
+				$editUser->fecha_bloqueo  = null;
+				$editUser->fecha_alta  = new DateTime('now');
+				$editUser->puntos_acumulados  = 0;
+				$password = "12345";
+				$editUser->pass = md5($password);
+				$editUser = Managers\ClienteManager::getInstance()->save($editUser);
+				
+				$somedata['usuario'] = $nombre;
+				$mailbody = $this->parser->parse('mails/nuevoUsuario.tpl',$somedata, true);
+				\Managers\MailManager::getInstance()->sendmail($email, 'Bienvenido', $mailbody);
+				
+			   $result['status'] = true;
+					
+					
+			}else{
+			
+						$result['message'] = 'Ya existe un cliente con ese correo';
+					 $result['status'] = false;
+			
+			
+				
+		   }	
+		   echo json_encode($result);
+	}
 
 
 }

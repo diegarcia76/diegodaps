@@ -64,6 +64,19 @@ class ClienteManager extends BaseManager{
 		return false;
 	}
 	
+	public function getByUsernameEmail($email){
+		
+		if (!$usuarioCheck = $this->getByUsername($email)){
+			return false;
+		} else{
+			return true;
+		}
+	
+		
+	}
+	
+	
+	
 	
 	
 	public function getDatatableDatasource($data){

@@ -59,14 +59,16 @@
                         </div>    
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Precio Unitario</label>
+                                <label class="control-label">Precio a Cobrar c/u</label>
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">$</span>
-                                    <input type="text" class="form-control" readonly="readonly"  name="precio" placeholder="" value="" required="required">
+                                    <input type="text" class="form-control"  name="precio" placeholder="" value="" required="required">
                                 </div>                            
                             </div>
                         </div>
                     </div>
+					
+					
 
                     <div class="form-group">
                         <label class="control-label">Seleccionar Coiffeur</label>
@@ -79,8 +81,11 @@
                     </div>
                     
                     <div class="wpr-total text-right">
-                        <h2>$<span>0.00</span></h2>
+                        <h2>PRECIO recomendado: $<span>0.00</span></h2>
                     </div> 
+					<!--<div class="wpr-total-2 text-right">
+                        <h2>PRECIO Real a cobrar: $<span>0.00</span></h2>
+                    </div> -->
             
 				</div>            	
             </div>

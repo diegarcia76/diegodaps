@@ -486,7 +486,7 @@ class Coiffeurs extends BaseAdmin_Controller {
 	}
 
 
-	public function getServiciosXCoiffeur($id_coiffeur){
+	public function getServiciosXCoiffeur2($id_coiffeur){
 
 		$aCoiffeur = Managers\CoiffeurManager::getInstance()->get($id_coiffeur);
 		$servicios = array();
@@ -494,6 +494,36 @@ class Coiffeurs extends BaseAdmin_Controller {
 		foreach($aCoiffeur->serviciosXCoiffeur as $se){
 			$servicios[] = \Managers\ServicioXCoiffeurManager::getInstance()->toArray($se);		
 		}				
+
+		$result['servicios'] = $servicios;
+		echo json_encode($result);
+
+	}
+	
+	public function getServiciosXCoiffeur($id_coiffeur){
+
+		$aCoiffeur = Managers\CoiffeurManager::getInstance()->get($id_coiffeur);
+		$servicios = array();
+		/*
+		if ($id_coiffeur == 8){
+			$aServ = Managers\ServicioManager::getInstance()->getAllDiego();
+				foreach($aServ as $se){
+					$servicios[] = \Managers\ServicioManager::getInstance()->toArray2($se);		
+				}
+			
+		
+		}else{
+		*/
+			foreach($aCoiffeur->serviciosXCoiffeur as $se){
+				$servicios[] = \Managers\ServicioXCoiffeurManager::getInstance()->toArray($se);		
+			}
+		
+		
+		//}	
+				
+		
+		
+					
 
 		$result['servicios'] = $servicios;
 		echo json_encode($result);

@@ -71,6 +71,12 @@
         <a href="{site_url()}admin/comentarios"> <i class="fa fa-comments"></i> <span class="title">Comentarios</span></a>
     </li>
     {/if}
+	
+	{if $actualBackuser->perfil->id|in_array:array(1)}
+    <li class="{if $menuactive eq 'comments'}active{/if}">
+        <a href="{site_url()}admin/comments"> <i class="fa fa-comments"></i> <span class="title">Observaciones clientes</span></a>
+    </li>
+    {/if}
 
     {if $actualBackuser->perfil->id|in_array:array(1)}
     <li class="{if $menuactive eq 'reportes'}active{/if}"> <a href="javascript:;"> <i class="icon-settings"></i> <span class="title">Reportes</span> <span class="arrow "></span> </a>

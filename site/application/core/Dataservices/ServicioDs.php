@@ -80,6 +80,10 @@ class ServicioDs extends BaseDataService {
     public function getAllEnApp(){
 		return $this->em->getRepository($this->tbl_name)->findBy(array('servicioEnApp' => true));
 	}
+	
+	public function getAllDiego(){
+		return $this->em->getRepository($this->tbl_name)->findBy(array('activo' => true));
+	}
 
 
 }

@@ -163,8 +163,12 @@
 					                {/if}
 				                </select>
 				                <div id="cliente_nuevo" class="form-group {if $editUser->nombre eq ''} hidden {/if}" >
-									<input type="text" class="form-control cliente_nuevo" placeholder="escribe el nombre del nuevo cliente" value="{$editUser->nombre}" id="nombreturno" {if $editUser->nombre neq ''} disabled="disabled" {/if}/>
-									<input type="text" class="form-control cliente_nuevo " placeholder="escribe el teléfono del nuevo cliente" value="{$editUser->telefono}" id="telefonoturno" {if $editUser->telefono neq ''} disabled="disabled" {/if}/>
+									<input type="text" class="form-control cliente_nuevo" placeholder="Escribe el nombre del nuevo cliente" value="{$editUser->nombre}" id="nombreturno" {if $editUser->nombre neq ''} disabled="disabled" {/if}/>
+									<input type="text" class="form-control cliente_nuevo " placeholder="Escribe el teléfono del nuevo cliente" value="{$editUser->telefono}" id="telefonoturno" {if $editUser->telefono neq ''} disabled="disabled" {/if}/>
+									<input type="text" class="form-control cliente_nuevo " placeholder="Escribe el email del nuevo cliente" value="{$editUser->email}" id="emailturno" {if $editUser->email neq ''} disabled="disabled" {/if}/>
+									{if $accion eq 'add'}
+									<a href="#" class="nocliente" id="nocliente" >Guardar</a>
+									{/if}
 								</div>
 							</div>
 

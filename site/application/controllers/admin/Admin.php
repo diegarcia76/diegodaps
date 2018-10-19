@@ -165,7 +165,17 @@ class Admin extends BaseAdmin_Controller {
 			}
 
 			if($comentario!=''){
-
+				if ($aTurno->cliente){
+					$aComentario = \Managers\ComentarioManager::getInstance()->create();
+	
+					
+					$aComentario->fecha = new \Datetime('now');
+					$aComentario->usuario = $aTurno->cliente;
+					$aComentario->comentario = $comentario;				
+	
+					\Managers\ComentarioManager::getInstance()->save($aComentario);
+				}
+				
 				$aPago->comentario = $comentario;
 				$aPago = \Managers\PagoManager::getInstance()->save($aPago);
 			}

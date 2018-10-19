@@ -137,6 +137,11 @@ class ClienteDs extends BaseDataService {
 		return $todos;
 	} 
 	
+	public function getByUsernameEmail($username){
+		$todos = $this->em->getRepository($this->tbl_name)->findOneBy(array('email' => $username));
+		return $todos;
+	} 
+	
 	
 	
 	public function getByEmail($email){

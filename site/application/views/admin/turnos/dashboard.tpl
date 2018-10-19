@@ -52,7 +52,7 @@
             </ul>
             <div class="tab-content">
                 {foreach $aCoiffeurs as $co name=obje}
-                    <div role="tabpanel" class="tab-pane {if $smarty.foreach.obje.first } active {/if}" id="{$co->id}">
+				 <div role="tabpanel" class="tab-pane {if $smarty.foreach.obje.first } active {/if}" id="{$co->id}">
                         <div class="list-group" id="listado_horario_{$co->id}">
                         </div>
                     </div>

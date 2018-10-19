@@ -55,9 +55,9 @@
             <th>Nombre</th>
             <th>Marca</th>
             <th>Línea</th>
+			  <th width="15%">Precio Efectivo</th>
             <th width="10%">Precio</th>
-            <th width="15%">Precio Efectivo</th>
-            <th>Acciones</th>
+                  <th>Acciones</th>
     	</tr>
     </thead>
     <tbody>
@@ -84,8 +84,9 @@
                             {/foreach}
                     </select> 
                 </td>
+				 <td><input type="text" class="number form-control" name="producto_precio_efectivo" value="{$aProducto->precio_efectivo|number_format:2:'.':','}" data-default="{$aProducto->precio_efectivo_default|number_format:2:'.':','}"></td>
                 <td><input type="text" class="number form-control" name="producto_precio" value="{$aProducto->precio|number_format:2:'.':','}" data-default="{$aProducto->precio_default|number_format:2:'.':','}"></td>
-                <td><input type="text" class="number form-control" name="producto_precio_efectivo" value="{$aProducto->precio_efectivo|number_format:2:'.':','}" data-default="{$aProducto->precio_efectivo_default|number_format:2:'.':','}"></td>
+               
                 <td><button class="btn blue" type="submit">Guardar</button></td>
             </form>
         </tr>        

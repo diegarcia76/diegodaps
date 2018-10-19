@@ -83,10 +83,10 @@ class Turno extends \models\Turno implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'fecha_hora', 'prioridad', 'canjeado', 'canjeado_puntos', 'editado', 'nombre', 'telefono', 'cliente', 'servicio', 'coiffeur', 'estadoTurno', 'pago', 'fotos', 'valoraciones');
+            return array('__isInitialized__', 'id', 'fecha_hora', 'prioridad', 'canjeado', 'canjeado_puntos', 'editado', 'nombre', 'telefono', 'email', 'cliente', 'servicio', 'coiffeur', 'estadoTurno', 'pago', 'fotos', 'valoraciones');
         }
 
-        return array('__isInitialized__', 'id', 'fecha_hora', 'prioridad', 'canjeado', 'canjeado_puntos', 'editado', 'nombre', 'telefono', 'cliente', 'servicio', 'coiffeur', 'estadoTurno', 'pago', 'fotos', 'valoraciones');
+        return array('__isInitialized__', 'id', 'fecha_hora', 'prioridad', 'canjeado', 'canjeado_puntos', 'editado', 'nombre', 'telefono', 'email', 'cliente', 'servicio', 'coiffeur', 'estadoTurno', 'pago', 'fotos', 'valoraciones');
     }
 
     /**

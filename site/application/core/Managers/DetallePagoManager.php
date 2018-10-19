@@ -35,7 +35,7 @@ class DetallePagoManager extends BaseManager{
 	
 	public function create(){
 		$aDetallePago = parent::create();
-		$aDetallePago->fecha = new \Datetime('now');
+		//$aDetallePago->fecha = new \Datetime('now');
 		
 		return $aDetallePago;
 	}
@@ -106,6 +106,10 @@ class DetallePagoManager extends BaseManager{
 	public function setJoinDeCoiffeur($aCoiffeur = null){
 		return \Dataservices\DetallePagoDs::getInstance()->setJoinDeCoiffeur($aCoiffeur);		
 	}
+	
+	public function setJoinDeServicio($aCoiffeur = null){
+		return \Dataservices\DetallePagoDs::getInstance()->setJoinDeServicio($aCoiffeur);		
+	}
 
 	public function setJoinDePago($aPago = null){
 		return \Dataservices\DetallePagoDs::getInstance()->setJoinDePago($aPago);		
@@ -121,6 +125,12 @@ class DetallePagoManager extends BaseManager{
 
 	public function getBalancexFechas($fecha_start = null, $fecha_end = null){
 		return \Dataservices\DetallePagoDs::getInstance()->getBalancexFechas($fecha_start, $fecha_end);		
+	}
+	public function getBalancexFechas2($fecha_start = null, $fecha_end = null){
+		return \Dataservices\DetallePagoDs::getInstance()->getBalancexFechas2($fecha_start, $fecha_end);		
+	}
+	public function getBalancexFechas3($fecha_start = null, $fecha_end = null, $pel){
+		return \Dataservices\DetallePagoDs::getInstance()->getBalancexFechas3($fecha_start, $fecha_end, $pel);		
 	}
 
 }

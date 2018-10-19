@@ -68,10 +68,10 @@
                         </div>    
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="control-label">Precio Unitario</label>
+                                 <label class="control-label">Precio a Cobrar c/u</label>
                                 <div class="input-group">
                                     <span class="input-group-addon" id="basic-addon1">$</span>
-                                    <input type="text" class="form-control" readonly="readonly"  name="precio" placeholder="" value="" required="required">
+                                    <input type="text" class="form-control"  name="precio" placeholder="" value="" required="required">
                                 </div>                            
                             </div>
                         </div>

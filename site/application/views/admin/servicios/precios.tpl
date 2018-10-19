@@ -43,8 +43,8 @@
     	<tr>
             <th>Id</th>
             <th>Nombre</th>
-            <th>Precio</th>
             <th>Precio Efectivo</th>
+			<th>Precio</th>
             <th>Acciones</th>
     	</tr>
     </thead>
@@ -57,8 +57,9 @@
                         <input type="hidden" name="servicio_id" value="{$aServicio->id}">
                     </td>
                     <td>{$aServicio->nombre}</td>
+					 <td><input type="text" class="number form-control" name="servicio_precio_efectivo_default" value="{$aServicio->precio_efectivo_default|number_format:2:'.':','}" data-default="{$aServicio->precio_efectivo_default|number_format:2:'.':','}"></td>
                     <td><input type="text" class="number form-control" name="servicio_precio_default" value="{$aServicio->precio_default|number_format:2:'.':','}" data-default="{$aServicio->precio_default|number_format:2:'.':','}"></td>
-                    <td><input type="text" class="number form-control" name="servicio_precio_efectivo_default" value="{$aServicio->precio_efectivo_default|number_format:2:'.':','}" data-default="{$aServicio->precio_efectivo_default|number_format:2:'.':','}"></td>
+                   
                     <td><button class="btn blue" type="submit">Guardar</button></td>
                 </form>
             </tr>

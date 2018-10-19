@@ -93,7 +93,7 @@ class Pago extends My_Models
      */ 
     protected $cliente = null;   
 	
-	public function addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur = null, $comision = null, $descuento = null, $id =null){
+	public function addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur = null, $comision = null, $descuento = null, $id =null, $fecha){
 		$aDetallePago = \Managers\DetallePagoManager::getInstance()->create();
 		$aDetallePago->descripcion = $detalle;
 		$aDetallePago->cantidad = $cantidad;
@@ -105,6 +105,7 @@ class Pago extends My_Models
 		$aDetallePago->comision = $comision;
 		$aDetallePago->descuento = $descuento;
 		$aDetallePago->tipo = $tipo;
+		$aDetallePago->fecha = $fecha;
 
 		if($id){
 			if($tipo=='servicio'){
@@ -161,6 +162,7 @@ class Pago extends My_Models
 		$aDetallePago->descuento = $descuento;
 		$aDetallePago->tipo = 'servicio';
 		$aDetallePago->servicio = $aTurno->servicio;
+		$aDetallePago->fecha = new \DateTime('now');
 		
 		//Genera la comision tomando el precio menos el descuento (precio efectivo) [MP]
 		$comisionCoiffeur = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);

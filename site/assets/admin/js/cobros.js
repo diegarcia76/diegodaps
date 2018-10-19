@@ -373,10 +373,16 @@ var Cobros = function() {
 
 		if (isNaN(precio)) precio = 0;
 		var cantidad = parseInt($('#modal-agregar-producto select[name="cantidad"]').val());
+		
+		
 		var total = precio * cantidad;
 		var descuento = 0;
 		
+		//var precio2 = parseFloat($('#modal-agregar-producto select[name="precio"]').val());
+		//var total2 = precio2 * cantidad;
+		
 		$('#modal-agregar-producto .wpr-total span').html(total.toFixed(2));
+		//$('#modal-agregar-producto .wpr-total-2 span').html(total.toFixed(2));
 
 	}
 
@@ -400,9 +406,11 @@ var Cobros = function() {
 
 			$('#modal-agregar-producto')
 				.find('form').find('input[name="pago-id"]').val(pago_id);
-
+				
+			
 
 			$('#modal-agregar-producto').modal('show');
+			$('#modal-agregar-producto input[name="precio"]').val(0);
 		});
 
 		$('#modal-agregar-producto').find('select[name="producto-id"], select[name="cantidad"]').change(function(){
@@ -757,7 +765,6 @@ var Cobros = function() {
 			var theSelect = $('#servicio-id');
 			coiffeur_id = $(this).val();
 			var servicio_id = $(this).data('servicio_id');
-			//alert(servicio_id);
 			$.ajax({
 				url: __SITEURL+'admin/coiffeurs/getServiciosXCoiffeur/'+coiffeur_id,
 				type: 'POST',
@@ -961,6 +968,9 @@ var Cobros = function() {
 		});
 
 	}
+	
+	
+		
 
     return {
 		init: function(){

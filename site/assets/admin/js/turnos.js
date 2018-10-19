@@ -4,6 +4,7 @@ var Turnos = function() {
 	var coiffeur_id = null;
 
 	function cargarTurnos(){
+		
 
 		var date = $('#Adatepicker').datepicker("getDate");
 		var formatted = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
@@ -45,8 +46,9 @@ var Turnos = function() {
 				for (var index = parseInt(jsonData.hora_min); index < parseInt(jsonData.hora_max); index++) {
 
 					var strHs = '00'+index;
+				//	alert(strHs);
 					strHs = strHs.substr(-2);
-
+					//alert(strHs);
 					// armamos la fila correspondiente al horario
 	       			var aTr = $('<TR>').appendTo(aTableBody);
 
@@ -360,6 +362,7 @@ var Turnos = function() {
 		var turno_id = $('#turno_id').val();
 		var nombreturno = $('#nombreturno').val();
 		var telefonoturno = $('#telefonoturno').val();
+		var email = $('#emailturno').val();
 
 				WebDialogs.doLoading({
 					message: 'Aguarde...',
@@ -376,7 +379,8 @@ var Turnos = function() {
 				fecha: fecha,
 				turno_id: turno_id,
 				nombreturno: nombreturno,
-				telefonoturno: telefonoturno
+				telefonoturno: telefonoturno,
+				email: email
 			},
 			type: 'post',
 			dataType: 'json',
@@ -568,6 +572,35 @@ var Turnos = function() {
 				alert('No se puede reservar este turno');
 			}
 
+		});
+		
+		$('.nocliente').on('click', function(){
+			nombre = $('#nombreturno').val();
+			telefono = $('#telefonoturno').val();
+			email = $('#emailturno').val();
+			
+			
+				$.ajax({
+				url: __SITEURL+'admin/turnos/altaNoTurno/',
+				type: 'POST',
+				dataType: 'json',
+				data:{
+					nombre: nombre,
+					telefono: telefono,
+					email: email
+				},
+				success: function (jsonData){
+	              	if (jsonData.status == true){
+					alert("Cargado al sistema exitosamente");
+					}else{
+					alert("El mail ya se encuentra cargado en el sistema. Ingrese otro Email");	
+					}
+				}
+			});
+
+			
+			
+			
 		});
 
 	}
