@@ -503,7 +503,9 @@ class Cobros extends BaseAdmin_Controller
             $result['message'] = 'Servicio no encontrado';
         }
 	}else{
-		 $aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
+		 if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
+		 		$aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
+		 }		
 	}
 	       
 			
@@ -517,9 +519,17 @@ class Cobros extends BaseAdmin_Controller
             	$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
 				$descripcion = $aServicioXCoiffeur->servicio->nombre;
 			}else{
-				$descuento = 0;
-            	$comision = 0;
-				$descripcion = $aServicio->nombre;
+				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
+					$descuento = 0;
+            		$comision = 0;
+					$descripcion = $aServicio->nombre;
+				}else{
+					$descuento = $aServicioXCoiffeur->descuento_efectivo;
+            		$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
+					$descripcion = $aServicioXCoiffeur->servicio->nombre;
+				
+				
+				}	
 			}
             //$descripcion = $aServicio->nombre;
             //$precio = $aServicioXCoiffeur->precio;
@@ -531,7 +541,11 @@ class Cobros extends BaseAdmin_Controller
 			if ($coiffeur_id != 8){	
             $aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicioXCoiffeur->servicio->id, $fecha);
 			}else{
-			 $aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicio->id, $fecha);
+				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
+			 		$aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicio->id, $fecha);
+				}else{
+					$aPago->addDetallePago($descripcion, $cantidad, $precio, 'servicio', $aCoiffeur, $comision, $descuento, $aServicioXCoiffeur->servicio->id, $fecha);
+				}	
 			}
             $aPago = \Managers\PagoManager::getInstance()->save($aPago);
             $result['status'] = true;
@@ -570,9 +584,13 @@ if ($coiffeur_id != 8){
             $aPago = null;
             $result['message'] = 'Servicio no encontrado';
         }
-}
+}else{
+		 if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
+		 		$aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
+		 }		
+	}
 
-$aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
+//$aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
         if ($aPago) {
             $configuracion = \Managers\ConfiguracionManager::getInstance()->get(1);
 
@@ -582,9 +600,15 @@ $aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
             	$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
 				$descripcion = $aServicioXCoiffeur->servicio->nombre;
 			}else{
+				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
 				$descuento = 0;
             	$comision = 0;
 				$descripcion = $aServicio->nombre;
+				}else{
+				$descuento = $aServicioXCoiffeur->descuento_efectivo;
+            	$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
+				$descripcion = $aServicioXCoiffeur->servicio->nombre;
+				}
 			}
            // $descripcion = $aServicio->nombre;
         //    $precio = $aServicioXCoiffeur->precio;
@@ -600,7 +624,11 @@ $aServicio = \Managers\ServicioManager::getInstance()->get($servicio_id);
             $aDetallePago->descuento = $descuento;
             $aDetallePago->comision = $comision;
 			if ($coiffeur_id == 8){
-			   $aDetallePago->servicio = $aServicio;
+				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
+			   	$aDetallePago->servicio = $aServicio;
+			   }else{
+			   	$aDetallePago->servicio = $aServicioXCoiffeur->servicio;
+			   }
 			 }else{
 			 	$aDetallePago->servicio = $aServicioXCoiffeur->servicio;
 			}  

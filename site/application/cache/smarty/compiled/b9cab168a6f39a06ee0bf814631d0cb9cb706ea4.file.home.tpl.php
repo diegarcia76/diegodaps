@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-12 23:57:57
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:22
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:158305bb78632045d82-36905563%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:269705bc9fcc62a07f8-29423213%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -35,20 +35,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '158305bb78632045d82-36905563',
+  'nocache_hash' => '269705bc9fcc62a07f8-29423213',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb7863284f252_48975719',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bc9fcc698b752_74983368',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bb7863284f252_48975719')) {function content_5bb7863284f252_48975719($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5bc9fcc698b752_74983368')) {function content_5bc9fcc698b752_74983368($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
 ?><!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
@@ -516,20 +516,20 @@ if (!$_smarty_tpl->tpl_vars['aPago']->_loop) {
 <!-- modales de la pantalla -->
 <?php /*  Call merged included template "admin/cobros/modal-agregar-producto.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-producto.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '158305bb78632045d82-36905563');
-content_5bc118e60dade2_28522224($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-producto.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '269705bc9fcc62a07f8-29423213');
+content_5bc9fcc670cdb3_41116118($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/cobros/modal-agregar-producto.tpl" */?>
 <?php /*  Call merged included template "admin/cobros/modal-agregar-servicio.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-servicio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '158305bb78632045d82-36905563');
-content_5bc118e61ceb05_05812739($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-servicio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '269705bc9fcc62a07f8-29423213');
+content_5bc9fcc67e4e07_72066001($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/cobros/modal-agregar-servicio.tpl" */?>
 <?php /*  Call merged included template "admin/cobros/modal-agregar-item.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-item.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '158305bb78632045d82-36905563');
-content_5bc118e6285135_19950389($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-item.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '269705bc9fcc62a07f8-29423213');
+content_5bc9fcc6875551_01052521($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/cobros/modal-agregar-item.tpl" */?>
 
@@ -698,9 +698,9 @@ assets/admin/js/cobros.js?version=20180712"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-12 23:57:58
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:22
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\modal-agregar-producto.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bc118e60dade2_28522224')) {function content_5bc118e60dade2_28522224($_smarty_tpl) {?><div id="modal-agregar-producto" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-producto-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bc9fcc670cdb3_41116118')) {function content_5bc9fcc670cdb3_41116118($_smarty_tpl) {?><div id="modal-agregar-producto" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-producto-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-producto" action="<?php echo site_url();?>
 admin/cobros/addProducto" method="post" class="formulario">
     <input type="hidden" name="pago-id" value="" />
@@ -818,9 +818,9 @@ $_smarty_tpl->tpl_vars['aCoiffeur']->_loop = true;
     </div><!-- /.modal-dialog -->
     </form>
 </div><!-- /.modal --><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-12 23:57:58
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:22
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\modal-agregar-servicio.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bc118e61ceb05_05812739')) {function content_5bc118e61ceb05_05812739($_smarty_tpl) {?><div id="modal-agregar-servicio" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-servicio-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bc9fcc67e4e07_72066001')) {function content_5bc9fcc67e4e07_72066001($_smarty_tpl) {?><div id="modal-agregar-servicio" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-servicio-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-servicio" action="<?php echo site_url();?>
 admin/cobros/addServicio" method="post" class="formulario">
     <input type="hidden" name="pago-id" value="" />
@@ -936,9 +936,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
     </div><!-- /.modal-dialog -->
     </form>
 </div><!-- /.modal --><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-12 23:57:58
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:22
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\modal-agregar-item.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bc118e6285135_19950389')) {function content_5bc118e6285135_19950389($_smarty_tpl) {?><div id="modal-agregar-item" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-item-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bc9fcc6875551_01052521')) {function content_5bc9fcc6875551_01052521($_smarty_tpl) {?><div id="modal-agregar-item" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-item-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-item" action="<?php echo site_url();?>
 admin/cobros/saveItem" method="post" class="formulario"
     >

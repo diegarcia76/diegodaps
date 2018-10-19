@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-17 17:02:24
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:17
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\dashboard\home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:245045bb3e602e81080-57735150%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:115935bc9fcc15fa342-41158655%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -23,20 +23,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '245045bb3e602e81080-57735150',
+  'nocache_hash' => '115935bc9fcc15fa342-41158655',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb3e6034fbb67_79296115',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bc9fcc1a8c077_96973389',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bb3e6034fbb67_79296115')) {function content_5bb3e6034fbb67_79296115($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5bc9fcc1a8c077_96973389')) {function content_5bc9fcc1a8c077_96973389($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
 ?><!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
@@ -413,8 +413,8 @@ admin/turnos/editar/<?php echo $_smarty_tpl->tpl_vars['th']->value->id;?>
 </div>
 <?php /*  Call merged included template "admin/dashboard/modal-agregar-comentario.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/dashboard/modal-agregar-comentario.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '245045bb3e602e81080-57735150');
-content_5bc795519ecd07_07971805($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/dashboard/modal-agregar-comentario.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '115935bc9fcc15fa342-41158655');
+content_5bc9fcc1999c16_00628883($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/dashboard/modal-agregar-comentario.tpl" */?>
 
@@ -563,9 +563,9 @@ assets/admin/js/home.js"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-17 17:02:25
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:17
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\dashboard\modal-agregar-comentario.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bc795519ecd07_07971805')) {function content_5bc795519ecd07_07971805($_smarty_tpl) {?><div id="modal-agregar-comentario" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-comentario-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bc9fcc1999c16_00628883')) {function content_5bc9fcc1999c16_00628883($_smarty_tpl) {?><div id="modal-agregar-comentario" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-comentario-label" aria-hidden="true" data-backdrop='static'>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

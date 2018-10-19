@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-18 15:03:29
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:36:17
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\balance\imprimir.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:278905bbe4b9610ec01-76257474%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:56785bc9f9f1b1b5e6-79305712%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0a7199fe895138c4a013b7602911c7c6e1419f7d' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\balance\\imprimir.tpl',
-      1 => 1539885804,
+      1 => 1539963246,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '278905bbe4b9610ec01-76257474',
+  'nocache_hash' => '56785bc9f9f1b1b5e6-79305712',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bbe4b9634e663_46750375',
   'variables' => 
   array (
     'fechas_start' => 0,
@@ -33,8 +31,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'aBalance' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bc9f9f1d11be6_48666968',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bbe4b9634e663_46750375')) {function content_5bbe4b9634e663_46750375($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_5bc9f9f1d11be6_48666968')) {function content_5bc9f9f1d11be6_48666968($_smarty_tpl) {?>
 <?php echo '<script'; ?>
  type="text/javascript">
 window.onload = function(){
@@ -79,8 +79,7 @@ $_smarty_tpl->tpl_vars['aPel']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['aBal']->key => $_smarty_tpl->tpl_vars['aBal']->value) {
 $_smarty_tpl->tpl_vars['aBal']->_loop = true;
 ?>
-		<?php echo $_smarty_tpl->tpl_vars['aBal']->value[]['id'];?>
-
+		
 			<?php if ($_smarty_tpl->tpl_vars['aPel']->value->id==$_smarty_tpl->tpl_vars['aBal']->value['id']) {?>	
       			
 		

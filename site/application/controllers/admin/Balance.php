@@ -122,9 +122,28 @@ class Balance extends BaseAdmin_Controller {
 		//$this->data['aBalance'] = $aBalance;
 		$this->data['aBalance2'] = $aBalance2;
 		$this->data['aPeluquero'] = $aPeluquero;
-		$this->data['fechas_start'] = $fechas_start;
-		$this->data['fechas_end'] = $fechas_end;
+		$this->data['fechas_start'] = $fechas[0];
+		$this->data['fechas_end'] = $fechas[1];
 		
+		
+		$this->parser->parse($this->parsePath.'imprimir.tpl', $this->data);
+
+	}
+	
+	public function imprimir2(){
+		
+		$fechas = explode(' - ', $this->input->post('input-fecha'));
+		
+		$fechas_start = DateTime::createFromFormat('d/m/Y', $fechas[0]);
+		$fechas_end = DateTime::createFromFormat('d/m/Y', $fechas[1]);
+
+		$aBalance = \Managers\DetallePagoManager::getInstance()->getBalancexFechas($fechas_start, $fechas_end);
+		/*echo "<pre>";
+		print_r($aBalance);
+		echo "</pre>";*/
+		$this->data['aBalance'] = $aBalance;
+		$this->data['fechas_start'] = $fechas[0];
+		$this->data['fechas_end'] = $fechas[1];
 		
 		$this->parser->parse($this->parsePath.'imprimir.tpl', $this->data);
 

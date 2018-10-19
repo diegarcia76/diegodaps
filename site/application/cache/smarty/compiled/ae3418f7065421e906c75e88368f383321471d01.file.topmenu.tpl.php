@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:41:23
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:36:11
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\include\topmenu.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:96775bb3e603519f41-77641603%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:166125bc9f9ebb4e662-49012651%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '96775bb3e603519f41-77641603',
+  'nocache_hash' => '166125bc9f9ebb4e662-49012651',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb3e6035b64c6_97292346',
+  'unifunc' => 'content_5bc9f9ebb8c875_43789286',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bb3e6035b64c6_97292346')) {function content_5bb3e6035b64c6_97292346($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.capitalize.php';
+<?php if ($_valid && !is_callable('content_5bc9f9ebb8c875_43789286')) {function content_5bc9f9ebb8c875_43789286($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_capitalize')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.capitalize.php';
 ?><div class="page-logo">
                         <a href="<?php echo site_url();?>
 admin">

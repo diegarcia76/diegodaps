@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-02 23:34:22
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:36:12
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\estadoscss.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:102555bb3e45ed753b9-51161955%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:83615bc9f9ec7ef945-97006982%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '102555bb3e45ed753b9-51161955',
+  'nocache_hash' => '83615bc9f9ec7ef945-97006982',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bb3e45edc8163_04023414',
+  'unifunc' => 'content_5bc9f9ec858909_15496705',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bb3e45edc8163_04023414')) {function content_5bb3e45edc8163_04023414($_smarty_tpl) {?><?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['e']->_loop = false;
+<?php if ($_valid && !is_callable('content_5bc9f9ec858909_15496705')) {function content_5bc9f9ec858909_15496705($_smarty_tpl) {?><?php  $_smarty_tpl->tpl_vars['e'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['e']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['estados']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['e']->key => $_smarty_tpl->tpl_vars['e']->value) {
 $_smarty_tpl->tpl_vars['e']->_loop = true;

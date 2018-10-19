@@ -504,29 +504,39 @@ class Coiffeurs extends BaseAdmin_Controller {
 
 		$aCoiffeur = Managers\CoiffeurManager::getInstance()->get($id_coiffeur);
 		$servicios = array();
-		/*
+		$servicios1 = array();
+		$servicios2 = array();
+		$servicios_temp = array();
+		
 		if ($id_coiffeur == 8){
 			$aServ = Managers\ServicioManager::getInstance()->getAllDiego();
 				foreach($aServ as $se){
-					$servicios[] = \Managers\ServicioManager::getInstance()->toArray2($se);		
+					$servicios1[] = \Managers\ServicioManager::getInstance()->toArray2($se);		
+				}
+				foreach($aCoiffeur->serviciosXCoiffeur as $se){
+					$servicios_temp[] = \Managers\ServicioXCoiffeurManager::getInstance()->toArray($se);		
 				}
 			
-		
+			$servicios2 = array_merge($servicios1, $servicios_temp);
+			//var_dump($servicios2); die();
+				$result['servicios'] = $servicios2;
+				echo json_encode($result);
 		}else{
-		*/
+		
 			foreach($aCoiffeur->serviciosXCoiffeur as $se){
 				$servicios[] = \Managers\ServicioXCoiffeurManager::getInstance()->toArray($se);		
 			}
+				$result['servicios'] = $servicios;
+				echo json_encode($result);
 		
 		
-		//}	
+		}	
 				
 		
 		
 					
 
-		$result['servicios'] = $servicios;
-		echo json_encode($result);
+	
 
 	}
 
