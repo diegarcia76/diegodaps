@@ -55,6 +55,13 @@ var Tickets = function() {
 					orderable: false,
 					searchable: false,
 					width: '240px'
+				},
+				{   // 6
+					data: 'hidden',
+					name: 'c.id',
+					orderable: false,
+					searchable: true,
+					visible: false
 				}
 				
 			]						
@@ -62,7 +69,21 @@ var Tickets = function() {
 	}
 
 
-
+var handleFiltros = function(){
+		
+		$('#filtro-cliente').change(function(){
+			var clienten = $(this).val();
+			if (!clienten){
+				clienten = '';
+			}
+			var datatable = $("#tblTickets").DataTable();
+			datatable.column(6)
+                    .search(clienten)
+                    .draw();
+			//handleSubt();
+		});
+				
+	}
 	var handleSelect = function(){
 		$('select.select2').each(function(){
 			var thePlaceholder = $(this).attr('placeholder');
@@ -78,6 +99,7 @@ var Tickets = function() {
 		initListado: function(){
 			handleSelect();
 			handleTable();
+			handleFiltros();
 		},
 	}
 }();

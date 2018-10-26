@@ -46,6 +46,7 @@
             <th>Precio Efectivo</th>
 			<th>Precio</th>
             <th>Acciones</th>
+			  <th>Eliminar</th>
     	</tr>
     </thead>
     <tbody>
@@ -59,8 +60,9 @@
                     <td>{$aServicio->nombre}</td>
 					 <td><input type="text" class="number form-control" name="servicio_precio_efectivo_default" value="{$aServicio->precio_efectivo_default|number_format:2:'.':','}" data-default="{$aServicio->precio_efectivo_default|number_format:2:'.':','}"></td>
                     <td><input type="text" class="number form-control" name="servicio_precio_default" value="{$aServicio->precio_default|number_format:2:'.':','}" data-default="{$aServicio->precio_default|number_format:2:'.':','}"></td>
-                   
+                 
                     <td><button class="btn blue" type="submit">Guardar</button></td>
+					 <td><input type="checkbox" name="eliminar[]" class="eliminar" id="eliminar" rel="{$aServicio->id}" value="{$aServicio->id}"/></td>
                 </form>
             </tr>
             
@@ -68,6 +70,7 @@
     </tbody>
     <tfoot>
         <tr><td colspan="5"> <button class="btn green pull-right" type="button" id="guardar_todos">Guardar Todos</button> </td></tr>
+		 <tr><td colspan="5"> <button class="btn red pull-right" type="button" id="eliminar_todos">Eliminar Seleccionados</button> </td></tr>
         
     </tfoot>
     </table>

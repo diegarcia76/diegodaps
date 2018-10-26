@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:36:11
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-26 15:56:19
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\balance\listado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:187445bc9f9eb77cf36-37739747%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd8828c29490a5703c05db5f97ac0f3d5421af2af' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\balance\\listado.tpl',
-      1 => 1539731093,
+      1 => 1540580162,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -21,14 +21,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bc9f9ebab0db3_70485079',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bc9f9ebab0db3_70485079',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bc9f9ebab0db3_70485079')) {function content_5bc9f9ebab0db3_70485079($_smarty_tpl) {?><!DOCTYPE html>
 <!--
@@ -278,20 +278,7 @@ $_smarty_tpl->tpl_vars['aSe']->_loop = true;
                                 </div>
                             </div>
 							
-							 <div class="col-md-3 m-r-2">
-                                <div class="form-group">
-                                    <label class="control-label m-b-1 ">Forma de Pago</label>
-                                        <select id="filtro-pago" name="filtro-pago" class="form-control select2 " placeholder='Seleccione tipo de pago'>
-                                            <option value="">Sin filtrar</option>
-                                        
-                                            <option value="1">Efectivo</option>
-											 <option value="2">Tarjeta</option>
-                                      
-                                        </select>
-                                </div>
-                            </div>
-                          
-						  
+							 
 						  
 						  
 						  
@@ -308,18 +295,20 @@ $_smarty_tpl->tpl_vars['aSe']->_loop = true;
             <th>Pago</th>
             <th>Fecha Pago</th>
             <th>Coiffeur</th>
+			 <th>Acción</th>
             <th>Cliente</th>
             <th>Descripción</th>
-            <th class="dt-right">Precio</th>
+            <th>Precio</th>
             <th class="dt-right">Importe</th>
             <th class="dt-right">Comisión</th>
+			 <th class="dt-right">Acciones</th>
         </tr>
     </thead>
     <tbody>
     </tbody>
     <tfoot>
             <tr>
-                <th colspan="5" style="text-align:right">Totales:</th>
+                <th colspan="6" style="text-align:right">Totales:</th>
                 <th></th>
                 <th></th>
                 <th></th>

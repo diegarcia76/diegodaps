@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:36:11
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-26 15:15:32
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\include\sidebarmenu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:187655bc9f9ebbbcb61-49253456%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dc62352638c4b4573828f1f7120ae3a18ba3701d' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\include\\sidebarmenu.tpl',
-      1 => 1539805673,
+      1 => 1540577710,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bc9f9ebe95ea1_85863207',
   'variables' => 
   array (
     'menuactive' => 0,
@@ -22,8 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'submenuactive' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bc9f9ebe95ea1_85863207',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bc9f9ebe95ea1_85863207')) {function content_5bc9f9ebe95ea1_85863207($_smarty_tpl) {?><ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='Dashboard') {?>active<?php }?>">
@@ -80,6 +80,13 @@ admin/coiffeurs"> <i class="fa fa-user"></i> <span class="title">Coiffeurs</span
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='balance') {?>active<?php }?>">
         <a href="<?php echo site_url();?>
 admin/balance"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="title">Balance</span></a>
+    </li>
+    <?php }?>
+	
+	<?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1))) {?>
+    <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='caja') {?>active<?php }?>">
+        <a href="<?php echo site_url();?>
+admin/caja"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="title">Caja</span></a>
     </li>
     <?php }?>
 
@@ -140,6 +147,12 @@ admin/broadcast"> <i class="fa fa-wifi"></i> <span class="title">Broadcast</span
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='usuarios') {?>active<?php }?>">
         <a href="<?php echo site_url();?>
 admin/usuarios"> <i class="fa fa-users" aria-hidden="true"></i> <span class="title">Usuarios</span></a>
+    </li>
+    <?php }?>
+	  <?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1,2))) {?>
+    <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='tarjetas') {?>active<?php }?>">
+        <a href="<?php echo site_url();?>
+admin/tarjetas"> <i class="fa fa-money" aria-hidden="true"></i> <span class="title">Configurar Cuotas T/C</span></a>
     </li>
     <?php }?>
 

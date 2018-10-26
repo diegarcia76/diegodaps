@@ -61,8 +61,8 @@ class ComentarioManager extends BaseManager{
 	}
 	
 
-	public function setJoinDeCliente($aCoiffeur = null){
-		return \Dataservices\ComentarioDs::getInstance()->setJoinDeCliente($aCoiffeur);		
+	public function setJoinDeCliente($aCliente = null){
+		return \Dataservices\ComentarioDs::getInstance()->setJoinDeCliente($aCliente);	
 	}
 
 }

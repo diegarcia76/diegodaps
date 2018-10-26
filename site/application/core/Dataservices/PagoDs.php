@@ -33,7 +33,19 @@ class PagoDs extends BaseDataService {
 	
 	public function getPendientes(){
 		return $this->em->getRepository($this->tbl_name)->findBy(array('cobrado' => false), array('fecha' =>'ASC'));
-	}    
+	}   
+	
+	 public function setJoinDeCliente($aCliente = null){
+        $this->aCliente = $aCliente;
+        $this->miFuncion[] = 'setDatasourceJoinsCliente';
+    }
+
+    protected function setDatasourceJoinsCliente(){        
+    	$this->qb->leftjoin('d.cliente','c');
+        if($this->aCliente){ 
+            $this->qb->andWhere($this->qb->expr()->eq('c.id', $this->aCliente->id));
+        }
+    } 
 
 }
 

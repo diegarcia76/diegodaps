@@ -138,6 +138,9 @@ class ProductoDs extends BaseDataService {
 
 	
 	} 
+	
+	
+	
 
 
     public function setJoinDeMarcas(){

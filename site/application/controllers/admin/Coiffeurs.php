@@ -506,6 +506,7 @@ class Coiffeurs extends BaseAdmin_Controller {
 		$servicios = array();
 		$servicios1 = array();
 		$servicios2 = array();
+		$servicios3 = array();
 		$servicios_temp = array();
 		
 		if ($id_coiffeur == 8){
@@ -518,6 +519,8 @@ class Coiffeurs extends BaseAdmin_Controller {
 				}
 			
 			$servicios2 = array_merge($servicios1, $servicios_temp);
+			//var_dump($servicios2);
+		//	$servicios3 = sort($servicios2[], SORT_REGULAR);
 			//var_dump($servicios2); die();
 				$result['servicios'] = $servicios2;
 				echo json_encode($result);
@@ -637,6 +640,35 @@ class Coiffeurs extends BaseAdmin_Controller {
 		echo json_encode($result);
 
 		
+	}
+	
+	
+	public function eliminar_todos(){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar Estilista';
+		$result['message'] = 'Imposible eliminar el Estilista';
+
+		$lote = $this->input->post('lote');
+		
+		
+		$i =0;
+		foreach ($lote as $lot){
+			if ($aCoiffeur = Managers\CoiffeurManager::getInstance()->get($lot)){
+
+				
+				\Managers\CoiffeurManager::getInstance()->delete($aCoiffeur);
+				
+			
+			}
+		}
+		
+			
+				$result["title"]   = "Estilista eliminado";
+				$result["status"]  = true;
+				$result["message"] = 'Se han eliminado los Estilistas';	
+		
+
+		echo json_encode($result);
 	}
 
 

@@ -33,13 +33,27 @@
     <div class="portlet-title">
        <div class="table-toolbar">
 	        <div class="row">
-	            <div class="col-md-6">
+	            <div class="col-md-3">
 	                <div class="btn-group">
 	                    <a class="btn green pull-right" href="{site_url()}admin/servicios/add"> <i class="icon-plus"></i> Agregar Sevicio</a>
 	                </div>
 	            </div>
-                <div class="col-md-6 text-right">
-                        <a class="btn default" href="{site_url()}admin/servicios/listadeprecios">Lista de precios</a>
+				<div class="col-md-3">
+	                <div class="btn-group">
+	                     <a class="btn default" href="{site_url()}admin/servicios/listadeprecios">Lista de precios</a>
+	                </div>
+	            </div>
+                <div class="col-md-3">
+					
+                       
+						 <a class="btn default" href="{site_url()}admin/servicios/aumentar">Aumento Global de Precios (Lista general)</a>
+						  <a class="btn default" href="{site_url()}admin/servicios/rebajar">Rebaja Global de Precios (Lista general)</a>
+                </div>  
+				 <div class="col-md-3">
+					
+                       
+						 <a class="btn default" href="{site_url()}admin/servicios/aumentarCoiffeurs">Aumento de Precios (Coiffeurs)</a>
+						  <a class="btn default" href="{site_url()}admin/servicios/rebajarCoiffeurs">Rebaja de Precios (Coiffeurs)</a>
                 </div>                
 	        </div>
 	    </div>

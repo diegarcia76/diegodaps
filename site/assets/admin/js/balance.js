@@ -85,36 +85,36 @@ var Balance = function() {
 
 				// Total over this page
 							pageTotalPrecio = api
-				                .column( 5, { page: 'current'} )
-				                .data()
-				                .reduce( function (a, b) {
-				                    return Math.round((intVal(a) + intVal(b)) *100 )/100;
-				                }, 0 );
-
-				            pageTotal = api
 				                .column( 6, { page: 'current'} )
 				                .data()
 				                .reduce( function (a, b) {
 				                    return Math.round((intVal(a) + intVal(b)) *100 )/100;
 				                }, 0 );
 
-				            pageTotalComision = api
+				            pageTotal = api
 				                .column( 7, { page: 'current'} )
 				                .data()
 				                .reduce( function (a, b) {
 				                    return Math.round((intVal(a) + intVal(b)) *100 )/100;
 				                }, 0 );
 
+				            pageTotalComision = api
+				                .column( 8, { page: 'current'} )
+				                .data()
+				                .reduce( function (a, b) {
+				                    return Math.round((intVal(a) + intVal(b)) *100 )/100;
+				                }, 0 );
+
 				            // Update footer
-				            $( api.column( 5 ).footer() ).html(
+				            $( api.column( 6 ).footer() ).html(
 				                '$'+pageTotalPrecio //+' ( $'+ total +' total)'
 				            );
 
-				            $( api.column( 6 ).footer() ).html(
+				            $( api.column( 7 ).footer() ).html(
 				                '$'+pageTotal //+' ( $'+ total +' total)'
 				            );
 
-				            $( api.column( 7 ).footer() ).html(
+				            $( api.column( 8 ).footer() ).html(
 				                '$'+pageTotalComision //+' ( $'+totalComision+')'
 				            );
 
@@ -149,6 +149,12 @@ var Balance = function() {
 					name: 'c.nombre',
 					orderable: true,
 					searchable: true
+				},
+				{   // 11
+					data: 'acciones',
+					orderable: false,
+					searchable: false,
+					width: '50px'
 				},
 				{   // 3
 					data: 'cliente_name',
@@ -210,7 +216,8 @@ var Balance = function() {
 					orderable: false,
 					searchable: true,
 					visible: false
-				},
+				}
+				
 
 			]
 		});
@@ -278,9 +285,9 @@ var Balance = function() {
 			}, function(start, end, label) {
 			   // console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
 				var datatable = $("#tblBalance").DataTable();
-				datatable.column(9)
+				datatable.column(10)
 						.search(start.format('DD/MM/YYYY'))
-						.column(10)
+						.column(11)
 						.search(end.format('DD/MM/YYYY'))
 						.draw();
 
@@ -299,7 +306,7 @@ var Balance = function() {
 				clienten = '';
 			}
 			var datatable = $("#tblBalance").DataTable();
-			datatable.column(8)
+			datatable.column(9)
                     .search(clienten)
                     .draw();
 			//handleSubt();
@@ -311,7 +318,7 @@ var Balance = function() {
 				clienten = '';
 			}
 			var datatable = $("#tblBalance").DataTable();
-			datatable.column(11)
+			datatable.column(12)
                     .search(clienten)
                     .draw();
 			//handleSubt();

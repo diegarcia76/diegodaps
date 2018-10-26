@@ -83,10 +83,10 @@ class Pago extends \models\Pago implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'fecha', 'fecha_pago', 'total', 'comentario', 'cobrado', 'canje', 'nombre', 'turnos', 'pagos', 'detallePago', 'cliente');
+            return array('__isInitialized__', 'id', 'fecha', 'fecha_pago', 'total', 'comentario', 'cobrado', 'canje', 'nombre', 'turnos', 'pagos', 'detallePago', 'cliente', 'totale', 'totalt', 'forma');
         }
 
-        return array('__isInitialized__', 'id', 'fecha', 'fecha_pago', 'total', 'comentario', 'cobrado', 'canje', 'nombre', 'turnos', 'pagos', 'detallePago', 'cliente');
+        return array('__isInitialized__', 'id', 'fecha', 'fecha_pago', 'total', 'comentario', 'cobrado', 'canje', 'nombre', 'turnos', 'pagos', 'detallePago', 'cliente', 'totale', 'totalt', 'forma');
     }
 
     /**

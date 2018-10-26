@@ -55,6 +55,8 @@
     <tbody>
     </tbody>
     </table>
+	
+	 <tr><td colspan="5"> <button class="btn red pull-right" type="button" id="eliminar_todos">Eliminar Seleccionados</button> </td></tr>
     </div>
 </div>
 {/block}

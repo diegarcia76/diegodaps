@@ -92,4 +92,22 @@ class DetallePago extends My_Models
      * @JoinColumn(name="productoId", referencedColumnName="id")
      */ 
     protected $producto = null;
+	
+	/**
+     * @var float $totale
+     * @Column(name="totale", type="float", nullable=true)
+     */
+    protected $totale;
+	
+	/**
+     * @var float $totalt
+     * @Column(name="totalt", type="float", nullable=true)
+     */
+    protected $totalt;
+	
+	  /**
+     * @var integer $forma
+     * @Column(name="forma", type="integer", nullable=true)
+     */
+    protected $forma;
 }

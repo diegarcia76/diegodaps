@@ -58,6 +58,7 @@
 			  <th width="15%">Precio Efectivo</th>
             <th width="10%">Precio</th>
                   <th>Acciones</th>
+				   <th>Eliminar</th>
     	</tr>
     </thead>
     <tbody>
@@ -85,15 +86,19 @@
                     </select> 
                 </td>
 				 <td><input type="text" class="number form-control" name="producto_precio_efectivo" value="{$aProducto->precio_efectivo|number_format:2:'.':','}" data-default="{$aProducto->precio_efectivo_default|number_format:2:'.':','}"></td>
-                <td><input type="text" class="number form-control" name="producto_precio" value="{$aProducto->precio|number_format:2:'.':','}" data-default="{$aProducto->precio_default|number_format:2:'.':','}"></td>
+                <td><input type="text" class="number form-control" name="producto_precio" value="{$aProducto->precio|number_format:2:'.':','}" data-default="{$aProducto->precio_default|number_format:2:'.':','}">
+				
+				</td>
                
                 <td><button class="btn blue" type="submit">Guardar</button></td>
+					 <td><input type="checkbox" name="eliminar[]" class="eliminar" id="eliminar" rel="{$aProducto->id}" value="{$aProducto->id}"/></td>
             </form>
         </tr>        
         {/foreach}    
     </tbody>
     <tfoot>
         <tr><td colspan="6"> <button class="btn green pull-right" type="button" id="guardar_todos">Guardar Todos</button> </td></tr>
+		 <tr><td colspan="6"> <button class="btn red pull-right" type="button" id="eliminar_todos">Eliminar Seleccionados</button> </td></tr>
         
     </tfoot>
     </table>

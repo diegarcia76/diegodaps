@@ -51,9 +51,9 @@ class Balance extends BaseAdmin_Controller {
 		// Data for Data-Tables
 		$data = $this->input->post('columns');
 
-		if($data[9]['search']['value'] != '' && $data[10]['search']['value'] != ''){
-			$fechaActualDesde = trim($data[9]['search']['value']);
-			$fechaActualHasta = trim($data[10]['search']['value']);
+		if($data[10]['search']['value'] != '' && $data[11]['search']['value'] != ''){
+			$fechaActualDesde = trim($data[10]['search']['value']);
+			$fechaActualHasta = trim($data[11]['search']['value']);
 		 } else {
 		 	$fechaActualDesde = date('d/m/Y');
 		 	$fechaActualHasta = date('d/m/Y');
@@ -148,6 +148,34 @@ class Balance extends BaseAdmin_Controller {
 		$this->parser->parse($this->parsePath.'imprimir.tpl', $this->data);
 
 	}
+	
+	public function change($id){
+		
+		
+		$aBalance = \Managers\DetallePagoManager::getInstance()->get($id);
+		/*echo "<pre>";
+		print_r($aBalance);
+		echo "</pre>";*/
+		$this->data['pago'] = $aBalance;
+		$this->data['coiffeurs'] = \Managers\CoiffeurManager::getInstance()->getActiveAll();
+		
+		
+		$this->parser->parse($this->parsePath.'form.tpl', $this->data);
+
+	}
+	public function saveChange($id){
+		
+		$id = $this->input->post('pago');
+		$estilista = $this->input->post('estilista');
+		$est = \Managers\CoiffeurManager::getInstance()->get($estilista);
+		$aPago = \Managers\DetallePagoManager::getInstance()->get($id);
+		$aPago->coiffeur = $est;
+		$aPago = \Managers\DetallePagoManager::getInstance()->save($aPago);
+		
+		redirect('admin/balance');
+
+	}
+	
 
 
 }

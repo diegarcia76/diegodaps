@@ -323,6 +323,35 @@ class Clientes extends BaseAdmin_Controller {
 		$data = \Managers\ClienteManager::getInstance()->getDatatableDatasource($this->input->post());
 		echo $data;
 	}
+	public function eliminar_todos(){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar Estilista';
+		$result['message'] = 'Imposible eliminar el Estilista';
+
+		$lote = $this->input->post('lote');
+		
+		
+		$i =0;
+		foreach ($lote as $lot){
+			if ($aCliente = Managers\ClienteManager::getInstance()->get($lot)){
+
+				/*if (($aUsuario->federacion->id != $this->federacionActual->id) && ($this->session->userdata('login_admin')=='federacion')){
+					$result['message'] = 'El usuario que trata de eliminar no es de esta federación';
+				}else{*/
+				Managers\ClienteManager::getInstance()->delete($aCliente);
+				
+			
+			}
+		}
+		
+			
+				$result["title"]   = "Estilista eliminado";
+				$result["status"]  = true;
+				$result["message"] = 'Se han eliminado los Estilistas';	
+		
+
+		echo json_encode($result);
+	}
 
 
 }

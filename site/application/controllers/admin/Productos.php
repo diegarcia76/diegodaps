@@ -86,6 +86,34 @@ class Productos extends BaseAdmin_Controller {
 
 		echo json_encode($result);
 	}
+	
+	public function eliminar_todos(){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar producto';
+		$result['message'] = 'Imposible eliminar el producto';
+
+		$lote = $this->input->post('lote');
+		
+		
+		$i =0;
+		foreach ($lote as $lot){
+			if ($aProducto = Managers\ProductoManager::getInstance()->get($lot)){
+		
+				Managers\ProductoManager::getInstance()->delete($aProducto);
+				
+			
+			}
+		}
+		
+			
+				$result["title"]   = "Productos eliminado";
+				$result["status"]  = true;
+				$result["message"] = 'Se han eliminado los productos';	
+		
+
+		echo json_encode($result);
+	}
+	
 
 	public function editar($producto_id){
 
@@ -539,6 +567,267 @@ class Productos extends BaseAdmin_Controller {
 		$pdf = \Managers\PdfManager::getInstance()->generarListadoPrecios($marcas_ids);
 
 
+	}
+	
+	public function aumentar(){
+		$breadcrumb = array();
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Aumento de precios de productos';
+			$this->data['aMarcas'] = Managers\MarcaManager::getInstance()->getAll();
+			//$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumentar.tpl', $this->data);
+	}
+	
+	public function saveAumentar(){
+		$breadcrumb = array();
+			$aumento = intval($this->input->post('aumento'));
+			$marca = intval($this->input->post('marca'));
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Aumento de precios de Productos';
+
+			if ($marca == 0){
+				$aServicios = Managers\ProductoManager::getInstance()->getAll();
+			}else{
+				$aServicios = Managers\ProductoManager::getInstance()->getByMarca($marca);
+			
+			}
+			
+			
+			$sub = 0;
+			
+			
+			foreach ($aServicios as $ser){
+				set_time_limit(300);
+				$precio = $ser->precio;
+				//echo $precio."<br>";
+				$precio2 = $ser->precio_efectivo;
+				$sub =$precio +  ($precio * $aumento / 100);
+				$sub2 =$precio2 +  ($precio2 * $aumento / 100);
+				//echo $sub."<br>";
+				$sub = round($sub, 0);
+				$sub2 = round($sub2, 0);
+				//echo "FINAL: ".$sub."<br>";  
+				//echo "ULTIMO ".substr($sub,-1,1)."<br>";
+				$ultimo = substr($sub,-1,1);
+				$ultimo2 = substr($sub2,-1,1);
+				if ($ultimo == 0){
+					$final = $sub;
+				}
+				if ($ultimo == 1){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 2){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 3){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 4){
+					$final = $sub + 1;
+				}
+				if ($ultimo == 5){
+					$final = $sub ;
+				}
+				if ($ultimo == 6){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 7){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 8){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 9){
+					$final = $sub + 1;
+				}
+				
+				//
+				
+				if ($ultimo2 == 0){
+					$final2 = $sub2;
+				}
+				if ($ultimo2 == 1){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 2){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 3){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 4){
+					$final2 = $sub2 + 1;
+				}
+				if ($ultimo2 == 5){
+					$final2 = $sub2 ;
+				}
+				if ($ultimo2 == 6){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 7){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 8){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 9){
+					$final2 = $sub2 + 1;
+				}
+				
+				
+				
+				
+				$aSer = Managers\ProductoManager::getInstance()->get($ser->id);
+				$aSer->precio = $final;
+				$aSer->precio_efectivo = $final2;
+				$aSer = Managers\ProductoManager::getInstance()->save($aSer);
+				
+				//echo "final ".$final."<br>";
+				
+				
+				//round(3.6, 0); 
+				
+			}
+			//die();
+			
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formOk.tpl', $this->data);
+	}
+	
+	public function rebajar(){
+		$breadcrumb = array();
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Rebaja de precios de Productos';
+			$this->data['aMarcas'] = Managers\MarcaManager::getInstance()->getAll();
+			//$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formRebajar.tpl', $this->data);
+	}
+	
+	public function saveRebajar(){
+		$breadcrumb = array();
+		$aumento = intval($this->input->post('aumento'));
+			$marca = intval($this->input->post('marca'));
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Descuento de precios de productos';
+
+
+			if ($marca == 0){
+				$aServicios = Managers\ProductoManager::getInstance()->getAll();
+			}else{
+				$aServicios = Managers\ProductoManager::getInstance()->getByMarca($marca);
+			
+			}
+			$sub = 0;
+			
+			
+			foreach ($aServicios as $ser){
+			set_time_limit(300);
+				$precio = $ser->precio;
+				//echo $precio."<br>";
+				$precio2 = $ser->precio_efectivo;
+				$sub =$precio -  ($precio * $aumento / 100);
+				$sub2 =$precio2 -  ($precio2 * $aumento / 100);
+				//echo $sub."<br>";
+				$sub = round($sub, 0);
+				$sub2 = round($sub2, 0);
+				//echo "FINAL: ".$sub."<br>";  
+				//echo "ULTIMO ".substr($sub,-1,1)."<br>";
+				$ultimo = substr($sub,-1,1);
+				$ultimo2 = substr($sub2,-1,1);
+				if ($ultimo == 0){
+					$final = $sub;
+				}
+				if ($ultimo == 1){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 2){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 3){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 4){
+					$final = $sub + 1;
+				}
+				if ($ultimo == 5){
+					$final = $sub ;
+				}
+				if ($ultimo == 6){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 7){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 8){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 9){
+					$final = $sub + 1;
+				}
+				
+				//
+				
+				if ($ultimo2 == 0){
+					$final2 = $sub2;
+				}
+				if ($ultimo2 == 1){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 2){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 3){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 4){
+					$final2 = $sub2 + 1;
+				}
+				if ($ultimo2 == 5){
+					$final2 = $sub2 ;
+				}
+				if ($ultimo2 == 6){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 7){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 8){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 9){
+					$final2 = $sub2 + 1;
+				}
+				
+								
+				$aSer = Managers\ProductoManager::getInstance()->get($ser->id);
+				$aSer->precio = $final;
+				$aSer->precio_efectivo = $final2;
+				$aSer = Managers\ProductoManager::getInstance()->save($aSer);
+				
+				//echo "final ".$final."<br>";
+				
+				
+				//round(3.6, 0); 
+				
+			}
+			//die();
+			
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formOk.tpl', $this->data);
 	}
 
 }

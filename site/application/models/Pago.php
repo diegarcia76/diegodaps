@@ -91,7 +91,25 @@ class Pago extends My_Models
      * @ManyToOne(targetEntity="Cliente", inversedBy="pagos")
      * @JoinColumn(name="cliente_id", referencedColumnName="id")
      */ 
-    protected $cliente = null;   
+    protected $cliente = null; 
+	
+	/**
+     * @var float $totale
+     * @Column(name="totale", type="float", nullable=true)
+     */
+    protected $totale;
+	
+	/**
+     * @var float $totalt
+     * @Column(name="totalt", type="float", nullable=true)
+     */
+    protected $totalt;
+	
+	  /**
+     * @var integer $forma
+     * @Column(name="forma", type="integer", nullable=true)
+     */
+    protected $forma;  
 	
 	public function addDetallePago($detalle, $cantidad, $precio, $tipo, $aCoiffeur = null, $comision = null, $descuento = null, $id =null, $fecha){
 		$aDetallePago = \Managers\DetallePagoManager::getInstance()->create();
@@ -145,6 +163,7 @@ class Pago extends My_Models
 		// revisamos si el servicio fue canjeado revisando el turno
 		if ($aTurno->canjeado == true){
 			$detalleExtra = ' (X Canje de puntos ['.$aTurno->canjeado_puntos.'])';
+			$precioServicio = $aServicioXCoiffeur->precio;
 		} else {
 			$precioServicio = $aServicioXCoiffeur->precio;
 		}
@@ -158,8 +177,14 @@ class Pago extends My_Models
 		$aDetallePago->descripcion = $aTurno->servicio->nombre;
 		//$aDetallePago->descripcion = $aTurno->servicio->nombre.' con '.$aTurno->coiffeur->nombre.$detalleExtra;
 		$aDetallePago->cantidad = 1;
+		
+		if ($aTurno->canjeado == true){
+		$aDetallePago->precio = 0;
+		$aDetallePago->descuento = 0;
+		}else{
 		$aDetallePago->precio = $precioServicio;
 		$aDetallePago->descuento = $descuento;
+		}
 		$aDetallePago->tipo = 'servicio';
 		$aDetallePago->servicio = $aTurno->servicio;
 		$aDetallePago->fecha = new \DateTime('now');
@@ -171,9 +196,12 @@ class Pago extends My_Models
 		$aDetallePago->coiffeur = $aTurno->coiffeur;
 		$aDetallePago->comision = $comisionCoiffeur;
 	
+		if ($aTurno->canjeado == true){
+		$this->total +=0;
+			} else {
+		
 		$this->total += $precioServicio;
-		
-		
+		}
 		$this->turnos->add($aTurno);
 		$aTurno->pago = $this;
 		
@@ -186,5 +214,7 @@ class Pago extends My_Models
 	public function getNroFormateado(){
 		return substr('00000'.$this->id, -5);
 	}
+
+	
 	
 }

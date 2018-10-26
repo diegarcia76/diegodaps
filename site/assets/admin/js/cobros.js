@@ -8,13 +8,15 @@ var Cobros = function() {
 			window.open($(this).attr('href'),'_blank');
 			window.location.reload();
 		});
-
+		
 
 		$('.btn-confirm-efectivo').click(function(){
 			pago_id = $(this).data('id-pago');
 			total_efectivo = $('.monto-efectivo').val();
 			cb_modificar_fecha = ($('.cb_modificar_fecha').is(':checked'))?1:0;
 			fecha_cobro = $('.fecha_cobro').val();
+			var recargo = 0;
+			var tipo = 1;
 
 			//alert('combo: '+cb_modificar_fecha);
 			//alert('fecha: '+fecha_cobro);
@@ -30,7 +32,9 @@ var Cobros = function() {
 					tipo:'efectivo',
 					total_efectivo: total_efectivo,
 					cb_modificar_fecha:cb_modificar_fecha,
-					fecha_cobro:fecha_cobro
+					fecha_cobro:fecha_cobro,
+					recargo:recargo,
+					forma:tipo
 				},
 				type: 'POST',
 				dataType: 'json',
@@ -55,6 +59,12 @@ var Cobros = function() {
 			total_tarjeta = $(this).data('total-tarjeta');
 			cb_modificar_fecha = ($('.cb_modificar_fecha').is(':checked'))?1:0;
 			fecha_cobro = $('.fecha_cobro').val();
+			interes = $('.t').val();
+			var interes = total_tarjeta + (total_tarjeta * interes / 100);
+			var recargo = interes - total_tarjeta;
+			var tipo = 2;
+			//alert(recargo);
+			//return false;
 
 			WebDialogs.doLoading({
 				message: 'Enviando Información al cliente',
@@ -66,7 +76,9 @@ var Cobros = function() {
 						tipo:'noefectivo',
 						monto: total_tarjeta,
 						cb_modificar_fecha:cb_modificar_fecha,
-						fecha_cobro:fecha_cobro
+						fecha_cobro:fecha_cobro,
+						recargo:recargo,
+						forma:tipo
 
 				},
 				type: 'POST',
@@ -146,7 +158,9 @@ var Cobros = function() {
 						url: __SITEURL+'admin/cobros/pagar/'+pago_id,
 						data: {
 								tipo:'noefectivo',
-								monto: 0
+								monto: 0,
+								recargo:0,
+								forma:3
 						},
 						type: 'POST',
 						dataType: 'json',
@@ -172,8 +186,68 @@ var Cobros = function() {
 
 
 		});
+		
+		$('.cobrarCombinando').click(function(){
+											  
+			$('#confirmarCobro').modal('hide');											  	
+			$('#confirmarCobroCombinado').modal('show');
+			
+			
+			
+			
+		});
+		
+		$('.finalizar').click(function(){
+		var pago_id = $('input[name="idc"]').val();		
+		var total = $('input[name="totalc"]').val();	
+		var totale = $('input[name="monto-efectivoc"]').val();
+		var totalt = $('input[name="monto-tarjetac"]').val();
+				WebDialogs.doLoading({
+						message: 'Enviando Información al cliente',
+						title: 'Cobro'						
+					});
+				
+		$.ajax({
+						url: __SITEURL+'admin/cobros/pagar/'+pago_id,
+						data: {
+								tipo:'combinado',
+								monto: totale,
+								recargo:totalt,
+								forma:4
+						},
+						type: 'POST',
+						dataType: 'json',
+						success: function (jsonData){					
+							//alert(jsonData.message);
+							WebDialogs.doCloseLoading();
+							$('#confirmarCobroCombinado').modal('hide');
 
+							WebDialogs.doAlert({
+								message: 'Pago realizado',
+								title: 'Éxito',
+								onConfirm: function(){
+									window.location.reload();
+								}
+							});
+						}
+					});		
+				
+		
+		
+		//alert(totale);							   
+		});							   
 
+		$('#t').change(function(){
+		
+		
+		
+		var total = $('.btn-confirm-no-efectivo').data('total-tarjeta');
+		var interes = $('.t').val();
+		
+		
+		var subt = total + (total * interes / 100);
+		$('.btn-confirm-no-efectivo').html('<i class="fa fa-check"></i>Cobrar $'+subt+'.-');
+		});
 
 		$('.cobrar').click(function(){
 
@@ -527,6 +601,58 @@ var Cobros = function() {
 		});
 
 	}
+	
+	
+	
+	
+	var handleEliminarTodos = function(){
+		$('#eliminar_todos').on('click', function(e){
+			e.preventDefault();
+			var lote = new Array ();
+			var elimina =  $('input[name="eliminar[]"]');
+			//alert(lote);
+			for(i = 0; i < elimina.length; i++){
+				if (elimina[i].checked){
+				lote[i]=elimina[i].value;
+				//alert("SI");	
+					}
+					
+					//
+				
+				//alert(lote[i]);
+			}
+			
+			
+			WebDialogs.doLoading({
+				message: 'Eliminando Seleccionados',
+				title: 'Eliminar'						
+			});
+
+			$.ajax({
+				url: __SITEURL+'admin/cobros/eliminar_todos/',
+				data: {
+					lote:lote
+				},
+				type: 'POST',
+				dataType: 'json',
+				success: function (jsonData){					
+					//alert(jsonData.message);
+					WebDialogs.doCloseLoading();
+					
+					WebDialogs.doAlert({
+						message: 'Se realizó la operación',
+						title: 'Éxito',
+						onConfirm: function(){
+							window.location.reload();
+						}
+					});
+				}
+			});
+			
+		});
+	}
+	
+	
 
 	var handleEliminarItem = function(){
 
@@ -983,6 +1109,7 @@ var Cobros = function() {
 			handleEditarItem();
 			handleSelectInModals();
 			handleChangeCliente();
+			handleEliminarTodos();
 		}
 
 	}

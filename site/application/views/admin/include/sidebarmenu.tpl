@@ -47,6 +47,12 @@
         <a href="{site_url()}admin/balance"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="title">Balance</span></a>
     </li>
     {/if}
+	
+	{if $actualBackuser->perfil->id|in_array:array(1)}
+    <li class="{if $menuactive eq 'caja'}active{/if}">
+        <a href="{site_url()}admin/caja"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="title">Caja</span></a>
+    </li>
+    {/if}
 
     {if $actualBackuser->perfil->id|in_array:array(1,2)}
     <li class="{if $menuactive eq 'tickets'}active{/if}">
@@ -97,6 +103,11 @@
     {if $actualBackuser->perfil->id|in_array:array(1)}
     <li class="{if $menuactive eq 'usuarios'}active{/if}">
         <a href="{site_url()}admin/usuarios"> <i class="fa fa-users" aria-hidden="true"></i> <span class="title">Usuarios</span></a>
+    </li>
+    {/if}
+	  {if $actualBackuser->perfil->id|in_array:array(1,2)}
+    <li class="{if $menuactive eq 'tarjetas'}active{/if}">
+        <a href="{site_url()}admin/tarjetas"> <i class="fa fa-money" aria-hidden="true"></i> <span class="title">Configurar Cuotas T/C</span></a>
     </li>
     {/if}
 

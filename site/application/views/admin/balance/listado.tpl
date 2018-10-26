@@ -94,20 +94,7 @@
                                 </div>
                             </div>
 							
-							 <div class="col-md-3 m-r-2">
-                                <div class="form-group">
-                                    <label class="control-label m-b-1 ">Forma de Pago</label>
-                                        <select id="filtro-pago" name="filtro-pago" class="form-control select2 " placeholder='Seleccione tipo de pago'>
-                                            <option value="">Sin filtrar</option>
-                                        
-                                            <option value="1">Efectivo</option>
-											 <option value="2">Tarjeta</option>
-                                      
-                                        </select>
-                                </div>
-                            </div>
-                          
-						  
+							 
 						  
 						  
 						  
@@ -124,18 +111,20 @@
             <th>Pago</th>
             <th>Fecha Pago</th>
             <th>Coiffeur</th>
+			 <th>Acción</th>
             <th>Cliente</th>
             <th>Descripción</th>
-            <th class="dt-right">Precio</th>
+            <th>Precio</th>
             <th class="dt-right">Importe</th>
             <th class="dt-right">Comisión</th>
+			 <th class="dt-right">Acciones</th>
         </tr>
     </thead>
     <tbody>
     </tbody>
     <tfoot>
             <tr>
-                <th colspan="5" style="text-align:right">Totales:</th>
+                <th colspan="6" style="text-align:right">Totales:</th>
                 <th></th>
                 <th></th>
                 <th></th>

@@ -93,6 +93,10 @@ class DetallePagoManager extends BaseManager{
 					}
 				}
 				return '$ '.number_format(0, 2);
+			},
+			'acciones' => function($aDetallePago){
+				
+				return MainManager::getInstance()->getParse('admin/balance/acciones.tpl',array('edit_user' => $aDetallePago));
 			}
 			
 		);		
@@ -131,6 +135,72 @@ class DetallePagoManager extends BaseManager{
 	}
 	public function getBalancexFechas3($fecha_start = null, $fecha_end = null, $pel){
 		return \Dataservices\DetallePagoDs::getInstance()->getBalancexFechas3($fecha_start, $fecha_end, $pel);		
+	}
+	
+	public function getDatatableDatasourceCaja($data){
+		// print_r($data);
+		// print_r($data);
+		$formats = array(
+			/*'acciones' => function($aUsuario){
+				return MainManager::getInstance()->getParse('admin/usuarios/acciones.tpl',array('edit_user' => $aUsuario));
+			},*/
+			'pago' => function($aDetallePago){				
+				return $aDetallePago->pago->id;
+			},
+			'fecha' => function($aDetallePago){
+				if($aDetallePago->pago->fecha){
+					return $aDetallePago->pago->fecha->format('d/m/Y H:i');
+				}
+				return 'no definido';
+			},
+			'coiffeur' => function($aDetallePago){
+				
+				if($aDetallePago->coiffeur){
+					return $aDetallePago->coiffeur->nombre;
+				}
+				return '--';
+			},
+			'cliente_name' => function($aDetallePago){
+				if($aDetallePago->pago->cliente){
+					return $aDetallePago->pago->cliente->nombre;
+				} else {
+					return $aDetallePago->pago->nombre;
+				}
+				
+			},
+			'precio' => function($aDetallePago){
+				if($aDetallePago->precio){
+					return '$ '.number_format((($aDetallePago->precio)*$aDetallePago->cantidad), 2);
+				}
+				return '$ '.number_format(0, 2);
+			},
+			'importe' => function($aDetallePago){
+				if($aDetallePago->precio){
+					if($aDetallePago->tipo != 'descuento'){
+						return '$ '.number_format((($aDetallePago->precio-$aDetallePago->descuento)*$aDetallePago->cantidad), 2);
+					}
+				}
+				return '$ '.number_format(0, 2);
+			},
+			'comision' => function($aDetallePago){
+				if($aDetallePago->comision){
+					if($aDetallePago->tipo != 'descuento'){
+						return '$ '.number_format($aDetallePago->comision, 2);
+					}
+				}
+				return '$ '.number_format(0, 2);
+			},
+			'acciones' => function($aDetallePago){
+				
+				return MainManager::getInstance()->getParse('admin/balance/acciones.tpl',array('edit_user' => $aDetallePago));
+			}
+			
+		);		
+		
+		$datasource = \Dataservices\DetallePagoDs::getInstance()->getDatatableSource($data);
+		$count 		= \Dataservices\DetallePagoDs::getInstance()->getDatatableSourceCount($data);
+				
+		return DatatableManager::getInstance()->getDatasource($datasource, $data, $count, $formats);
 	}
 
 }

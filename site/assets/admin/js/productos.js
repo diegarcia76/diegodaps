@@ -363,6 +363,56 @@ var Productos = function() {
 			
 		});
 	}
+	
+	var handleEliminarTodos = function(){
+		$('#eliminar_todos').on('click', function(e){
+			e.preventDefault();
+			var lote = new Array ();
+			var elimina =  $('input[name="eliminar[]"]');
+			//alert(lote);
+			for(i = 0; i < elimina.length; i++){
+				if (elimina[i].checked){
+				lote[i]=elimina[i].value;
+				//alert("SI");	
+					}
+					
+					//
+				
+				//alert(lote[i]);
+			}
+			
+			
+			WebDialogs.doLoading({
+				message: 'Eliminando Seleccionados',
+				title: 'Eliminar'						
+			});
+
+			$.ajax({
+				url: __SITEURL+'admin/productos/eliminar_todos/',
+				data: {
+					lote:lote
+				},
+				type: 'POST',
+				dataType: 'json',
+				success: function (jsonData){					
+					//alert(jsonData.message);
+					WebDialogs.doCloseLoading();
+					
+					WebDialogs.doAlert({
+						message: 'Se realizó la operación',
+						title: 'Éxito',
+						onConfirm: function(){
+							window.location.reload();
+						}
+					});
+				}
+			});
+			
+		});
+	}
+	
+	
+	
 
 	var handleMarcasSelect = function(){
 
@@ -432,6 +482,7 @@ var Productos = function() {
 			handleFiltros();
 			handleGuardarTodos();
 			handleMarcasSelect();
+			handleEliminarTodos();
 			// handleImprimirPrecios();
 		}
 	}

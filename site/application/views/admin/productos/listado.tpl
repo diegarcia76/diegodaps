@@ -34,12 +34,14 @@
     <div class="portlet-title">
        <div class="table-toolbar">
 	        <div class="row">
-	            <div class="col-md-6">
+	            <div class="col-md-4">
                     <a class="btn green" href="{site_url()}admin/productos/add"> <i class="icon-plus"></i> Agregar Producto</a>
                     <a class="btn green" href="{site_url()}admin/productos/listar_marcas"> <i class="icon-plus"></i> Administrar Marcas</a>
 	            </div>                
-                <div class="col-md-6 text-right">
+                <div class="col-md-8 text-right">
                     <a class="btn default" href="{site_url()}admin/productos/precios"> <i class="fa fa-dollar"></i> Listado de Precios</a>
+					<a class="btn default" href="{site_url()}admin/productos/aumentar"> <i class="fa fa-dollar"></i> Aumento Global de Precios</a>
+					<a class="btn default" href="{site_url()}admin/productos/rebajar"> <i class="fa fa-dollar"></i> Rebaja Global de Precios</a>
                 </div>
 	        </div>
 	    </div>

@@ -98,14 +98,20 @@
 																						{if $actualBackuser->perfil->id|in_array:array(1)}
 																						<button class="btn btn-default btn-sm btn-eliminar-item" data-id-detalle="{$aDetallePago->id}" > <i class="fa fa-trash"></i></button>
 																						{/if}
+																						
+																						
 																						<button class="btn btn-default btn-sm btn-modificar-item" data-id-detalle="{$aDetallePago->id}" > <i class="fa fa-pencil"></i></button>
+																						
+																				<input type="checkbox" name="eliminar[]" class="eliminar" id="eliminar" rel="{$aDetallePago->id}" value="{$aDetallePago->id}"/>		
 																					</td>
 																			</tr>
+																			
 																	{/foreach}
 																			<tr>
 																					<td colspan="4" class="text-right">TOTAL</td>
 																					<th>${$aPago->total|floatval|number_format:2:",":"."}</th>
 																			</tr>
+																			 <tr><td colspan="5"> <button class="btn red pull-right" type="button" id="eliminar_todos">Eliminar Seleccionados</button> </td></tr>
 																	</tbody>
 																	</table>
 														</div>
@@ -230,12 +236,110 @@
 			            <input type="text" class="form-control fecha_cobro" id="Adatepicker" name="fecha_cobro">
 						    
 		            </p>
+					
+					<p class="wpr-fecha-cobro form-inline ">
+		            	Si realiza el pago con tarjeta (Interés):<br/>
+			            <select id="t"  name="t" class="form-control select2 t" placeholder='tarjeta'>
+                                    <option value="{$t->cuota1}">{$t->cuota1} % 1 cuota  de {$aPago->total}</option>
+									{$to = $aPago->total + ($aPago->total * $t->cuota2 / 100) }
+									{$tf = $to / 2}
+									  <option value="{$t->cuota2}">{$t->cuota2} %  2 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+									  
+									  {$to = $aPago->total + ($aPago->total * $t->cuota3 / 100) }
+									{$tf = $to / 3}
+									    <option value="{$t->cuota3}">{$t->cuota3} %  3 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+										
+										{$to = $aPago->total + ($aPago->total * $t->cuota4 / 100) }
+									{$tf = $to / 4}
+										  <option value="{$t->cuota4}">{$t->cuota4} %  4 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+										  
+										  {$to = $aPago->total + ($aPago->total * $t->cuota5 / 100) }
+									{$tf = $to / 5}
+										    <option value="{$t->cuota5}">{$t->cuota5} %  5 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+											
+											{$to = $aPago->total + ($aPago->total * $t->cuota6 / 100) }
+									{$tf = $to / 6}
+											  <option value="{$t->cuota6}">{$t->cuota6} %  6 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+											  
+											  {$to = $aPago->total + ($aPago->total * $t->cuota7 / 100) }
+									{$tf = $to / 7}
+											    <option value="{$t->cuota7}">{$t->cuota7} %  7 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+												
+												{$to = $aPago->total + ($aPago->total * $t->cuota8 / 100) }
+									{$tf = $to / 8}
+												  <option value="{$t->cuota8}">{$t->cuota8} %  8 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+												  
+												  {$to = $aPago->total + ($aPago->total * $t->cuota9 / 100) }
+									{$tf = $to / 9}
+												    <option value="{$t->cuota9}">{$t->cuota9} %  9 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+													
+													{$to = $aPago->total + ($aPago->total * $t->cuota10 / 100) }
+									{$tf = $to / 10}
+													  <option value="{$t->cuota10}">{$t->cuota10} %  10 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+													  
+													  {$to = $aPago->total + ($aPago->total * $t->cuota11 / 100) }
+									{$tf = $to / 11}
+													    <option value="{$t->cuota11}">{$t->cuota11} %  11 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+														
+														{$to = $aPago->total + ($aPago->total * $t->cuota12 / 100) }
+									{$tf = $to / 12}
+														  <option value="{$t->cuota12}">{$t->cuota12} %  12 cuotas de {$tf|floatval|number_format:2:".":""} c/u</option>
+                                	
+                                   
+                                </select>
+						
+						
+						    
+		            </p>
+					
 		        </div>    
             </div>
             <div class="modal-footer">
               	<button class="btn btn-default btn-cancelar" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i> Cancelar</button>
               	<button class="btn btn-success green btn-confirm-efectivo"></button>
               	<button class="btn btn-success green btn-confirm-no-efectivo"></button>
+				<button class="btn btn-success blue cobrarCombinando">Combinar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+
+</div>
+
+
+<div id="confirmarCobroCombinado" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content modal-warning">
+            <div class="modal-body">
+	            <div class="wpr">
+					 <p class="wpr-efectivo form-inline">
+		            	Monto a Cobrar (Tarjeta saldo en 1 cuota)<br/>
+						<div class="success green btn-confirm-no-efectivo"></div>
+		            	
+		            </p>
+					
+		           	           
+		            <p class="wpr-efectivo form-inline">
+		            	Monto en Efectivo:<br/>
+		            	<input type="text" class="form-control numeric monto-efectivo2" name="monto-efectivoc"  value="0" >
+		            </p>
+					 <p class="wpr-efectivo form-inline">
+		            	Monto con Tarjeta:<br/>
+		            	<input type="text" class="form-control numeric monto-tarjeta2" name="monto-tarjetac" value="0" >
+		            </p>
+		           	         
+						<input type="hidden" name="idc" value="{$aPago->id}" >
+						<input type="hidden" name="totalc" value="{$aPago->total}" >
+						
+					 
+					
+		        </div>    
+            </div>
+            <div class="modal-footer">
+              	<button class="btn btn-default btn-cancelar" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i> Cancelar</button>
+               	<button class="btn btn-success green finalizar">FINALIZAR</button>
+				
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

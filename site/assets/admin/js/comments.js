@@ -34,8 +34,8 @@ var Comments = function() {
 				},
 				{   // 4
 					data: 'cliente',
-					name: 'c.id',
-					orderable: false,
+					name: 'd.id',
+					orderable: true,
 					searchable: true
 				},
 				{   // 5
@@ -43,7 +43,15 @@ var Comments = function() {
 					name: 'd.comentario',
 					orderable: true,
 					searchable: true
-				}
+				},
+				{   // 6
+					data: 'hidden',
+					name: 'c.id',
+					orderable: false,
+					searchable: true,
+					visible: false
+				},
+				
 				
 				
 				
@@ -51,7 +59,21 @@ var Comments = function() {
 		});
 	}
 
-
+var handleFiltros = function(){
+		
+		$('#filtro-cliente').change(function(){
+			var clienten = $(this).val();
+			if (!clienten){
+				clienten = '';
+			}
+			var datatable = $("#tblComentarios").DataTable();
+			datatable.column(4)
+                    .search(clienten)
+                    .draw();
+			//handleSubt();
+		});
+				
+	}
 	
 	var handleSpinners = function(){
 		$('.spinner_fed').spinner({value:0, min: 0, max: 9999});
@@ -76,6 +98,7 @@ var Comments = function() {
 		initListado: function(){
 			handleSelect();
 			handleTable();
+			handleFiltros();
 			},
 	
 	}

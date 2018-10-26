@@ -80,6 +80,38 @@ class Servicios extends BaseAdmin_Controller {
 
 	}
 
+	public function eliminar_todos(){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar producto';
+		$result['message'] = 'Imposible eliminar el producto';
+
+		$lote = $this->input->post('lote');
+		
+		
+		$i =0;
+		foreach ($lote as $lot){
+			if ($aServicio = Managers\ServicioManager::getInstance()->get($lot)){
+
+				/*if (($aUsuario->federacion->id != $this->federacionActual->id) && ($this->session->userdata('login_admin')=='federacion')){
+					$result['message'] = 'El usuario que trata de eliminar no es de esta federación';
+				}else{*/
+				Managers\ServicioManager::getInstance()->delete($aServicio);
+				
+			
+			}
+		}
+		
+			
+				$result["title"]   = "Productos eliminado";
+				$result["status"]  = true;
+				$result["message"] = 'Se han eliminado los productos';	
+		
+
+		echo json_encode($result);
+	}
+
+
+
 	public function eliminar($servicio_id){
 		$result['status'] = false;
 		$result['title'] = 'Error al eliminar servicio';
@@ -343,5 +375,490 @@ class Servicios extends BaseAdmin_Controller {
 	public function imprimir(){
 		$pdf = \Managers\PdfManager::getInstance()->generarListadoPreciosServicios();
 	}
+	
+	public function aumentar(){
+		$breadcrumb = array();
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Aumento de precios de Servicios';
+
+			//$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumento.tpl', $this->data);
+	}
+	
+	public function saveAumento(){
+		$breadcrumb = array();
+			$aumento = intval($this->input->post('aumento'));
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Aumento de precios de Servicios';
+
+			$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			$sub = 0;
+			$sub2 = 0;
+			
+			foreach ($aServicios as $ser){
+				set_time_limit(300);
+				$precio = $ser->precio_default;
+				//echo $precio."<br>";
+				$precio2 = $ser->precio_efectivo_default;
+				$sub =$precio +  ($precio * $aumento / 100);
+				$sub2 =$precio2 +  ($precio2 * $aumento / 100);
+				//echo $sub."<br>";
+				$sub = round($sub, 0);
+				$sub2 = round($sub2, 0);
+				//echo "FINAL: ".$sub."<br>";  
+				//echo "ULTIMO ".substr($sub,-1,1)."<br>";
+				$ultimo = substr($sub,-1,1);
+				$ultimo2 = substr($sub2,-1,1);
+				if ($ultimo == 0){
+					$final = $sub;
+				}
+				if ($ultimo == 1){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 2){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 3){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 4){
+					$final = $sub + 1;
+				}
+				if ($ultimo == 5){
+					$final = $sub ;
+				}
+				if ($ultimo == 6){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 7){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 8){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 9){
+					$final = $sub + 1;
+				}
+				
+				//
+				
+				if ($ultimo2 == 0){
+					$final2 = $sub2;
+				}
+				if ($ultimo2 == 1){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 2){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 3){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 4){
+					$final2 = $sub2 + 1;
+				}
+				if ($ultimo2 == 5){
+					$final2 = $sub2 ;
+				}
+				if ($ultimo2 == 6){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 7){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 8){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 9){
+					$final2 = $sub2 + 1;
+				}
+				
+				$aSer = Managers\ServicioManager::getInstance()->get($ser->id);
+				$aSer->precio_default = $final;
+				$aSer->precio_efectivo_default = $final2;
+				$aSer = Managers\ServicioManager::getInstance()->save($aSer);
+				
+				//echo "final ".$final."<br>";
+				
+				
+				//round(3.6, 0); 
+				
+			}
+			//die();
+			
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumentoOk.tpl', $this->data);
+	}
+	
+	public function rebajar(){
+		$breadcrumb = array();
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Rebaja de precios de Servicios';
+
+			//$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formRebaja.tpl', $this->data);
+	}
+	
+	public function saveRebaja(){
+		$breadcrumb = array();
+			$aumento = intval($this->input->post('aumento'));
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Rebaja de precios de Servicios';
+
+			$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			$sub = 0;
+			$sub2 = 0;
+			
+			foreach ($aServicios as $ser){
+			set_time_limit(300);
+				$precio = $ser->precio;
+				//echo $precio."<br>";
+				$precio2 = $ser->precio_efectivo;
+				$sub =$precio -  ($precio * $aumento / 100);
+				$sub2 =$precio2 -  ($precio2 * $aumento / 100);
+				//echo $sub."<br>";
+				$sub = round($sub, 0);
+				$sub2 = round($sub2, 0);
+				//echo "FINAL: ".$sub."<br>";  
+				//echo "ULTIMO ".substr($sub,-1,1)."<br>";
+				$ultimo = substr($sub,-1,1);
+				$ultimo2 = substr($sub2,-1,1);
+				if ($ultimo == 0){
+					$final = $sub;
+				}
+				if ($ultimo == 1){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 2){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 3){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 4){
+					$final = $sub + 1;
+				}
+				if ($ultimo == 5){
+					$final = $sub ;
+				}
+				if ($ultimo == 6){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 7){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 8){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 9){
+					$final = $sub + 1;
+				}
+				
+				//
+				
+				if ($ultimo2 == 0){
+					$final2 = $sub2;
+				}
+				if ($ultimo2 == 1){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 2){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 3){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 4){
+					$final2 = $sub2 + 1;
+				}
+				if ($ultimo2 == 5){
+					$final2 = $sub2 ;
+				}
+				if ($ultimo2 == 6){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 7){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 8){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 9){
+					$final2 = $sub2 + 1;
+				}
+				
+				$aSer = Managers\ServicioManager::getInstance()->get($ser->id);
+				$aSer->precio = $final;
+				$aSer->precio_efectivo = $final2;
+				$aSer = Managers\ServicioManager::getInstance()->save($aSer);
+				
+				//echo "final ".$final."<br>";
+				
+				
+				//round(3.6, 0); 
+				
+			}
+			//die();
+			
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumentoOk.tpl', $this->data);
+	}
+	
+	
+	public function aumentarCoiffeurs(){
+		$breadcrumb = array();
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Aumento de precios de Servicios x Coiffeurs';
+
+			//$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumentoCoiffeurs.tpl', $this->data);
+	}
+	
+	public function saveAumentoCoiffeurs(){
+		$breadcrumb = array();
+			$aumento = intval($this->input->post('aumento'));
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Aumento de precios de Servicios x Coiffeurs';
+
+			$aServicios = Managers\ServicioXCoiffeurManager::getInstance()->getAll();
+			$sub = 0;
+			$sub2 = 0;
+			
+			foreach ($aServicios as $ser){
+			set_time_limit(300);
+				$precio = $ser->precio;
+				//echo $precio."<br>";
+				$precio2 = $ser->precio_efectivo;
+				$sub =$precio +  ($precio * $aumento / 100);
+				$sub2 =$precio2 +  ($precio2 * $aumento / 100);
+				//echo $sub."<br>";
+				$sub = round($sub, 0);
+				$sub2 = round($sub2, 0);
+				//echo "FINAL: ".$sub."<br>";  
+				//echo "ULTIMO ".substr($sub,-1,1)."<br>";
+				$ultimo = substr($sub,-1,1);
+				$ultimo2 = substr($sub2,-1,1);
+				if ($ultimo == 0){
+					$final = $sub;
+				}
+				if ($ultimo == 1){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 2){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 3){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 4){
+					$final = $sub + 1;
+				}
+				if ($ultimo == 5){
+					$final = $sub ;
+				}
+				if ($ultimo == 6){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 7){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 8){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 9){
+					$final = $sub + 1;
+				}
+				
+				//
+				
+				if ($ultimo2 == 0){
+					$final2 = $sub2;
+				}
+				if ($ultimo2 == 1){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 2){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 3){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 4){
+					$final2 = $sub2 + 1;
+				}
+				if ($ultimo2 == 5){
+					$final2 = $sub2 ;
+				}
+				if ($ultimo2 == 6){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 7){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 8){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 9){
+					$final2 = $sub2 + 1;
+				}
+				
+				$aSer = Managers\ServicioXCoiffeurManager::getInstance()->get($ser->id);
+				$aSer->precio = $final;
+				$aSer->precio_efectivo = $final2;
+				$aSer = Managers\ServicioXCoiffeurManager::getInstance()->save($aSer);
+				
+				//echo "final ".$final."<br>";
+				
+				
+				//round(3.6, 0); 
+				
+			}
+			//die();
+			
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumentoOk.tpl', $this->data);
+	}
+	public function rebajarCoiffeurs(){
+		$breadcrumb = array();
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Rebaja de precios de Servicios x Coiffeurs';
+
+			//$aServicios = Managers\ServicioManager::getInstance()->getAll();
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formRebajaCoiffeurs.tpl', $this->data);
+	}
+	
+	public function saveRebajaCoiffeurs(){
+		$breadcrumb = array();
+			$aumento = intval($this->input->post('aumento'));
+			$breadcrumb['Dashboard'] = $this->controller_url('admin');
+			$this->data['breadcrumb'] = $breadcrumb;
+
+			$this->data['pageSubtitle'] = 'Rebaja de precios de Servicios x Coiffeurs';
+
+			$aServicios = Managers\ServicioXCoiffeurManager::getInstance()->getAll();
+			$sub = 0;
+			$sub2 = 0;
+			
+			foreach ($aServicios as $ser){
+			set_time_limit(300);
+				$precio = $ser->precio_default;
+				//echo $precio."<br>";
+				$precio2 = $ser->precio_efectivo_default;
+				$sub =$precio -  ($precio * $aumento / 100);
+				$sub2 =$precio2 -  ($precio2 * $aumento / 100);
+				//echo $sub."<br>";
+				$sub = round($sub, 0);
+				$sub2 = round($sub2, 0);
+				//echo "FINAL: ".$sub."<br>";  
+				//echo "ULTIMO ".substr($sub,-1,1)."<br>";
+				$ultimo = substr($sub,-1,1);
+				$ultimo2 = substr($sub2,-1,1);
+				if ($ultimo == 0){
+					$final = $sub;
+				}
+				if ($ultimo == 1){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 2){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 3){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 4){
+					$final = $sub + 1;
+				}
+				if ($ultimo == 5){
+					$final = $sub ;
+				}
+				if ($ultimo == 6){
+					$final = $sub + 4;
+				}
+				if ($ultimo == 7){
+					$final = $sub + 3;
+				}
+				if ($ultimo == 8){
+					$final = $sub + 2;
+				}
+				if ($ultimo == 9){
+					$final = $sub + 1;
+				}
+				
+				//
+				
+				if ($ultimo2 == 0){
+					$final2 = $sub2;
+				}
+				if ($ultimo2 == 1){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 2){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 3){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 4){
+					$final2 = $sub2 + 1;
+				}
+				if ($ultimo2 == 5){
+					$final2 = $sub2 ;
+				}
+				if ($ultimo2 == 6){
+					$final2 = $sub2 + 4;
+				}
+				if ($ultimo2 == 7){
+					$final2 = $sub2 + 3;
+				}
+				if ($ultimo2 == 8){
+					$final2 = $sub2 + 2;
+				}
+				if ($ultimo2 == 9){
+					$final2 = $sub2 + 1;
+				}
+				
+				$aSer = Managers\ServicioXCoiffeurManager::getInstance()->get($ser->id);
+				$aSer->precio_default = $final;
+				$aSer->precio_efectivo_default = $final2;
+				$aSer = Managers\ServicioXCoiffeurManager::getInstance()->save($aSer);
+				
+				//echo "final ".$final."<br>";
+				
+				
+				//round(3.6, 0); 
+				
+			}
+			//die();
+			
+			//$this->data['aServicios'] = $aServicios;
+			$this->data['submenuactive'] = '';
+			$this->parser->parse($this->parsePath.'formAumentoOk.tpl', $this->data);
+	}
+	
 
 }

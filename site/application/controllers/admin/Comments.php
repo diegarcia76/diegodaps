@@ -23,8 +23,8 @@ class Comments extends BaseAdmin_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->data['menuactive'] = 'comentarios';
-		$this->data['pageSubtitle'] = 'Reporte de Comentarios del Cliente';
+		$this->data['menuactive'] = 'comments';
+		$this->data['pageSubtitle'] = 'Reporte de Observaciones del Cliente';
 		//$this->data['accesos'] = $this->session->userdata('permisosLogin');
 	}
 
@@ -39,7 +39,7 @@ class Comments extends BaseAdmin_Controller {
 
 	
 
-		
+		$this->data['clientes'] = \Managers\ClienteManager::getInstance()->getAll();
 
 		$this->data['submenuactive'] = '';
 		$this->parser->parse($this->parsePath.'listado.tpl', $this->data);

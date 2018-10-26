@@ -47,6 +47,7 @@ class Cobros extends BaseAdmin_Controller
         $this->data['pagosPendientes'] =  \Managers\PagoManager::getInstance()->getPendientes();
         $this->data['clientes'] = \Managers\ClienteManager::getInstance()->getAll();
         $this->data['coiffeurs'] = \Managers\CoiffeurManager::getInstance()->getActiveAll();
+		  $this->data['t'] = \Managers\TarjetaManager::getInstance()->get(1);
         //var_dump($configuracion->descuento_efectivo_productos); die();
 
         //$this->data['productosActivos'] = usort(\Managers\ProductoManager::getInstance()->getAll(), "cmp");
@@ -75,7 +76,8 @@ class Cobros extends BaseAdmin_Controller
         $monto_tarjeta = floatval($this->input->post('monto'));
         $cb_modificar_fecha = intval($this->input->post('cb_modificar_fecha'));
         $fecha_cobro = $this->input->post('fecha_cobro');
-
+		$recargo = $this->input->post('recargo');
+		
         if ($aPago = \Managers\PagoManager::getInstance()->get($pago_id)) {
 
             $canje = false;
@@ -85,23 +87,51 @@ class Cobros extends BaseAdmin_Controller
             if($cb_modificar_fecha == 1){
                 $aPago->fecha = Datetime::createFromFormat('Y-m-d', $fecha_cobro);
             }
-
+			
+			if ($tipo=='combinado') {
+				$aPago->totale = $monto_tarjeta;
+				$aPago->totalt =$recargo;
+				$aPago->forma =4;
+				$aPago -> cobrado = true;
+			
+			}else{
+			
+			
             if ($tipo=='efectivo') {
-                $descuento = $aPago->total - $monto_efectivo;
+				$descuento = $aPago->total - $monto_efectivo;
+				$aPago->totale = $monto_efectivo;
+				$aPago->totalt =0;
+				$aPago->forma =1;
+				
+				 
                 $aPago->addDetallePago('Descuento por Pago en Efectivo', 1, $descuento, 'descuento', null, null, null,null, $aPago->fecha);
             } else {
-                $descuento = $aPago->total - $monto_tarjeta ;
+			
+				$descuento = $aPago->total - $monto_tarjeta ;
                 if ($descuento != 0){
                     $aPago->addDetallePago('Descuento Especial', 1, $descuento, 'descuento', null, null, null,null, $aPago->fecha);                
                 }
+				
+				if ($recargo != 0){
+					$aPago->addDetallePago('Recargo', 1, $recargo, 'Interes', null, null, null,null, $aPago->fecha); 
+                }
+				
 
                 if ($aPago->total == 0 && $monto_tarjeta == 0){
+					$aPago->totale = 0;
+					$aPago->totalt =0;
+					$aPago->forma =3;
                     $canje = true;
-                }
+                }else{
+					$aPago->totale = 0;
+					$aPago->totalt =$monto_tarjeta;
+					$aPago->forma =2;
+				
+				}
             }
             $aPago -> cobrado = true;
             $aPago -> canje = $canje;
-
+			}
             
 
             foreach ($aPago->turnos as $turno) {
@@ -427,6 +457,49 @@ class Cobros extends BaseAdmin_Controller
 
     }*/
 
+	public function eliminar_todos(){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar Item';
+		$result['message'] = 'Imposible eliminar el Item';
+
+		$lote = $this->input->post('lote');
+		
+		
+		$i =0;
+		foreach ($lote as $lot){
+			 if ($aDetallePago = \Managers\DetallePagoManager::getInstance()->get($lot)) {
+                        
+            $aPago = $aDetallePago->pago;  
+            $subTotal = $aDetallePago->cantidad * $aDetallePago->precio;
+            $aPago->total -= $subTotal;
+
+            if(count($aPago->detallePago)==1){
+                foreach ($aPago->turnos as $turno) {
+                    $turno->estadoTurno = \Managers\EstadoTurnoManager::getInstance()->get(ESTADO_TURNO_COBRADO);
+                }
+                $aPago -> cobrado = true;
+            }
+
+            $aPago = \Managers\PagoManager::getInstance()->save($aPago);
+
+            \Managers\DetallePagoManager::getInstance()->delete($aDetallePago);
+
+            
+           
+        }
+	}
+		
+			 $result["status"]  = true;
+            $result["message"] = 'Se ha eliminado el item con éxito.';		
+			
+		
+
+		echo json_encode($result);
+	}
+
+
+
+
     public function eliminarItem($detalle_id)
     {
         $result["status"]  = false;
@@ -520,7 +593,7 @@ class Cobros extends BaseAdmin_Controller
 				$descripcion = $aServicioXCoiffeur->servicio->nombre;
 			}else{
 				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
-					$descuento = 0;
+					$descuento = $aServicio->precio_default - $aServicio->precio_efectivo_default;
             		$comision = 0;
 					$descripcion = $aServicio->nombre;
 				}else{
@@ -601,7 +674,7 @@ if ($coiffeur_id != 8){
 				$descripcion = $aServicioXCoiffeur->servicio->nombre;
 			}else{
 				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->get($servicio_id)) {
-				$descuento = 0;
+				$descuento = $aServicio->precio_default - $aServicio->precio_efectivo_default;
             	$comision = 0;
 				$descripcion = $aServicio->nombre;
 				}else{

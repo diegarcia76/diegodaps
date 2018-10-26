@@ -41,7 +41,7 @@ class Tickets extends BaseAdmin_Controller {
 
 //		$this->data['coiffeurs'] = \Managers\CoiffeurManager::getInstance()->getAll();
 //		$this->data['pagos'] = \Managers\DetallePagoManager::getInstance()->getAll();
-
+		$this->data['clientes'] = \Managers\ClienteManager::getInstance()->getAll();
 		$this->data['submenuactive'] = '';
 		$this->parser->parse($this->parsePath.'listado.tpl', $this->data);
 	}
@@ -50,6 +50,7 @@ class Tickets extends BaseAdmin_Controller {
 	public function datasource(){
 		// Data for Data-Tables
 		$data = $this->input->post('columns');
+		\Managers\PagoManager::getInstance()->setJoinDeCliente();
 		$data = \Managers\PagoManager::getInstance()->getDatatableDatasource($this->input->post());
 		echo $data;
 	}

@@ -24,7 +24,27 @@
 {/block}
 
 {block name='content'}
+ <div id="busqueda_avanzada" class="">
+                <div class="panel-body">
 
+                    <div class="form-body form-bordered form-horizontal">
+                        <div class="row">
+                            <div class="col-md-3 m-r-2">
+                                <div class="form-group">
+                                    <label class="control-label m-b-1 ">BUSQUEDA CLIENTES </label>
+                                        <select id="filtro-cliente" name="filtro-cliente" class="form-control select2 " placeholder='Seleccione Cliente'>
+                                            <option value="">Sin filtrar</option>
+                                        {foreach $clientes as $aCo}
+                                            <option value="{$aCo->id}">{$aCo->nombre}</option>
+                                        {/foreach}
+                                        </select>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+    </div>
   
 
 <div class="row">

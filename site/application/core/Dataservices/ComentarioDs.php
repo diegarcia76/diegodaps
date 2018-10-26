@@ -74,7 +74,7 @@ class ComentarioDs extends BaseDataService {
     }
 
     protected function setDatasourceJoinsCliente(){        
-        $this->qb->leftjoin('d.usuario','c');
+    	$this->qb->leftjoin('d.usuario','c');
         if($this->aCliente){ 
             $this->qb->andWhere($this->qb->expr()->eq('c.id', $this->aCliente->id));
         }
