@@ -55,7 +55,29 @@ class Caja extends BaseAdmin_Controller {
 		echo $data;
 	}
 
-	
+	public function anular($id){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar pago';
+		$result['message'] = 'Imposible eliminar el pago';
+
+		
+			 if($aPago = \Managers\PagoManager::getInstance()->get($id)){
+             
+			
+					 foreach ($aPago->detallePago as $det){           
+						\Managers\DetallePagoManager::getInstance()->delete($det);
+					 }
+
+            
+
+            	$aPago = \Managers\PagoManager::getInstance()->save($aPago);
+
+				\Managers\PagoManager::getInstance()->delete($aPago);
+				$result['status'] = true;
+			}
+		
+		echo json_encode($result);
+	}
 
 
 }

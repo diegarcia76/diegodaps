@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-23 17:25:50
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-13 17:28:56
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\servicios\listado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:57135bca28b4e11266-69296692%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'fe76cc24e9bc71d6f082372e0beaca8f7653f03c' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\servicios\\listado.tpl',
-      1 => 1540326345,
+      1 => 1542140811,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -261,7 +261,7 @@ admin/servicios/rebajarCoiffeurs">Rebaja de Precios (Coiffeurs)</a>
             <th>Nombre</th>
             <th>Precio/Efectivo/DDaps's</th>
             <th>Comisión</th>
-            <th>Duración/Espera/Total</th>
+            <th>Duración Inicial/Espera/Duracion Final/Total</th>
             <th>En App?</th>
 	        <th>Acciones</th>
     	</tr>

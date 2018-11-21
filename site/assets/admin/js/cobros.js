@@ -41,7 +41,7 @@ var Cobros = function() {
 				success: function (jsonData){					
 					//alert(jsonData.message);
 					WebDialogs.doCloseLoading();
-					$('#confirmarCobro').modal('hide');
+					$('#confirmarCobro_'+pago_id).modal('hide');
 					WebDialogs.doAlert({
 						message: jsonData.message,
 						title: 'Éxito',
@@ -86,7 +86,7 @@ var Cobros = function() {
 				success: function (jsonData){					
 					//alert(jsonData.message);
 					WebDialogs.doCloseLoading();
-					$('#confirmarCobro').modal('hide');
+					$('#confirmarCobro_'+pago_id).modal('hide');
 					WebDialogs.doAlert({
 						message: jsonData.message,
 						title: 'Éxito',
@@ -167,7 +167,7 @@ var Cobros = function() {
 						success: function (jsonData){					
 							//alert(jsonData.message);
 							WebDialogs.doCloseLoading();
-							$('#confirmarCobro').modal('hide');
+							$('#confirmarCobro_'+pago_id).modal('hide');
 
 							WebDialogs.doAlert({
 								message: 'Canje confirmado',
@@ -189,8 +189,10 @@ var Cobros = function() {
 		
 		$('.cobrarCombinando').click(function(){
 											  
-			$('#confirmarCobro').modal('hide');											  	
-			$('#confirmarCobroCombinado').modal('show');
+			pago_id = $(this).data('id-pago');								  
+											  
+			$('#confirmarCobro_'+pago_id).modal('hide');											  	
+			$('#confirmarCobroCombinado_'+pago_id).modal('show');
 			
 			
 			
@@ -220,7 +222,7 @@ var Cobros = function() {
 						success: function (jsonData){					
 							//alert(jsonData.message);
 							WebDialogs.doCloseLoading();
-							$('#confirmarCobroCombinado').modal('hide');
+							$('#confirmarCobroCombinado_'+pago_id).modal('hide');
 
 							WebDialogs.doAlert({
 								message: 'Pago realizado',
@@ -237,12 +239,12 @@ var Cobros = function() {
 		//alert(totale);							   
 		});							   
 
-		$('#t').change(function(){
+		$('.t').change(function(){
+		var pago_id = parseInt($(this).data('id-pago'));
 		
-		
-		
+		//alert(pago_id);
 		var total = $('.btn-confirm-no-efectivo').data('total-tarjeta');
-		var interes = $('.t').val();
+		var interes = $(this).val();
 		
 		
 		var subt = total + (total * interes / 100);
@@ -270,7 +272,9 @@ var Cobros = function() {
 
 			$('.monto-efectivo').val(total_efectivo);
 
-			$('#confirmarCobro').modal('show');
+
+
+			$('#confirmarCobro_'+pago_id).modal('show');
 			/*WebDialogs.doConfirm({
 				message: 'EstÃ¡ por cobrar el pago!',
 				title: 'Â¿EstÃ¡ seguro?',

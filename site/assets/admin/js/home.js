@@ -49,6 +49,7 @@ var Home = function() {
 					}else{
 						$('#turnosHoyDash .cambioEstado').removeAttr('disabled', 'disabled')
 						$('#turnosHoyDash').html(jsonData.turnosHoy);
+						window.location.href = __SITEURL + 'admin';
 					}
 
 
@@ -108,7 +109,7 @@ var Home = function() {
 									if (jsonData.status == true){
 										//alert(jsonData.turnosHoy);
 										$('#turnosHoyDash').html(jsonData.turnosHoy);
-										//window.location.href = __SITEURL + 'admin';
+										window.location.href = __SITEURL + 'admin';
 									} else {
 										alert(jsonData.message);
 									}

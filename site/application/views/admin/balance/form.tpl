@@ -45,6 +45,7 @@
 												 <div class="form-group">
                         <label class="control-label">Seleccionar Coiffeur a Cambiar</label>
                         <select class="form-control select2" style="width: 100%;" name="estilista" id="estilista" required="required">
+						<option value="">Seleccione Coiffeur</option>
                           {foreach $coiffeurs as $aCoiffeur}
 							{if $aCoiffeur->id neq $pago->coiffeur->id}
                                 <option value="{$aCoiffeur->id}">{$aCoiffeur->nombre}</option>

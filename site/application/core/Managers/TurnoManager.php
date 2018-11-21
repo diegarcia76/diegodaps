@@ -33,7 +33,9 @@ class TurnoManager extends BaseManager{
 	}
 			
 	public function toArray($data){
+		
 		$arrayData = array();
+		
 		$arrayData["id"] = $data->id;
 		$arrayData['fecha_hora'] = \Managers\MainManager::getInstance()->fechaFormateada($data->fecha_hora);
 		$arrayData['servicio'] = $data->servicio->nombre;
@@ -45,6 +47,7 @@ class TurnoManager extends BaseManager{
 		$arrayData["hashdata"] = $this->doHash($data);
 		
 		return $arrayData;
+		
 	}
 
 	public function doHash($data){

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-26 15:15:32
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 16:14:51
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\include\sidebarmenu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:187655bc9f9ebbbcb61-49253456%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dc62352638c4b4573828f1f7120ae3a18ba3701d' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\include\\sidebarmenu.tpl',
-      1 => 1540577710,
+      1 => 1542741284,
       2 => 'file',
     ),
   ),
@@ -61,6 +61,13 @@ admin/productos"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> <span
 admin/admin/notificaciones"> <i class="fa fa-bell" aria-hidden="true"></i> <span class="title">Notificaciones</span></a>
     </li>
     <?php }?>
+	
+	<?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1,2))) {?>
+    <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='categorias') {?>active<?php }?>">
+        <a href="<?php echo site_url();?>
+admin/categorias"> <i class="fa fa-scissors" aria-hidden="true"></i> <span class="title">Categorias</span></a>
+    </li>
+    <?php }?>
 
     <?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1,2))) {?>
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='servicios') {?>active<?php }?>">
@@ -89,6 +96,7 @@ admin/balance"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="
 admin/caja"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="title">Caja</span></a>
     </li>
     <?php }?>
+	
 
     <?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1,2))) {?>
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='tickets') {?>active<?php }?>">
@@ -101,6 +109,12 @@ admin/tickets"> <i class="fa fa-money" aria-hidden="true"></i> <span class="titl
     <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='cobros') {?>active<?php }?>">
         <a href="<?php echo site_url();?>
 admin/cobros"> <i class="fa fa-money"></i> <span class="title">Cobros</span></a>
+    </li>
+    <?php }?>
+	<?php if (in_array($_smarty_tpl->tpl_vars['actualBackuser']->value->perfil->id,array(1))) {?>
+    <li class="<?php if ($_smarty_tpl->tpl_vars['menuactive']->value=='deudores') {?>active<?php }?>">
+        <a href="<?php echo site_url();?>
+admin/deudores"> <i class="fa fa-money" aria-hidden="true"></i> <span class="title">Deudores</span></a>
     </li>
     <?php }?>
 

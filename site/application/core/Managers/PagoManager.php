@@ -44,6 +44,12 @@ class PagoManager extends BaseManager{
 	public function getPendientes(){
 		return \Dataservices\PagoDs::getInstance()->getPendientes();
 	}
+	public function getPendientesByFecha(){
+		return \Dataservices\PagoDs::getInstance()->getPendientesByFecha();
+	}
+	public function getPendientesByFechaToday(){
+		return \Dataservices\PagoDs::getInstance()->getPendientesByFechaToday();
+	}
 	
 
 	public function getDatatableDatasource($data){
@@ -138,7 +144,7 @@ class PagoManager extends BaseManager{
 			},
 			
 			'acciones' => function($aPago){
-				return MainManager::getInstance()->getParse('admin/tickets/acciones.tpl',array('aPago' => $aPago));
+				return MainManager::getInstance()->getParse('admin/caja/acciones.tpl',array('aPago' => $aPago));
 			},
 		);		
 		

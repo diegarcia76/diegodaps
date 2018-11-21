@@ -68,6 +68,7 @@
 															</thead>
 															<tbody id="turnosHoyDash">
 																{foreach $turnosHoy as $th}
+																{if $th->mostrar eq 0}
 																<tr>
 																	<td>
 																		<div class="fc-title">
@@ -95,6 +96,7 @@
 																		</div>
 																	</td>
 																</tr>
+																{/if}
 																{/foreach}
 
 															</tbody>

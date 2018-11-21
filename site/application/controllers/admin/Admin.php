@@ -180,14 +180,32 @@ class Admin extends BaseAdmin_Controller {
 				$aPago = \Managers\PagoManager::getInstance()->save($aPago);
 			}
 
-			if(count($aTurnosCliente)>1){
-
+			
+			$t = 0;
+			foreach ($aTurnosCliente as $tu){
+				 if ($tu->mostrar == 0){
+				  $t = $t +1;
+				 }else{
+				 $t = $t -1;
+				 }
+			}
+			//echo $t;
+			//die();
+				
+			//if(count($aTurnosCliente)>1){
+			if($t>0){
+				
+				
+			
 				$turnos = array();
 				//var_dump($aProvincias->nombre);
 				foreach($aTurnosCliente as $tc){
 				//	var_dump($provincia);
-						$turnos[] = Managers\TurnoManager::getInstance()->toArray($tc);		
+						if ($tc->mostrar == 0){
+						 $turnos[] = Managers\TurnoManager::getInstance()->toArray($tc);	
+						}	
 				}
+				
 				
 				$result["title"]   = "Estado Cambiado";
 				$result["turnos"]  = $turnos;

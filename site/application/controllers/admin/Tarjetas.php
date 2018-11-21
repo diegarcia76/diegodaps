@@ -35,7 +35,7 @@ class Tarjetas extends BaseAdmin_Controller {
 		//$breadcrumb['Agregar nuevo Usuario'] = $this->controller_url('admin/usuarios/add');
 		$this->data['breadcrumb'] = $breadcrumb;
 
-		$aProductos = Managers\tarjetaManager::getInstance()->get(1);
+		$aProductos = Managers\TarjetaManager::getInstance()->get(1);
 
 		$this->data['aTarjetas'] = $aProductos;
 		$this->data['submenuactive'] = '';

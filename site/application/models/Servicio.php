@@ -55,6 +55,12 @@ class Servicio extends My_Models
      * @Column(name="duracion_espera", type="integer", nullable=true)
      */
     protected $duracion_espera;
+	
+	 /**
+     * @var integer $intervalo
+     * @Column(name="intervalo", type="integer", nullable=true)
+     */
+    protected $intervalo;
 
     /**
      * @var float $precio_default
@@ -106,6 +112,12 @@ class Servicio extends My_Models
      * @OneToMany(targetEntity="DetallePago", mappedBy="servicio", fetch="EXTRA_LAZY", cascade={"persist"}, orphanRemoval=true)
      */         
     protected $detallePago = array(); 
+	
+	 /**
+     * @var integer $categoria
+     * @Column(name="categoria", type="integer", nullable=true)
+     */
+    protected $categoria;
    
 
     public function getCoiffeurs(){
@@ -119,7 +131,7 @@ class Servicio extends My_Models
     }
 
     public function getDuracion_total(){
-        return intval($this->duracion)+intval($this->duracion_espera);
+        return intval($this->duracion)+intval($this->duracion_espera)+intval($this->intervalo);
     }
 
 }

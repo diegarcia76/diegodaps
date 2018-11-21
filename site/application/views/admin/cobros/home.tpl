@@ -215,9 +215,9 @@
 
 
 
+{foreach $pagosPendientes as $aPago}
 
-
-<div id="confirmarCobro" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div id="confirmarCobro_{$aPago->id}" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
 
     <div class="modal-dialog">
         <div class="modal-content modal-warning">
@@ -239,7 +239,7 @@
 					
 					<p class="wpr-fecha-cobro form-inline ">
 		            	Si realiza el pago con tarjeta (Interés):<br/>
-			            <select id="t"  name="t" class="form-control select2 t" placeholder='tarjeta'>
+			            <select id="t_{$aPago->id}"  name="t" class="form-control select2 t" placeholder='tarjeta' data-id-pago="{$aPago->id}">
                                     <option value="{$t->cuota1}">{$t->cuota1} % 1 cuota  de {$aPago->total}</option>
 									{$to = $aPago->total + ($aPago->total * $t->cuota2 / 100) }
 									{$tf = $to / 2}
@@ -296,18 +296,20 @@
             </div>
             <div class="modal-footer">
               	<button class="btn btn-default btn-cancelar" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i> Cancelar</button>
-              	<button class="btn btn-success green btn-confirm-efectivo"></button>
-              	<button class="btn btn-success green btn-confirm-no-efectivo"></button>
-				<button class="btn btn-success blue cobrarCombinando">Combinar</button>
+              	<button class="btn btn-success green btn-confirm-efectivo" data-id-pago="{$aPago->id}"></button>
+              	<button class="btn btn-success green btn-confirm-no-efectivo" data-id-pago="{$aPago->id}"></button>
+				<button class="btn btn-success blue cobrarCombinando" data-id-pago="{$aPago->id}">Combinar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 
 
 </div>
+{/foreach}
 
+{foreach $pagosPendientes as $aPago}
 
-<div id="confirmarCobroCombinado" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div id="confirmarCobroCombinado_{$aPago->id}" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
 
     <div class="modal-dialog">
         <div class="modal-content modal-warning">
@@ -347,7 +349,7 @@
 
 </div>
 
-
+{/foreach}
 
 
 

@@ -67,7 +67,7 @@
             <th>Nombre</th>
             <th>Precio/Efectivo/DDaps's</th>
             <th>Comisión</th>
-            <th>Duración/Espera/Total</th>
+            <th>Duración Inicial/Espera/Duracion Final/Total</th>
             <th>En App?</th>
 	        <th>Acciones</th>
     	</tr>

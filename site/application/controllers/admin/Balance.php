@@ -163,15 +163,58 @@ class Balance extends BaseAdmin_Controller {
 		$this->parser->parse($this->parsePath.'form.tpl', $this->data);
 
 	}
-	public function saveChange($id){
+	
+	
+	public function saveChange(){
 		
 		$id = $this->input->post('pago');
 		$estilista = $this->input->post('estilista');
 		$est = \Managers\CoiffeurManager::getInstance()->get($estilista);
 		$aPago = \Managers\DetallePagoManager::getInstance()->get($id);
+		
+		$servicioId = $aPago->servicio->id;
+		$ok =0;
+		//echo $servicioId; die();
+				if ($estilista != 8){		
+					if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->getServicioXCoiffeur($aPago->servicio, $est)) {
+						$aServicio = \Managers\ServicioManager::getInstance()->get($servicioId);
+						$ok = 1;
+					}
+			  }else{
+				    if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->getServicioXCoiffeur($aPago->servicio, $est)) {
+						$aServicio = \Managers\ServicioManager::getInstance()->get($servicioId);
+				   }		
+			  }
+			  
+	
+		
+		if ($estilista != 8){
+				
+            	$descuento = $aServicioXCoiffeur->descuento_efectivo;
+            	$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
+				$precio = $aServicioXCoiffeur->precio;
+				
+			}else{
+				if (!$aServicioXCoiffeur = \Managers\ServicioXCoiffeurManager::getInstance()->getServicioXCoiffeur($aPago->servicio, $est)) {
+					$descuento = $aServicio->precio_default - $aServicio->precio_efectivo_default;
+					$precio = $aServicio->precio_efectivo_default;
+            		$comision = 0;
+				}else{
+					$descuento = $aServicioXCoiffeur->descuento_efectivo;
+            		$comision = ($aServicioXCoiffeur->precio - $descuento) * ($aServicioXCoiffeur->comision / 100);
+					$precio = $aServicioXCoiffeur->precio;
+				
+				}	
+			}
+	
+		
+		//if ($ok == 0){
+		$aPago->precio = $precio;	
+		$aPago->descuento = $descuento;
+		$aPago->comision = $comision;
 		$aPago->coiffeur = $est;
 		$aPago = \Managers\DetallePagoManager::getInstance()->save($aPago);
-		
+		//}
 		redirect('admin/balance');
 
 	}

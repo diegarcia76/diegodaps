@@ -29,6 +29,12 @@
         <a href="{site_url()}admin/admin/notificaciones"> <i class="fa fa-bell" aria-hidden="true"></i> <span class="title">Notificaciones</span></a>
     </li>
     {/if}
+	
+	{if $actualBackuser->perfil->id|in_array:array(1,2)}
+    <li class="{if $menuactive eq 'categorias'}active{/if}">
+        <a href="{site_url()}admin/categorias"> <i class="fa fa-scissors" aria-hidden="true"></i> <span class="title">Categorias</span></a>
+    </li>
+    {/if}
 
     {if $actualBackuser->perfil->id|in_array:array(1,2)}
     <li class="{if $menuactive eq 'servicios'}active{/if}">
@@ -53,6 +59,7 @@
         <a href="{site_url()}admin/caja"> <i class="fa fa-bar-chart" aria-hidden="true"></i> <span class="title">Caja</span></a>
     </li>
     {/if}
+	
 
     {if $actualBackuser->perfil->id|in_array:array(1,2)}
     <li class="{if $menuactive eq 'tickets'}active{/if}">
@@ -63,6 +70,11 @@
     {if $actualBackuser->perfil->id|in_array:array(1,2)}
     <li class="{if $menuactive eq 'cobros'}active{/if}">
         <a href="{site_url()}admin/cobros"> <i class="fa fa-money"></i> <span class="title">Cobros</span></a>
+    </li>
+    {/if}
+	{if $actualBackuser->perfil->id|in_array:array(1)}
+    <li class="{if $menuactive eq 'deudores'}active{/if}">
+        <a href="{site_url()}admin/deudores"> <i class="fa fa-money" aria-hidden="true"></i> <span class="title">Deudores</span></a>
     </li>
     {/if}
 

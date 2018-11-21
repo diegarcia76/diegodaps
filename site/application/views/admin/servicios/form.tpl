@@ -49,6 +49,19 @@
 													<label class="control-label">Nombre</label>
 														<input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{$editUser->nombre}" required="required">
 												</div>
+												
+												
+												<div class="form-group">
+							<label class="control-label">Categoria</label>
+								<select id="categoria" name="categoria" class="form-control select2 " placeholder='Seleccione Categoria' required="required">
+										<option value="">Selecione Categoria</option>
+										{foreach $categorias as $c}
+                                    <option value="{$c->id}"   {if $editUser->categoria eq $c->id} selected="selected" {/if} >{$c->nombre}</option>
+									{/foreach}
+                                	
+                                </select>
+						</div>
+
 
 												<div class="form-group">
 													<label class="control-label">Precio Puntos</label>
@@ -61,13 +74,18 @@
 												</div>
 
 												<div class="form-group">
-													<label class="control-label">Duración</label>
-														<input type="text" class="form-control" name="duracion" placeholder="Duración" value="{$editUser->duracion}" >
+													<label class="control-label">Duración Incial</label>
+														<input type="text" class="form-control" name="duracion" placeholder="Duración Inicial" value="{$editUser->duracion}" >
 												</div>
 
 						                        <div class="form-group">
-													<label class="control-label">Duración espera</label>
+													<label class="control-label">Duración espera (Intervalo)</label>
 														<input type="text" class="form-control" name="duracion_espera" placeholder="Duración espera" value="{$editUser->duracion_espera}" >
+												</div>
+												
+												<div class="form-group">
+													<label class="control-label">Duración Final</label>
+														<input type="text" class="form-control" name="intervalo" placeholder="Duración Final" value="{$editUser->intervalo}" >
 												</div>
 
 												<div class="form-group">

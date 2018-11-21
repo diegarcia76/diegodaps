@@ -114,8 +114,30 @@ class Turno extends My_Models
     /**
      * @OneToMany(targetEntity="Valoracion", mappedBy="turno", orphanRemoval=true)
      **/
-    protected $valoraciones = null;
+	  protected $valoraciones = null;
 
+	  /**
+     * @var datetime $fecha_hora_inicio
+     *
+     * @Column(name="fecha_hora_inicio", type="datetime", nullable=true)
+     */
+     protected $fecha_hora_inicio;
+	 
+	  /**
+     * @var datetime $fecha_hora_final
+     *
+     * @Column(name="fecha_hora_final", type="datetime", nullable=true)
+     */
+     protected $fecha_hora_final;
+	 
+	  /**
+     * @var integer $mostrar
+     * @Column(name="mostrar", type="integer", nullable=false)
+     */
+    protected $mostrar = 0;    
+
+
+   
     public function getFecha_hora_fin(){
         $aux = new \Datetime($this->fecha_hora->format('Y-m-d H:i:s'));
         return $aux->modify('+'.$this->servicio->duracion.' minutes');

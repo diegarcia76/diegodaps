@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:17
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 14:47:50
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\dashboard\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:115935bc9fcc15fa342-41158655%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9d3f07233f3de13a78b1567dd7c494824cc1423f' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\dashboard\\home.tpl',
-      1 => 1538514863,
+      1 => 1542736064,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -27,14 +27,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bc9fcc1a8c077_96973389',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bc9fcc1a8c077_96973389',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bc9fcc1a8c077_96973389')) {function content_5bc9fcc1a8c077_96973389($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
 ?><!DOCTYPE html>
@@ -271,6 +271,7 @@ admin/clientes/add"> <i class="icon-plus"></i> Agregar Cliente</a>
 foreach ($_from as $_smarty_tpl->tpl_vars['th']->key => $_smarty_tpl->tpl_vars['th']->value) {
 $_smarty_tpl->tpl_vars['th']->_loop = true;
 ?>
+																<?php if ($_smarty_tpl->tpl_vars['th']->value->mostrar==0) {?>
 																<tr>
 																	<td>
 																		<div class="fc-title">
@@ -315,6 +316,7 @@ admin/turnos/editar/<?php echo $_smarty_tpl->tpl_vars['th']->value->id;?>
 																		</div>
 																	</td>
 																</tr>
+																<?php }?>
 																<?php } ?>
 
 															</tbody>
@@ -414,7 +416,7 @@ admin/turnos/editar/<?php echo $_smarty_tpl->tpl_vars['th']->value->id;?>
 <?php /*  Call merged included template "admin/dashboard/modal-agregar-comentario.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/dashboard/modal-agregar-comentario.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '115935bc9fcc15fa342-41158655');
-content_5bc9fcc1999c16_00628883($_smarty_tpl);
+content_5bf448c6394de5_89859047($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/dashboard/modal-agregar-comentario.tpl" */?>
 
@@ -563,9 +565,9 @@ assets/admin/js/home.js"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-19 12:48:17
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 14:47:50
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\dashboard\modal-agregar-comentario.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bc9fcc1999c16_00628883')) {function content_5bc9fcc1999c16_00628883($_smarty_tpl) {?><div id="modal-agregar-comentario" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-comentario-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bf448c6394de5_89859047')) {function content_5bf448c6394de5_89859047($_smarty_tpl) {?><div id="modal-agregar-comentario" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-comentario-label" aria-hidden="true" data-backdrop='static'>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

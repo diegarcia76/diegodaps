@@ -8,7 +8,7 @@ var Turnos = function() {
 
 		var date = $('#Adatepicker').datepicker("getDate");
 		var formatted = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-		//alert(formatted);
+		
 		$.ajax({
 			url: __SITEURL+'admin/turnos/getTurnosOcupados',
 			type: 'POST',
@@ -40,13 +40,15 @@ var Turnos = function() {
        				aTh = $('<TH>').addClass('coiffeur').html(aCoiffeur.nombre).appendTo(aTr);
        			});
 
-
+				
 				// Contenido para el TBODY
 				// Recorremos todas las horas
 				for (var index = parseInt(jsonData.hora_min); index < parseInt(jsonData.hora_max); index++) {
 
+					
+					
 					var strHs = '00'+index;
-				//	alert(strHs);
+					//alert(strHs);
 					strHs = strHs.substr(-2);
 					//alert(strHs);
 					// armamos la fila correspondiente al horario
@@ -55,6 +57,7 @@ var Turnos = function() {
 	       			// la primer columna es la hora
 	       			var aTd = $('<Td>').append(strHs+'Hs');
 	       			aTr.append(aTd);
+					
 
 	       			// por cada coifeur armamos una TD para cada hora
 	       			$.each(jsonData.coiffeurs, function(index, aCoiffeur){

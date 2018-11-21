@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-25 18:41:09
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 20:08:26
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:269705bc9fcc62a07f8-29423213%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b9cab168a6f39a06ee0bf814631d0cb9cb706ea4' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\cobros\\home.tpl',
-      1 => 1540503661,
+      1 => 1542755298,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -480,9 +480,14 @@ if (!$_smarty_tpl->tpl_vars['aPago']->_loop) {
 
 
 
+<?php  $_smarty_tpl->tpl_vars['aPago'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aPago']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['pagosPendientes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['aPago']->key => $_smarty_tpl->tpl_vars['aPago']->value) {
+$_smarty_tpl->tpl_vars['aPago']->_loop = true;
+?>
 
-
-<div id="confirmarCobro" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div id="confirmarCobro_<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
 
     <div class="modal-dialog">
         <div class="modal-content modal-warning">
@@ -504,7 +509,8 @@ if (!$_smarty_tpl->tpl_vars['aPago']->_loop) {
 					
 					<p class="wpr-fecha-cobro form-inline ">
 		            	Si realiza el pago con tarjeta (Interés):<br/>
-			            <select id="t"  name="t" class="form-control select2 t" placeholder='tarjeta'>
+			            <select id="t"  name="t" class="form-control select2 t" placeholder='tarjeta' data-id-pago="<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+">
                                     <option value="<?php echo $_smarty_tpl->tpl_vars['t']->value->cuota1;?>
 "><?php echo $_smarty_tpl->tpl_vars['t']->value->cuota1;?>
  % 1 cuota  de <?php echo $_smarty_tpl->tpl_vars['aPago']->value->total;?>
@@ -597,18 +603,28 @@ if (!$_smarty_tpl->tpl_vars['aPago']->_loop) {
             </div>
             <div class="modal-footer">
               	<button class="btn btn-default btn-cancelar" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i> Cancelar</button>
-              	<button class="btn btn-success green btn-confirm-efectivo"></button>
-              	<button class="btn btn-success green btn-confirm-no-efectivo"></button>
-				<button class="btn btn-success blue cobrarCombinando">Combinar</button>
+              	<button class="btn btn-success green btn-confirm-efectivo" data-id-pago="<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+"></button>
+              	<button class="btn btn-success green btn-confirm-no-efectivo" data-id-pago="<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+"></button>
+				<button class="btn btn-success blue cobrarCombinando" data-id-pago="<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+">Combinar</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 
 
 </div>
+<?php } ?>
 
+<?php  $_smarty_tpl->tpl_vars['aPago'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aPago']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['pagosPendientes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['aPago']->key => $_smarty_tpl->tpl_vars['aPago']->value) {
+$_smarty_tpl->tpl_vars['aPago']->_loop = true;
+?>
 
-<div id="confirmarCobroCombinado" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+<div id="confirmarCobroCombinado_<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+" class="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
 
     <div class="modal-dialog">
         <div class="modal-content modal-warning">
@@ -650,7 +666,7 @@ if (!$_smarty_tpl->tpl_vars['aPago']->_loop) {
 
 </div>
 
-
+<?php } ?>
 
 
 
@@ -661,19 +677,19 @@ if (!$_smarty_tpl->tpl_vars['aPago']->_loop) {
 <?php /*  Call merged included template "admin/cobros/modal-agregar-producto.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-producto.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '269705bc9fcc62a07f8-29423213');
-content_5bd23875bcc634_73489913($_smarty_tpl);
+content_5bf493eaa286a2_68356648($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/cobros/modal-agregar-producto.tpl" */?>
 <?php /*  Call merged included template "admin/cobros/modal-agregar-servicio.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-servicio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '269705bc9fcc62a07f8-29423213');
-content_5bd23875c7d0e5_05762790($_smarty_tpl);
+content_5bf493eab46645_58007420($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/cobros/modal-agregar-servicio.tpl" */?>
 <?php /*  Call merged included template "admin/cobros/modal-agregar-item.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/cobros/modal-agregar-item.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '269705bc9fcc62a07f8-29423213');
-content_5bd23875d03726_10651105($_smarty_tpl);
+content_5bf493eabdf257_76369078($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/cobros/modal-agregar-item.tpl" */?>
 
@@ -842,9 +858,9 @@ assets/admin/js/cobros.js?version=20180712"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-25 18:41:09
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 20:08:26
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\modal-agregar-producto.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bd23875bcc634_73489913')) {function content_5bd23875bcc634_73489913($_smarty_tpl) {?><div id="modal-agregar-producto" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-producto-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bf493eaa286a2_68356648')) {function content_5bf493eaa286a2_68356648($_smarty_tpl) {?><div id="modal-agregar-producto" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-producto-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-producto" action="<?php echo site_url();?>
 admin/cobros/addProducto" method="post" class="formulario">
     <input type="hidden" name="pago-id" value="" />
@@ -962,9 +978,9 @@ $_smarty_tpl->tpl_vars['aCoiffeur']->_loop = true;
     </div><!-- /.modal-dialog -->
     </form>
 </div><!-- /.modal --><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-25 18:41:09
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 20:08:26
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\modal-agregar-servicio.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bd23875c7d0e5_05762790')) {function content_5bd23875c7d0e5_05762790($_smarty_tpl) {?><div id="modal-agregar-servicio" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-servicio-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bf493eab46645_58007420')) {function content_5bf493eab46645_58007420($_smarty_tpl) {?><div id="modal-agregar-servicio" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-servicio-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-servicio" action="<?php echo site_url();?>
 admin/cobros/addServicio" method="post" class="formulario">
     <input type="hidden" name="pago-id" value="" />
@@ -1080,9 +1096,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
     </div><!-- /.modal-dialog -->
     </form>
 </div><!-- /.modal --><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-25 18:41:09
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 20:08:26
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\cobros\modal-agregar-item.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bd23875d03726_10651105')) {function content_5bd23875d03726_10651105($_smarty_tpl) {?><div id="modal-agregar-item" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-item-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bf493eabdf257_76369078')) {function content_5bf493eabdf257_76369078($_smarty_tpl) {?><div id="modal-agregar-item" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-item-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-item" action="<?php echo site_url();?>
 admin/cobros/saveItem" method="post" class="formulario"
     >

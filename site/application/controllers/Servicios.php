@@ -47,6 +47,9 @@ class Servicios extends Base_Controller {
 			if(!$co->coiffeur->borrado)
 				$coiffeurs[] = \Managers\ServicioXCoiffeurManager::getInstance()->toArray($co);		
 		}				
+//var_dump($coiffeurs); die();
+
+
 
 		$result['coiffeurs'] = $coiffeurs;
 		echo json_encode($result);

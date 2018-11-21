@@ -328,7 +328,8 @@ class TurnoDs extends BaseDataService {
 		$this->qb->select('d, s') 
  			     ->from($this->tbl_name, 'd')
  			     ->innerjoin('d.servicio','s')
-			 	 ->where(					
+			 	 ->where(
+				 	$this->qb->expr()->gte('d.mostrar', 0),					
 					$this->qb->expr()->gte('d.fecha_hora', ':fechaInicio'),
 					$this->qb->expr()->lte('d.fecha_hora', ':fechaInicio2'),
 					$this->qb->expr()->notIn('d.estadoTurno', '2,5,7,8')

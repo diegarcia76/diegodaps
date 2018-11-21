@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-26 15:53:11
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-21 16:57:39
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\caja\listado.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:137275bd359d5afb0d2-27030659%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c9f1161f812c04cb506bb3c7b59fe55ed983393a' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\caja\\listado.tpl',
-      1 => 1540579985,
+      1 => 1542830253,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -258,14 +258,18 @@ $_smarty_tpl->tpl_vars['aCo']->_loop = true;
         <table class="table table-stripped table-responsive table-hover dt-responsive" id="tblTickets">
             <thead>
             	<tr>
-                    <th>Nro</th>
+                    <th>Nro</th> 
+					<th>Acciones</th>
                     <th>Fecha</th>
                     <th>Cliente</th>
                     <th>Estado</th>
                     <th>Total</th>
-					<th>Total Efect</th>
-					<th>Total Tarj</th>
-                    <th class="dt-right">Forma de Pago</th>
+					<th>Total Ef</th>
+					<th>Total Tj</th>
+					<th>Pago</th>
+                   
+					
+					
             	</tr>
             </thead>
             <tbody>

@@ -69,7 +69,8 @@ class Servicios extends BaseAdmin_Controller {
 			$breadcrumb = array();
 			$breadcrumb['Servicios'] = $this->controller_url('');
 			$breadcrumb['Agregar nuevo Servicio'] = $this->controller_url('add');
-			$this->data['breadcrumb'] = $breadcrumb;			
+			$this->data['breadcrumb'] = $breadcrumb;
+			$this->data['categorias'] = Managers\CategoriaManager::getInstance()->getAll();				
 			
 			$this->data['submenuactive'] = 'add';
 			$this->data['pageTitle'] = 'Agregar nuevo Servicio';
@@ -148,7 +149,8 @@ class Servicios extends BaseAdmin_Controller {
 				$breadcrumb = array();
 				$breadcrumb['Servicios'] = $this->controller_url('');
 				$breadcrumb['Editar Servicio'] = $this->controller_url('editar/'.$servicio_id);
-				$this->data['breadcrumb'] = $breadcrumb;				
+				$this->data['breadcrumb'] = $breadcrumb;
+				$this->data['categorias'] = Managers\CategoriaManager::getInstance()->getAll();				
 		
 				$this->data['submenuactive'] = '';
 				$this->data['pageTitle'] = 'Editar Servicio';
@@ -209,12 +211,14 @@ class Servicios extends BaseAdmin_Controller {
 			$puntos_premio = $this->input->post('puntos_premio');
 			$duracion = $this->input->post('duracion');
 			$duracion_espera = $this->input->post('duracion_espera');
+			$intervalo = $this->input->post('intervalo');
 			$precio_default = $this->input->post('precio_default');
 			$precio_efectivo_default = $this->input->post('precio_efectivo_default');
 			$comision_default = $this->input->post('comision_default');
 			$servicioEnApp = $this->input->post('servicioEnApp');
 			$division_grilla = $this->input->post('division_grilla');
 			$activo = $this->input->post('activo');
+			$categoria = $this->input->post('categoria');
 			
 			if (!$activo){
 				$activo = 0;
@@ -253,6 +257,7 @@ class Servicios extends BaseAdmin_Controller {
 			$editUser->precio_puntos  = $precio_puntos;
 			$editUser->puntos_premio  = $puntos_premio;
 			$editUser->duracion  = $duracion;
+			$editUser->intervalo  = $intervalo;
 			$editUser->duracion_espera  = $duracion_espera;
 			$editUser->precio_default  = $precio_default;
 			$editUser->precio_efectivo_default  = $precio_efectivo_default;
@@ -260,6 +265,7 @@ class Servicios extends BaseAdmin_Controller {
 			$editUser->servicioEnApp  = $servicioEnApp;
 			$editUser->division_grilla  = $division_grilla;
 			$editUser->activo  = $activo;
+			$editUser->categoria  = $categoria;
 
 			foreach ($editUser->serviciosXCoiffeur as $serv) {
 				if(!$serv->especial){

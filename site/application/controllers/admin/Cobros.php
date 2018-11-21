@@ -44,7 +44,8 @@ class Cobros extends BaseAdmin_Controller
 
         $this->data['productosActivos'] = \Managers\ProductoManager::getInstance()->getAll();
         $this->data['serviciosActivos'] = \Managers\ServicioManager::getInstance()->getAll();
-        $this->data['pagosPendientes'] =  \Managers\PagoManager::getInstance()->getPendientes();
+        //$this->data['pagosPendientes'] =  \Managers\PagoManager::getInstance()->getPendientes();
+		 $this->data['pagosPendientes'] =  \Managers\PagoManager::getInstance()->getPendientesByFechaToday();
         $this->data['clientes'] = \Managers\ClienteManager::getInstance()->getAll();
         $this->data['coiffeurs'] = \Managers\CoiffeurManager::getInstance()->getActiveAll();
 		  $this->data['t'] = \Managers\TarjetaManager::getInstance()->get(1);
@@ -144,12 +145,20 @@ class Cobros extends BaseAdmin_Controller
                     $userDataMin['hash'] = \Managers\ClienteManager::getInstance()->doHash($turno->cliente);
 
                     $userData = base64_encode(json_encode($userDataMin));
-
-                    $somedata['verificar_link'] = site_url().'registro/valorarServicio/'.$userData;
+					
+					
+					
+					if (!$turno->cliente->email){
+					
+					}else{
+					 $somedata['verificar_link'] = site_url().'registro/valorarServicio/'.$userData;
 
                     $somedata['nombre'] =$turno->cliente->nombre;
                     $somedata['servicio'] =$turno->servicio->nombre;
-                                
+                     
+					 
+					 
+					            
                     $mailbody = $this->parser->parse('mails/valorar.tpl',$somedata, true);
                     \Managers\MailManager::getInstance()->sendmail($turno->cliente->email,"Diego Dap's", $mailbody);
 
@@ -163,6 +172,10 @@ class Cobros extends BaseAdmin_Controller
                     $aNotificacion->cliente = $turno->cliente;
                     $aNotificacion->fecha = new \DateTime('now');
                     $aNotificacion =  \Managers\NotificacionManager::getInstance()->save($aNotificacion, $somedata['verificar_link']);
+					
+					
+					}	
+                   
 
                 }
 

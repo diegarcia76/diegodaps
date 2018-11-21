@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-23 18:24:52
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-18 14:04:51
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\balance\form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:247485bcf903c79a494-85972621%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '733dcac515803e52ea3b48de5257545cff696174' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\balance\\form.tpl',
-      1 => 1540329677,
+      1 => 1542560686,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -235,6 +235,7 @@ admin/balance/saveChange" id="" method="post" >
 												 <div class="form-group">
                         <label class="control-label">Seleccionar Coiffeur a Cambiar</label>
                         <select class="form-control select2" style="width: 100%;" name="estilista" id="estilista" required="required">
+						<option value="">Seleccione Coiffeur</option>
                           <?php  $_smarty_tpl->tpl_vars['aCoiffeur'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aCoiffeur']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['coiffeurs']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['aCoiffeur']->key => $_smarty_tpl->tpl_vars['aCoiffeur']->value) {

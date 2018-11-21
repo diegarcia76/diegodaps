@@ -707,24 +707,102 @@ class Webservice extends Base_Controller
         $fecha = '20170118180000';
         $turno_id = 0;*/
 
-
+		
 
         $aCoiffeur = Managers\CoiffeurManager::getInstance()->get($id_coiffeur);
         $aServicio = Managers\ServicioManager::getInstance()->get($id_servicio);
         $aUser = Managers\ClienteManager::getInstance()->get($user_id);
+		
+		$fecha2 = new DateTime($fecha);
+		$fechaInicioAux = Datetime::createFromFormat('Y-m-d H:i:s', $fecha2->format('Y-m-d H:i:s'));
+		
         $fecha = \Datetime::createFromFormat('YmdHis', $fecha);
+		
+		
+		      
+
+               
+		
+		
         //var_dump($aUser->nombre); die();
         //agregar notificacion para el Back de turno
         $aNotificacion =  \Managers\NotificacionManager::getInstance()->create();
         //var_dump($fecha->format('d-m H:i')); die();
+		
+	
+		
         if ($aTurno = Managers\TurnoManager::getInstance()->get($turno_id)) {
             if (!$aTurno->editado) {
-                $aTurno->coiffeur = $aCoiffeur;
-                $aTurno->servicio = $aServicio;
-                $aTurno->fecha_hora = $fecha;
-                $aTurno->editado = true;
+               if (($aServicio->duracion_espera == 0) and ($aServicio->intervalo == 0)){
+					
+						$aTurno->coiffeur = $aCoiffeur;
+                   		$aTurno->servicio = $aServicio;
+                   		$aTurno->fecha_hora = $fecha;
+					
+					 $aTurno->fecha_hora_inicio = $fecha;
+				     $aTurno->fecha_hora_final = clone $fechaInicioAux; 
+                     $aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion.' minutes');
+					
+					
+                    $aTurno->editado = true;
 
-                $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+                    $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+					
+					} else{
+						if (($aServicio->duracion_espera != 0) and ($aServicio->intervalo == 0)){
+						
+							$aTurno->coiffeur = $aCoiffeur;
+							$aTurno->servicio = $aServicio;
+							$aTurno->fecha_hora = $fecha;
+							
+							$aTurno->fecha_hora_inicio = $fecha;
+							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							$aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion.' minutes');
+							
+							
+							$aTurno->editado = true;
+							
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+						
+						}else{
+						
+							$aTurno->coiffeur = $aCoiffeur;
+							$aTurno->servicio = $aServicio;
+							$aTurno->fecha_hora = $fecha;
+							
+							$aTurno->fecha_hora_inicio = $fecha;
+							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							$aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion.' minutes');
+							
+							
+							$aTurno->editado = true;
+							
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+							
+							 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+							 $aTurno->coiffeur = $aCoiffeur;
+							 $aTurno->estadoTurno = $aEstado;
+							 $aTurno->servicio = $aServicio;
+							 $aTurno->cliente = $aUser;
+							 $aTurno->prioridad = $prioridad;
+							 $aTurno->fecha_hora = $fecha;
+							
+							 $aTurno->fecha_hora_inicio = clone $fechaInicioAux; 	
+							 $aTurno->fecha_hora_inicio->modify('+ '.$aServicio->duracion_espera.' minutes');;
+							 $aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							 $aSumar =  $aServicio->duracion_espera + $aServicio->intervalo;
+							 $aTurno->fecha_hora_final->modify('+ '.$aSumar.' minutes');
+							
+							 $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+						
+						
+						
+						
+						}
+					
+					
+					}
+
 
                 ///noti
                 $aNotificacion->titulo = 'Turno modificado';
@@ -748,7 +826,90 @@ class Webservice extends Base_Controller
                 } else {
                     $prioridad = 0;
                 }
+				
+				 $aEstado = Managers\EstadoTurnoManager::getInstance()->get(1); //Estado Reservado
+				if (($aServicio->duracion_espera == 0) and ($aServicio->intervalo == 0)){
+					 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+						$aTurno->coiffeur = $aCoiffeur;
+                   		$aTurno->servicio = $aServicio;
+                   		$aTurno->fecha_hora = $fecha;
+						 $aTurno->estadoTurno = $aEstado;
+						   $aTurno->prioridad = $prioridad;
+						   $aTurno->cliente = $aUser;
+					
+					 $aTurno->fecha_hora_inicio = $fecha;
+				     $aTurno->fecha_hora_final = clone $fechaInicioAux; 
+                     $aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion.' minutes');
+					
+					
+                  
 
+                    $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+					
+					} else{
+						if (($aServicio->duracion_espera != 0) and ($aServicio->intervalo == 0)){
+						 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+							$aTurno->coiffeur = $aCoiffeur;
+							$aTurno->servicio = $aServicio;
+							$aTurno->fecha_hora = $fecha;
+							 $aTurno->estadoTurno = $aEstado;
+							  $aTurno->cliente = $aUser;
+							    $aTurno->prioridad = $prioridad;
+							
+							$aTurno->fecha_hora_inicio = $fecha;
+							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							$aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion.' minutes');
+							
+							
+							
+							
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+						
+						}else{
+							 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+							
+						
+							$aTurno->coiffeur = $aCoiffeur;
+							$aTurno->servicio = $aServicio;
+							$aTurno->fecha_hora = $fecha;
+							 $aTurno->estadoTurno = $aEstado;
+							  $aTurno->cliente = $aUser;
+							    $aTurno->prioridad = $prioridad;
+							
+							$aTurno->fecha_hora_inicio = $fecha;
+							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							$aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion.' minutes');
+							
+							
+							
+							
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+							
+							 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+							 $aTurno->coiffeur = $aCoiffeur;
+							 $aTurno->estadoTurno = $aEstado;
+							 $aTurno->servicio = $aServicio;
+							 $aTurno->cliente = $aUser;
+							 $aTurno->prioridad = $prioridad;
+							 $aTurno->fecha_hora = $fecha;
+							
+							 $aTurno->fecha_hora_inicio = clone $fechaInicioAux; 
+							 $aSumar =  $aServicio->duracion + $aServicio->duracion_espera;	
+							 $aTurno->fecha_hora_inicio->modify('+ '.$aSumar.' minutes');;
+							 $aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							 $aSumar =  $aServicio->duracion_espera + $aServicio->intervalo + $aServicio->duracion;
+							 $aTurno->fecha_hora_final->modify('+ '.$aSumar.' minutes');
+							
+							 $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+						
+						
+						
+						
+						}
+					
+					
+					}
+/*
                 $aTurno =  \Managers\TurnoManager::getInstance()->create();
                 $aEstado = Managers\EstadoTurnoManager::getInstance()->get(1); //Estado Reservado
 
@@ -758,6 +919,11 @@ class Webservice extends Base_Controller
                 $aTurno->cliente = $aUser;
                 $aTurno->prioridad = $prioridad;
                 $aTurno->fecha_hora = $fecha;
+				
+					 $aTurno->fecha_hora_inicio = $fecha;
+				     $aTurno->fecha_hora_final = clone $fechaInicioAux; 
+                     $aTurno->fecha_hora_final->modify('+ '.$aServicio->duracion_total.' minutes');
+					 */
 
                 if ($puntos>0) {
                     $aTurno->canjeado = true;

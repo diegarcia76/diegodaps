@@ -83,10 +83,10 @@ class Servicio extends \models\Servicio implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'nombre', 'precio_puntos', 'puntos_premio', 'duracion', 'duracion_espera', 'precio_default', 'precio_efectivo_default', 'comision_default', 'servicioEnApp', 'division_grilla', 'activo', 'turnos', 'serviciosXCoiffeur', 'detallePago');
+            return array('__isInitialized__', 'id', 'nombre', 'precio_puntos', 'puntos_premio', 'duracion', 'duracion_espera', 'intervalo', 'precio_default', 'precio_efectivo_default', 'comision_default', 'servicioEnApp', 'division_grilla', 'activo', 'turnos', 'serviciosXCoiffeur', 'detallePago', 'categoria');
         }
 
-        return array('__isInitialized__', 'id', 'nombre', 'precio_puntos', 'puntos_premio', 'duracion', 'duracion_espera', 'precio_default', 'precio_efectivo_default', 'comision_default', 'servicioEnApp', 'division_grilla', 'activo', 'turnos', 'serviciosXCoiffeur', 'detallePago');
+        return array('__isInitialized__', 'id', 'nombre', 'precio_puntos', 'puntos_premio', 'duracion', 'duracion_espera', 'intervalo', 'precio_default', 'precio_efectivo_default', 'comision_default', 'servicioEnApp', 'division_grilla', 'activo', 'turnos', 'serviciosXCoiffeur', 'detallePago', 'categoria');
     }
 
     /**

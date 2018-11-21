@@ -70,7 +70,7 @@ class ServicioManager extends BaseManager{
 					return 'NO';
 			},
 			'duracion' => function($aServicio){
-				return $aServicio->duracion.'/'.$aServicio->duracion_espera.'/'.$aServicio->duracion_total;
+				return $aServicio->duracion.'/'.$aServicio->duracion_espera.'/'.$aServicio->intervalo.'/'.$aServicio->duracion_total;
 			},
 			'precio' => function($aServicio){
 				$aDiegoDaps = \Managers\CoiffeurManager::getInstance()->get(8);

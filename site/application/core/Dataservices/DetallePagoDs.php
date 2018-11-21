@@ -161,7 +161,7 @@ class DetallePagoDs extends BaseDataService {
  			     ->groupBy("c.id");
 
 		if($fecha_start){
-            $this->qb->andWhere('d.fecha BETWEEN :fecha1 AND :fecha2');
+            $this->qb->andWhere('d.fecha_pago BETWEEN :fecha1 AND :fecha2');
             $this->qb->setParameter('fecha1', $fecha_start->format('Y-m-d 00:00:00'));
             $this->qb->setParameter('fecha2', $fecha_end->format('Y-m-d 23:59:59'));
             
@@ -187,13 +187,14 @@ class DetallePagoDs extends BaseDataService {
 		$this->qb->select('c.id, c.nombre, sum(d.precio*d.cantidad) as total, sum(d.comision) as comision, sum(d.descuento*d.cantidad) as descuento, d.descripcion, sum(d.cantidad) as cantidad, d.precio') 
  			     ->from($this->tbl_name, 'd')
  			     ->innerjoin('d.coiffeur','c')
+				 ->innerjoin('d.pago','p')
 				  ->where(
 					$this->qb->expr()->eq('c.id', $pel)
 					)
  			     ->groupBy("d.descripcion");
 
 		if($fecha_start){
-            $this->qb->andWhere('d.fecha BETWEEN :fecha1 AND :fecha2');
+            $this->qb->andWhere('p.fecha_pago BETWEEN :fecha1 AND :fecha2');
             $this->qb->setParameter('fecha1', $fecha_start->format('Y-m-d 00:00:00'));
             $this->qb->setParameter('fecha2', $fecha_end->format('Y-m-d 23:59:59'));
             

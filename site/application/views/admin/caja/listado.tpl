@@ -65,14 +65,18 @@
         <table class="table table-stripped table-responsive table-hover dt-responsive" id="tblTickets">
             <thead>
             	<tr>
-                    <th>Nro</th>
+                    <th>Nro</th> 
+					<th>Acciones</th>
                     <th>Fecha</th>
                     <th>Cliente</th>
                     <th>Estado</th>
                     <th>Total</th>
-					<th>Total Efect</th>
-					<th>Total Tarj</th>
-                    <th class="dt-right">Forma de Pago</th>
+					<th>Total Ef</th>
+					<th>Total Tj</th>
+					<th>Pago</th>
+                   
+					
+					
             	</tr>
             </thead>
             <tbody>
