@@ -510,6 +510,44 @@ class Cobros extends BaseAdmin_Controller
 		echo json_encode($result);
 	}
 
+public function eliminar_todos_pagos(){
+		$result['status'] = false;
+		$result['title'] = 'Error al eliminar Item';
+		$result['message'] = 'Imposible eliminar el Item';
+
+		$lote = $this->input->post('lote');
+		
+		
+		
+		$i =0;
+		foreach ($lote as $lot){
+		
+		
+			if($aPago = \Managers\PagoManager::getInstance()->get($lot)){
+             
+			// var_dump($aPago);
+			 foreach ($aPago->detallePago as $det){           
+           		\Managers\DetallePagoManager::getInstance()->delete($det);
+			 }
+
+            
+
+            $aPago = \Managers\PagoManager::getInstance()->save($aPago);
+
+            \Managers\PagoManager::getInstance()->delete($aPago);
+	}
+            
+           
+       
+	}
+		
+			 $result["status"]  = true;
+            $result["message"] = 'Se ha eliminado el item con éxito.';		
+			
+		
+
+		echo json_encode($result);
+	}
 
 
 

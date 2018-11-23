@@ -68,6 +68,8 @@
 												<button class="btn btn-default btn-agregar-producto btn-xs" data-id-pago="{$aPago->id}" > <i class="fa fa-plus"></i>PRODUCTO</button>
 							                    <button class="btn btn-{if $aPago->total eq 0}warning canjear{else}success cobrar{/if}  btn-xs" data-id-pago="{$aPago->id}" data-total="{$aPago->total|floatval|number_format:2:".":""}" data-descuentos="{$aPago->total_descuentos|floatval|number_format:2:".":""}">{if $aPago->total eq 0}Canjear{else}Cobrar <span>${$aPago->total|floatval|number_format:2:",":"."}{/if}</span></button>
 							                    <button class="btn btn-default btn-xs" type="button" data-toggle="collapse" data-target="#detalle-pago-{$aPago->id}" aria-expanded="false" aria-controls="detalle-pago-{$aPago->id}"><i class="fa fa-chevron-down"></i></button>
+												
+												<input type="checkbox" name="eliminarPago[]" class="eliminarPago" id="eliminarPago" rel="{$aPago->id}" value="{$aPago->id}"/>		
 											</td>
 										</tr>
 											<tr>
@@ -118,6 +120,8 @@
 														</td>
 														</tr>
 										{/foreach}
+										
+								<tr><td colspan="5"> <button class="btn red pull-right" type="button" id="eliminar_todos_pagos">Eliminar Seleccionados</button> </td></tr>		
 									</tbody>
 								</table>
 								{else}
@@ -225,10 +229,16 @@
 	            <div class="wpr">
 		            <p>Está por cobrar el pago! <br>¿Está Seguro?<br><a href="#" class="text-info btn-mostrar-importe-efectivo">Modificar monto efectivo</a><br/>
 		            </p>
+					
 		           
 		            <p class="wpr-efectivo form-inline hidden">
 		            	Puede modificar el importe para pago en efectivo:<br/>
-		            	<input type="text" class="form-control numeric monto-efectivo" value="" >
+						<input type="text" class="form-control numeric monto-efectivo" value="" disabled="disabled" ><br />
+						Reemplazar por este valor:<br />
+		            	<input type="text" name="monto_efectivo_des_{$aPago->id}" class="form-control numeric monto_efectivo_des_{$aPago->id}" id="monto_efectivo_des_{$aPago->id}" value="" data-id-pago="{$aPago->id}">
+						
+						
+						<button class="btn btn-success green btn-confirm-no-descuento" id="btn-confirm-no-descuento" data-id-pago="{$aPago->id}">Cobrar este monto</button>
 		            </p>
 		            <p>	<label><input type="checkbox" name="cb_modificar_fecha" class="cb_modificar_fecha" value="1"> Modificar Fecha de Cobro</label><br></p>
 		            <p class="wpr-fecha-cobro form-inline hidden">

@@ -1,34 +1,26 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 19:14:28
-         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:157285bce0bf47e1124-08250942%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:38:25
+         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\profile\historia-ficha.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:114975bf721d1e66b18-13300292%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '31abee81579313f224e714a2f0d79a6f2e22555f' => 
+    'ef5b8a6eaea123b39c31507039fd921e620e74b3' => 
     array (
-      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\login.tpl',
-      1 => 1542924318,
+      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\profile\\historia-ficha.tpl',
+      1 => 1538514863,
       2 => 'file',
     ),
     '60ac2ff8bf46065cc589b8fbd89c13f620e36a16' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\base\\base.tpl',
-      1 => 1542924863,
-      2 => 'file',
-    ),
-    'fda5dfcbf2e9c282f2eca416d2dc1fac392c6064' => 
-    array (
-      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\include\\login-box.tpl',
-      1 => 1538514863,
+      1 => 1542922660,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '157285bce0bf47e1124-08250942',
+  'nocache_hash' => '114975bf721d1e66b18-13300292',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bce0bf4ae16c9_42367643',
   'variables' => 
   array (
     'page_nocache' => 0,
@@ -37,13 +29,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'hideSidebar' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bf721d2121682_69542332',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bce0bf4ae16c9_42367643')) {function content_5bce0bf4ae16c9_42367643($_smarty_tpl) {?><!doctype html>
+<?php if ($_valid && !is_callable('content_5bf721d2121682_69542332')) {function content_5bf721d2121682_69542332($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
+?><!doctype html>
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
     <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
     <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
     <!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<html lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -101,9 +96,8 @@ home/cssEstados.css" rel="stylesheet" type="text/css"/>
 
         
 
-
     </head>
-    <body class="login">
+    <body >
 
 
         <!--[if lt IE 8]>
@@ -132,6 +126,7 @@ assets/images/googleplay.png" alt="googleplay" style="margin:0 auto;" width="150
 	   	<?php }?>
         
 
+
         <section id="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['mainSecctionId']->value)===null||$tmp==='' ? 'main' : $tmp);?>
 ">
             <div class="container">
@@ -140,32 +135,72 @@ assets/images/googleplay.png" alt="googleplay" style="margin:0 auto;" width="150
 
                 <?php }?>
                 
-	<a class="float-btn btn-success btn" href="<?php echo site_url();?>
-registro">CREAR UNA CUENTA</a>
-    <div class="row">
-	   <div class="col-md-12">
-		   <div class="logo text-center" style="margin-bottom: -65px; z-index: 1; position: relative;">
-				 <a href="<?php echo site_url();?>
-"><img src="<?php echo site_url();?>
-assets/images/isologo_4.svg" width="230" height="auto"/></a>
-		   </div>
-	   </div>
+			<div class="col-md-3 p-t-2" id="sidebar">
+				<div class="panel panel-default">
+					<div class="list-group">
+					  <div class="list-group-item">
+					  	<i class="fa fa-calendar" aria-hidden="true"></i> <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['aTurno']->value->fecha_hora,"%e de %B de %Y");?>
 
-	    <div class="col-md-4 col-md-offset-4">
-			<div class="panel panel-default p-t-3" style="border: 4px solid #be9e54;">
-				<?php /*  Call merged included template "include/login-box.tpl" */
-$_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('include/login-box.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '157285bce0bf47e1124-08250942');
-content_5bf72a44975544_65184250($_smarty_tpl);
-$_smarty_tpl = array_pop($_tpl_stack); 
-/*  End of included template "include/login-box.tpl" */?>
+					  </div>
+					  <div class="list-group-item">
+						<i class="fa fa-clock-o" aria-hidden="true"></i> <?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['aTurno']->value->fecha_hora,"%k:%M");?>
+
+					  </div>
+					  <div class="list-group-item">
+						<i class="fa fa-scissors" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['aTurno']->value->servicio->nombre;?>
+
+					  </div>
+					  <div class="list-group-item">
+						<i class="fa fa-user" aria-hidden="true"></i> <?php echo $_smarty_tpl->tpl_vars['aTurno']->value->coiffeur->nombre;?>
+
+					  </div>
+					 
+					</div>
+				</div>
+				<a href="<?php echo site_url();?>
+profile/historial" class="btn btn-sm btn-primary">
+					<i class="fa fa-arrow-left" aria-hidden="true"></i> volver
+				</a>
 			</div>
-	    </div>
-    </div>
+			<div class="col-md-9 p-t-2" id="content">
+
+				<div id="historial-carousel">
+					<div class="wrap">
+						<div id="fotos-slide" class="slider">
+							<ul class="row">
+					            <?php if (count($_smarty_tpl->tpl_vars['aTurno']->value->fotos)>0) {?>
+									<?php  $_smarty_tpl->tpl_vars['foto'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['foto']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['aTurno']->value->fotos; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['foto']->key => $_smarty_tpl->tpl_vars['foto']->value) {
+$_smarty_tpl->tpl_vars['foto']->_loop = true;
+?>
+					                <li>
+					                    <img src="<?php echo \Managers\ImagenManager::getInstance()->getUrl($_smarty_tpl->tpl_vars['foto']->value,'full');?>
+" height="400" width="auto" alt=".." />
+					                </li>
+					             <?php } ?>
+								<?php } else { ?>
+									<li>
+										<img src="<?php echo site_url();?>
+assets/images/default-historial.jpg" alt="..." class="img-responsive">
+								    </li>
+								<?php }?>
+				        	</ul>
+				    	</div>
+				    	<div class="controls">
+							<a href="#" class="prev-slide">
+								<div class="control left"></div>
+							</a>
+							<a href="#" class="next-slide">
+								<div class="control right"></div>
+							</a>
+						</div>
+					</div>
+				</div>
 
 
 
-
+			</div>
 
             </div>
         </section>
@@ -246,21 +281,17 @@ assets/js/plugins.js"><?php echo '</script'; ?>
 >
 
         
-
-    <!--script type="text/javascript" src="<?php echo assets_url('js/login.js');?>
-"><?php echo '</script'; ?>
+	<?php echo '<script'; ?>
+ src="<?php echo site_url();?>
+assets/js/vendor/lemmon-slider.min.js"><?php echo '</script'; ?>
 >
-
-    <?php echo '<script'; ?>
+	<?php echo '<script'; ?>
  type="text/javascript">
-
-        $(document).ready(function() {
-          Login.init();
-        });
-
-    <?php echo '</script'; ?>
--->
-
+		$(document).ready(function(){
+			$('#fotos-slide').lemmonSlider();
+		});
+	<?php echo '</script'; ?>
+>
 
         <?php echo '<script'; ?>
 >
@@ -268,7 +299,6 @@ assets/js/plugins.js"><?php echo '</script'; ?>
                 //App.init(); // init metronic core components
                 Login.init(); // init current layout
                 
-
             });
         <?php echo '</script'; ?>
 >
@@ -290,49 +320,3 @@ assets/js/plugins.js"><?php echo '</script'; ?>
     </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 19:14:28
-         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\include\login-box.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bf72a44975544_65184250')) {function content_5bf72a44975544_65184250($_smarty_tpl) {?><div class="login-box">
-	<div class="inner text-center">
-    	<form action="<?php echo site_url();?>
-registro/checklogin" method="post" id="frmLogin" class="frmLogin">
-        	<h3>¡Hola! ¿Cómo estás?</h3>
-			<hr/>
-			<a href="<?php echo $_smarty_tpl->tpl_vars['facebool_login_url']->value;?>
-" class="btn btn-face btn-block ">INGRESA CON FACEBOOK</a>
-			<hr/>
-            <?php if ($_smarty_tpl->tpl_vars['validado']->value==1) {?>
-            <H5>Tus Datos ya fueron Validados</H5>
-            <?php }?>
-
-            <h5 class="text-left">O ingresá tus datos</h5>
-			<div class="form-group">
-                <div class="inner-addon left-addon">
-                    <input type="text" class="form-control" name="username" placeholder="EMAIL" />
-                </div>
-            </div>
-
-			<div class="form-group">
-                <div class="inner-addon left-addon">
-                    <input type="password" class="form-control" name="pass" placeholder="CLAVE" />
-                </div>
-            </div>
-
-			<div class="form-group">
-				<button type="submit" class="btn btn-block btn-primary">Ingresar</button>
-            </div>
-
-            <!--<div class="form-group">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" value="1" name="recordar">
-                     Recordar mis datos
-                  </label>
-                </div>
-            </div>-->
-            	<a class="text-center" href="<?php echo site_url();?>
-registro/olvidopass">No me acuerdo mi clave</a><!--<a class="pull-right" href="<?php echo site_url();?>
-registro">REGISTRARME</a>-->
-        </form>
-    </div>
-</div><?php }} ?>

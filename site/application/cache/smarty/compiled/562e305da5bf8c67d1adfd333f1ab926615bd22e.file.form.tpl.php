@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:181305bce0c8138b9f4-55280213%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '60ac2ff8bf46065cc589b8fbd89c13f620e36a16' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\base\\base.tpl',
-      1 => 1538514863,
+      1 => 1542922660,
       2 => 'file',
     ),
     '52770e85bf33db55524d67043f3850598428b020' => 
@@ -63,6 +63,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5bce0c817c0d75_52520126',
   'variables' => 
   array (
     'page_nocache' => 0,
@@ -71,15 +73,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'hideSidebar' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bce0c817c0d75_52520126',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5bce0c817c0d75_52520126')) {function content_5bce0c817c0d75_52520126($_smarty_tpl) {?><!doctype html>
     <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
     <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
     <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
     <!--[if gt IE 8]><!-->
-<html class="no-js" lang=""> <!--<![endif]-->
+<html lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -234,31 +234,31 @@ assets/images/googleplay.png" alt="googleplay" style="margin:0 auto;" width="150
 	<?php /*  Call merged included template "turnos/form-step-1.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/form-step-1.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c8151ce73_99044580($_smarty_tpl);
+content_5bf72203a82586_09598550($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/form-step-1.tpl" */?>
 	<?php /*  Call merged included template "turnos/form-step-2.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/form-step-2.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c816412d1_19987182($_smarty_tpl);
+content_5bf72203bfb191_88352342($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/form-step-2.tpl" */?>
 	<?php /*  Call merged included template "turnos/form-step-3.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/form-step-3.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c81661605_06848608($_smarty_tpl);
+content_5bf72203c1e696_47257354($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/form-step-3.tpl" */?>
 	<?php /*  Call merged included template "turnos/form-step-4.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/form-step-4.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c816f6ad5_65232710($_smarty_tpl);
+content_5bf72203cb0fa0_13761943($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/form-step-4.tpl" */?>
 	<?php /*  Call merged included template "turnos/item-coifffeur.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/item-coifffeur.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c8173e826_02545663($_smarty_tpl);
+content_5bf72203cfa5d7_73367786($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/item-coifffeur.tpl" */?>
 
@@ -386,9 +386,9 @@ assets/js/turnosAdd.js"><?php echo '</script'; ?>
     </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\form-step-1.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c8151ce73_99044580')) {function content_5bce0c8151ce73_99044580($_smarty_tpl) {?><div id="step-1" class="step active">
+<?php if ($_valid && !is_callable('content_5bf72203a82586_09598550')) {function content_5bf72203a82586_09598550($_smarty_tpl) {?><div id="step-1" class="step active">
 				<div class="col-md-12 title text-center">
 
 					<h6 class="text-primary">NUEVO TURNO</h6>
@@ -476,9 +476,9 @@ $_smarty_tpl->tpl_vars['serv']->_loop = true;
 					</a>
 				</div>
 			</div><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\form-step-2.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c816412d1_19987182')) {function content_5bce0c816412d1_19987182($_smarty_tpl) {?><div id="step-2" class="step">
+<?php if ($_valid && !is_callable('content_5bf72203bfb191_88352342')) {function content_5bf72203bfb191_88352342($_smarty_tpl) {?><div id="step-2" class="step">
 	<div class="col-md-12 title text-center">
 		<h6 class="text-primary">NUEVO TURNO</h6>
 		<h3 class="m-t-0 p-t-0">Elegí el coiffeur</h3>
@@ -499,9 +499,9 @@ $_smarty_tpl->tpl_vars['serv']->_loop = true;
 		</a>
 	</div>
 </div><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\form-step-3.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c81661605_06848608')) {function content_5bce0c81661605_06848608($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_5bf72203c1e696_47257354')) {function content_5bf72203c1e696_47257354($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
 ?><div id="step-3" class="step">
 				<div class="col-md-12 title text-center">
 					<h6 class="text-primary">NUEVO TURNO</h6>
@@ -579,13 +579,13 @@ $_smarty_tpl->tpl_vars['serv']->_loop = true;
 	<?php /*  Call merged included template "turnos/item-horario.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/item-horario.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c816d8ac7_88028963($_smarty_tpl);
+content_5bf72203c99510_73704498($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/item-horario.tpl" */?>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\item-horario.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c816d8ac7_88028963')) {function content_5bce0c816d8ac7_88028963($_smarty_tpl) {?><?php echo '<script'; ?>
+<?php if ($_valid && !is_callable('content_5bf72203c99510_73704498')) {function content_5bf72203c99510_73704498($_smarty_tpl) {?><?php echo '<script'; ?>
  id="template_horario" type="text/x-jsrender">
 	
 		<div class="list-group-item p-t-1">
@@ -600,9 +600,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 	
 <?php echo '</script'; ?>
 ><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\form-step-4.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c816f6ad5_65232710')) {function content_5bce0c816f6ad5_65232710($_smarty_tpl) {?><div id="step-4" class="step">
+<?php if ($_valid && !is_callable('content_5bf72203cb0fa0_13761943')) {function content_5bf72203cb0fa0_13761943($_smarty_tpl) {?><div id="step-4" class="step">
 				<div class="col-md-12 title text-center">
 					<h6 class="text-primary">NUEVO TURNO</h6>
 					<h3 class="m-t-0 p-t-0">Confirmar el turno</h3>
@@ -692,14 +692,14 @@ $_smarty_tpl = array_pop($_tpl_stack);
 	<?php /*  Call merged included template "turnos/item-confirmacion-turno.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('turnos/item-confirmacion-turno.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '181305bce0c8138b9f4-55280213');
-content_5bce0c81721fc7_88020478($_smarty_tpl);
+content_5bf72203ce05b0_86233921($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "turnos/item-confirmacion-turno.tpl" */?>
 
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\item-confirmacion-turno.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c81721fc7_88020478')) {function content_5bce0c81721fc7_88020478($_smarty_tpl) {?><?php echo '<script'; ?>
+<?php if ($_valid && !is_callable('content_5bf72203ce05b0_86233921')) {function content_5bf72203ce05b0_86233921($_smarty_tpl) {?><?php echo '<script'; ?>
  id="template_confirmacion_turno" type="text/x-jsrender">
 	
 		<div class="list-group-item">
@@ -717,9 +717,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 	
 <?php echo '</script'; ?>
 ><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-10-22 14:44:33
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-22 18:39:15
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\turnos\item-coifffeur.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bce0c8173e826_02545663')) {function content_5bce0c8173e826_02545663($_smarty_tpl) {?><?php echo '<script'; ?>
+<?php if ($_valid && !is_callable('content_5bf72203cfa5d7_73367786')) {function content_5bf72203cfa5d7_73367786($_smarty_tpl) {?><?php echo '<script'; ?>
  id="template_coiffeur" type="text/x-jsrender">
 	
 		<button class="list-group-item nexter {{if id == ~turno_id}} anterior {{/if}}" data-id-coiffeur="{{:id}}">
