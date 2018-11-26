@@ -1378,7 +1378,7 @@ class Turnos extends BaseAdmin_Controller
                         ///noti
                         $aNotificacion->titulo = 'Ya agendamos tu turno. ¡Te esperamos!';
                         $aNotificacion->visto = false;
-                        $aNotificacion->descripcion = 'Fecha: '. $fecha->format('d-m-Y H:i'). ' HS';
+                        $aNotificacion->descripcion = 'Fecha: '. $desde. ' HS';
 
                         $result["title"]   = "Turno reservado";
                         $result["status"]  = true;

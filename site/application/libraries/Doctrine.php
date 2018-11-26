@@ -76,7 +76,7 @@ class Doctrine {
     // Set up logger
     //$logger = new EchoSQLLogger;
     //$config->setSQLLogger($logger);
-
+	//$config->setAutoGenerateProxyClasses( \Doctrine\Common\Proxy\AbstractProxyFactory::AUTOGENERATE_FILE_NOT_EXISTS );
     $config->setAutoGenerateProxyClasses( TRUE ); 
     // Database connection information
     $connectionOptions = array(
