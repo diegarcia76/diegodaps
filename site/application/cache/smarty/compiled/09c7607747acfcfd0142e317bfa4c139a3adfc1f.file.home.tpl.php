@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-23 13:13:13
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-27 13:02:08
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\deudores\home.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:174595be0869669db89-57356234%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '09c7607747acfcfd0142e317bfa4c139a3adfc1f' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\deudores\\home.tpl',
-      1 => 1542989586,
+      1 => 1543334497,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -525,7 +525,9 @@ $_smarty_tpl->tpl_vars['aPago']->_loop = true;
 		            <p>	<label><input type="checkbox" name="cb_modificar_fecha" class="cb_modificar_fecha" value="1"> Modificar Fecha de Cobro</label><br></p>
 		            <p class="wpr-fecha-cobro form-inline hidden">
 		            	Fecha de Cobro:<br/>
-			            <input type="text" class="form-control fecha_cobro" id="Adatepicker" name="fecha_cobro">
+			            <input type="text" class="form-control fecha_cobro" id="fecha_cobro_<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+" name="fecha_cobro_<?php echo $_smarty_tpl->tpl_vars['aPago']->value->id;?>
+">
 						    
 		            </p>
 					
@@ -700,19 +702,19 @@ $_smarty_tpl->tpl_vars['aPago']->_loop = true;
 <?php /*  Call merged included template "admin/deudores/modal-agregar-producto.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/deudores/modal-agregar-producto.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '174595be0869669db89-57356234');
-content_5bf8271a3c4b97_79203906($_smarty_tpl);
+content_5bfd6a81049371_64685560($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/deudores/modal-agregar-producto.tpl" */?>
 <?php /*  Call merged included template "admin/deudores/modal-agregar-servicio.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/deudores/modal-agregar-servicio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '174595be0869669db89-57356234');
-content_5bf8271a49af70_94032736($_smarty_tpl);
+content_5bfd6a810f5422_47763103($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/deudores/modal-agregar-servicio.tpl" */?>
 <?php /*  Call merged included template "admin/deudores/modal-agregar-item.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/deudores/modal-agregar-item.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '174595be0869669db89-57356234');
-content_5bf8271a54f310_38895826($_smarty_tpl);
+content_5bfd6a8117a382_04227017($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/deudores/modal-agregar-item.tpl" */?>
 
@@ -881,9 +883,9 @@ assets/admin/js/deudores.js?version=20180712"><?php echo '</script'; ?>
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-23 13:13:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-27 13:02:09
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\deudores\modal-agregar-producto.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bf8271a3c4b97_79203906')) {function content_5bf8271a3c4b97_79203906($_smarty_tpl) {?><div id="modal-agregar-producto" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-producto-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bfd6a81049371_64685560')) {function content_5bfd6a81049371_64685560($_smarty_tpl) {?><div id="modal-agregar-producto" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-producto-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-producto" action="<?php echo site_url();?>
 admin/deudores/addProducto" method="post" class="formulario">
     <input type="hidden" name="pago-id" value="" />
@@ -1001,9 +1003,9 @@ $_smarty_tpl->tpl_vars['aCoiffeur']->_loop = true;
     </div><!-- /.modal-dialog -->
     </form>
 </div><!-- /.modal --><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-23 13:13:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-27 13:02:09
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\deudores\modal-agregar-servicio.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bf8271a49af70_94032736')) {function content_5bf8271a49af70_94032736($_smarty_tpl) {?><div id="modal-agregar-servicio" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-servicio-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bfd6a810f5422_47763103')) {function content_5bfd6a810f5422_47763103($_smarty_tpl) {?><div id="modal-agregar-servicio" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-servicio-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-servicio" action="<?php echo site_url();?>
 admin/deudores/addServicio" method="post" class="formulario">
     <input type="hidden" name="pago-id" value="" />
@@ -1119,9 +1121,9 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration == 1
     </div><!-- /.modal-dialog -->
     </form>
 </div><!-- /.modal --><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-23 13:13:14
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-27 13:02:09
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\deudores\modal-agregar-item.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bf8271a54f310_38895826')) {function content_5bf8271a54f310_38895826($_smarty_tpl) {?><div id="modal-agregar-item" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-item-label" aria-hidden="true" data-backdrop='static'>
+<?php if ($_valid && !is_callable('content_5bfd6a8117a382_04227017')) {function content_5bfd6a8117a382_04227017($_smarty_tpl) {?><div id="modal-agregar-item" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-agregar-item-label" aria-hidden="true" data-backdrop='static'>
     <form id="frm-agregar-item" action="<?php echo site_url();?>
 admin/deudores/saveItem" method="post" class="formulario"
     >

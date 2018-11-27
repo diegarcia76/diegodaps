@@ -244,8 +244,31 @@ $(document).ready(function(){
 				email: email
 			},
               type: 'post',
-			dataType: 'json',
-			
+			  dataType: 'json',
+			  
+			  success: function (json){
+       			WebDialogs.doCloseLoading();
+				if (json.status == true){
+					WebDialogs.doAlert({
+						message: json.message,
+						title: json.title,
+						onConfirm: function(){
+							window.location.href = __SITEURL+'admin/turnos/turnos';
+						}
+					});
+
+				} else {
+					WebDialogs.doAlertError({
+						message: json.message,
+						title: json.title,
+						onConfirm: function(){
+							$(form).find('fieldset').attr('disabled',false);
+						}
+					});
+				}
+
+			}
+			/*
                success: function(json) {
                    $("#calendar").fullCalendar('renderEvent',
                    {
@@ -256,6 +279,7 @@ $(document).ready(function(){
                    },
                    true);
                }
+			   */
            });
            
        }
@@ -387,7 +411,7 @@ $(document).ready(function(){
  <div class="modal-content">
  <div class="modal-header">
  <button type="button" class="close" data-dismiss="modal">×</button>
- <h4 class="modal-title">Event Details</h4>
+ <h4 class="modal-title">Detalle del Servicio</h4>
  </div>
  <div id="modalBody" class="modal-body">
  <h4 id="modalTitle" class="modal-title"></h4>
@@ -395,8 +419,9 @@ $(document).ready(function(){
  </div>
  <input type="hidden" id="eventID"/>
  <div class="modal-footer">
- <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
- <button type="submit" class="btn btn-danger" id="deleteButton">Delete</button>
+ <button class="btn" data-dismiss="modal" aria-hidden="true">Salir</button>
+ <button type="submit" class="btn btn-succes" id="editButton">Editar</button>
+ <button type="submit" class="btn btn-danger" id="deleteButton">Eliminar</button>
  </div>
  </div>
 </div>

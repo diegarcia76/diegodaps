@@ -104,7 +104,7 @@
 																						
 																						<button class="btn btn-default btn-sm btn-modificar-item" data-id-detalle="{$aDetallePago->id}" > <i class="fa fa-pencil"></i></button>
 																						
-																				<input type="checkbox" name="eliminar[]" class="eliminar" id="eliminar" rel="{$aDetallePago->id}" value="{$aDetallePago->id}"/>		
+																				<input type="checkbox" name="eliminar[]" class="eliminar_{$aPago->id}" id="eliminar_{$aPago->id}" rel="{$aDetallePago->id}" value="{$aDetallePago->id}"/>		
 																					</td>
 																			</tr>
 																			
@@ -113,7 +113,7 @@
 																					<td colspan="4" class="text-right">TOTAL</td>
 																					<th>${$aPago->total|floatval|number_format:2:",":"."}</th>
 																			</tr>
-																			 <tr><td colspan="5"> <button class="btn red pull-right" type="button" id="eliminar_todos">Eliminar Seleccionados</button> </td></tr>
+																			 <tr><td colspan="5"> <button class="btn red pull-right eliminar_todos" type="button" id="eliminar_todos" data-id-pago="{$aPago->id}">Eliminar Seleccionados</button> </td></tr>
 																	</tbody>
 																	</table>
 														</div>
@@ -243,7 +243,7 @@
 		            <p>	<label><input type="checkbox" name="cb_modificar_fecha" class="cb_modificar_fecha" value="1" data-id-pago="{$aPago->id}"> Modificar Fecha de Cobro</label><br></p>
 		            <p class="wpr-fecha-cobro form-inline hidden">
 		            	Fecha de Cobro:<br/>
-			            <input type="text" class="form-control fecha_cobro_{$aPago->id}" id="Adatepicker" name="fecha_cobro_{$aPago->id}">
+			            <input type="text" class="form-control fecha_cobro" id="fecha_cobro_{$aPago->id}" name="fecha_cobro_{$aPago->id}">
 						    
 		            </p>
 					

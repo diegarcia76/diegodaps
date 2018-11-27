@@ -14,7 +14,7 @@ var Cobros = function() {
 			pago_id = $(this).data('id-pago');
 			total_efectivo = $('.monto-efectivo').val();
 			cb_modificar_fecha = ($('.cb_modificar_fecha').is(':checked'))?1:0;
-			fecha_cobro = $('.fecha_cobro_'+pago_id).val();
+			fecha_cobro = $('#fecha_cobro_'+pago_id).val();
 			var recargo = 0;
 			var tipo = 1;
 
@@ -57,7 +57,7 @@ $('.btn-confirm-no-descuento').click(function(){
 			pago_id = $(this).data('id-pago');
 			total_efectivo = $('.monto_efectivo_des_'+pago_id).val();
 			cb_modificar_fecha = ($('.cb_modificar_fecha').is(':checked'))?1:0;
-			fecha_cobro = $('.fecha_cobro_'+pago_id).val();
+			fecha_cobro = $('#fecha_cobro_'+pago_id).val();
 			var recargo = 0;
 			var tipo = 1;
 
@@ -104,7 +104,7 @@ $('.btn-confirm-no-descuento').click(function(){
 			total_efectivo = $('.monto-efectivo').val();
 			total_tarjeta = $(this).data('total-tarjeta');
 			cb_modificar_fecha = ($('.cb_modificar_fecha').is(':checked'))?1:0;
-			fecha_cobro = $('.fecha_cobro_'+pago_id).val();
+			fecha_cobro = $('#fecha_cobro_'+pago_id).val();
 			interes = $('.t').val();
 			var interes = total_tarjeta + (total_tarjeta * interes / 100);
 			var recargo = interes - total_tarjeta;
@@ -166,7 +166,7 @@ $('.btn-confirm-no-descuento').click(function(){
 			
 		});
 
-		$('#Adatepicker').datepicker(
+		$('.fecha_cobro').datepicker(
 		{
 		  format: 'yyyy-mm-dd',
 		  autoclose: true,
@@ -659,11 +659,15 @@ $('.btn-confirm-no-descuento').click(function(){
 	
 	
 	var handleEliminarTodos = function(){
-		$('#eliminar_todos').on('click', function(e){
+		$('.eliminar_todos').on('click', function(e){
 			e.preventDefault();
+			var pago_id = parseInt($(this).data('id-pago'));
+			//alert(pago_id);
 			var lote = new Array ();
+			//var nom = "eliminar[]_"+pago_id
 			var elimina =  $('input[name="eliminar[]"]');
-			//alert(lote);
+			//var elimina =  $('eliminar_'+pago_id).val();
+			//alert(elimina);
 			for(i = 0; i < elimina.length; i++){
 				if (elimina[i].checked){
 				lote[i]=elimina[i].value;

@@ -1318,7 +1318,11 @@ class Turnos extends BaseAdmin_Controller
 		$email = trim($this->input->post('email'));
         
         // $puntos = trim($this->input->post('puntos_servicio'));
-
+		$desde = new DateTime($desde);
+		$hasta = new DateTime($hasta);
+		$fecha = new DateTime($fecha);
+//echo $desde->format('Y-m-d h:i:s');
+//die();
         if ($aCoiffeur = Managers\CoiffeurManager::getInstance()->get($id_coiffeur)){
 
             $result["message"] = 'No se ha podido reservar el turno! <br/> Debe seleccionar un <strong>Cliente</strong>.';
@@ -1343,73 +1347,113 @@ class Turnos extends BaseAdmin_Controller
 
                 $result["message"] = 'No se ha podido reservar el turno! <br/> Debe seleccionar un <strong>Servicio</strong>.';
                 if ($aServicio = Managers\ServicioManager::getInstance()->get($id_servicio)){
-                    $fecha = Datetime::createFromFormat('YmdHis', $fecha);
+                   // $fecha = Datetime::createFromFormat('YmdHis', $fecha);
 
                     //agregar notificacion para el Back de turno
-                    $aNotificacion =  \Managers\NotificacionManager::getInstance()->create();
+                 	 $aEstado = Managers\EstadoTurnoManager::getInstance()->get(1); //Estado Reservado
+					 // if (($aServicio->duracion_espera == 0) and ($aServicio->intervalo == 0)){
+					 	 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+						 $aTurno->coiffeur = $aCoiffeur;
+                         $aTurno->estadoTurno = $aEstado;
+                         $aTurno->servicio = $aServicio;
+                         $aTurno->cliente = $aCliente;
+						 $aTurno->mostrar = 0;
+                         $aTurno->fecha_hora = $fecha;
+						 $aTurno->fecha_hora_inicio = $desde;
+				         $aTurno->fecha_hora_final = $hasta; 
+							 if ( $turnoOcupado = \Managers\TurnoManager::getInstance()->getByFecha($aServicio, $aCoiffeur, $fecha) ) {
+							   $prioridad = $turnoOcupado[0]->prioridad+1;
+							} else {
+							  $prioridad = 0;
+							}
+                       $aTurno->prioridad = $prioridad;
+                       $aTurno->nombre = $turno_nombre;
+                       $aTurno->telefono = $turno_telefono;
+					   $aTurno->email = $email;
+                       $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+                      /*
+					} else{
+						if (($aServicio->duracion_espera != 0) and ($aServicio->intervalo == 0)){
+						 	$aTurno =  \Managers\TurnoManager::getInstance()->create();
+						 	$aTurno->coiffeur = $aCoiffeur;
+                       	    $aTurno->estadoTurno = $aEstado;
+                        	$aTurno->servicio = $aServicio;
+                            $aTurno->cliente = $aCliente;
+						    $aTurno->mostrar = 0;
+                            $aTurno->fecha_hora = $fecha;
+							$aTurno->fecha_hora_inicio = $desde;
+							$aTurno->fecha_hora_final = $hasta; 
+							if ( $turnoOcupado = \Managers\TurnoManager::getInstance()->getByFecha($aServicio, $aCoiffeur, $fecha) ) {
+                               $prioridad = $turnoOcupado[0]->prioridad+1;
+                    		} else {
+                       		   $prioridad = 0;
+                    		}
 
-                    if ($aTurno = Managers\TurnoManager::getInstance()->get($turno_id)) {
-                        $aTurno->coiffeur = $aCoiffeur;
-                        $aTurno->servicio = $aServicio;
-                        $aTurno->fecha_hora = $fecha;
-                        $aTurno->cliente = $aCliente;
-                        ///noti
+							$aTurno->prioridad = $prioridad;
+							$aTurno->nombre = $turno_nombre;
+							$aTurno->telefono = $turno_telefono;
+							$aTurno->email = $email;
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+						
+						}else{
+							$aTurno =  \Managers\TurnoManager::getInstance()->create();
+							$aTurno->coiffeur = $aCoiffeur;
+							$aTurno->estadoTurno = $aEstado;
+							$aTurno->servicio = $aServicio;
+							$aTurno->cliente = $aCliente;
+							$aTurno->mostrar = 0;
+							$aTurno->fecha_hora = $fecha;
+							$aTurno->fecha_hora_inicio = $desde;
+							$aTurno->fecha_hora_final = hasta; 
+							if ( $turnoOcupado = \Managers\TurnoManager::getInstance()->getByFecha($aServicio, $aCoiffeur, $fecha) ) {
+                               $prioridad = $turnoOcupado[0]->prioridad+1;
+                   			 } else {
+                       			 $prioridad = 0;
+                    		}
+							$aTurno->prioridad = $prioridad;
+							$aTurno->nombre = $turno_nombre;
+							$aTurno->telefono = $turno_telefono;
+							$aTurno->email = $email;
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+							
+							
+							/*					
+							 $aTurno =  \Managers\TurnoManager::getInstance()->create();
+							 $aTurno->coiffeur = $aCoiffeur;
+                        	 $aTurno->estadoTurno = $aEstado;
+                             $aTurno->servicio = $aServicio;
+                             $aTurno->cliente = $aCliente;
+						     $aTurno->mostrar = 1;
+                             $aTurno->fecha_hora = $fecha;
+							
+							 $aTurno->fecha_hora_inicio = clone $fechaInicioAux; 
+							 $aSumar =  $aServicio->duracion + $aServicio->duracion_espera;	
+							 $aTurno->fecha_hora_inicio->modify('+ '.$aSumar.' minutes');;
+							 $aTurno->fecha_hora_final = clone $fechaInicioAux; 
+							 $aSumar =  $aServicio->duracion_espera + $aServicio->intervalo + $aServicio->duracion;
+							 $aTurno->fecha_hora_final->modify('+ '.$aSumar.' minutes');
+							 
+							 
+							 if ( $turnoOcupado = \Managers\TurnoManager::getInstance()->getByFecha($aServicio, $aCoiffeur, $fecha) ) {
+								//var_dump($turnoOcupado[0]->prioridad); die();
+								$prioridad = $turnoOcupado[0]->prioridad+1;
+							} else {
+								$prioridad = 0;
+							}
+		
+							$aTurno->prioridad = $prioridad;
+							$aTurno->nombre = $turno_nombre;
+							$aTurno->telefono = $turno_telefono;
+							 $aTurno->email = $email;
+							$aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
+					*/
 
-                        $aNotificacion->titulo = '<strong><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Tu turno del día '.$aTurno->fecha_hora->format('d-m').' a las '.$aTurno->fecha_hora->format('H:i').' hs fue modificado</strong><br />';
-                        $aNotificacion->descripcion = '<p style="padding:4px 0;">Revisá los cambios y comunicate con nosotros ante cualquier duda</p>';
-                        $aNotificacion->visto = false;
-
-                        $result["title"]   = "Turno reservado";
-                        $result["status"]  = true;
-                        $result["message"] = 'Se ha cambiado la reserva del turno';
-                    } else {
-                        
-
-                        $aTurno =  \Managers\TurnoManager::getInstance()->create();
-                        $aEstado = Managers\EstadoTurnoManager::getInstance()->get(1); //Estado Reservado
-
-                        $aTurno->coiffeur = $aCoiffeur;
-                        $aTurno->estadoTurno = $aEstado;
-                        $aTurno->servicio = $aServicio;
-                        $aTurno->cliente = $aCliente;
-                        
-                        $aTurno->fecha_hora = $fecha;
-
-                        ///noti
-                        $aNotificacion->titulo = 'Ya agendamos tu turno. ¡Te esperamos!';
-                        $aNotificacion->visto = false;
-                        $aNotificacion->descripcion = 'Fecha: '. $desde. ' HS';
-
-                        $result["title"]   = "Turno reservado";
+                   		 $result["title"]   = "Turno reservado";
                         $result["status"]  = true;
                         $result["message"] = 'Se ha reservado el turno';
+                  
 
-                        /*}else{
-                            $result["message"] = 'Turno Ocupado!';
-                        }*/
-                    }
-
-                    if ( $turnoOcupado = \Managers\TurnoManager::getInstance()->getByFecha($aServicio, $aCoiffeur, $fecha) ) {
-                        //var_dump($turnoOcupado[0]->prioridad); die();
-                        $prioridad = $turnoOcupado[0]->prioridad+1;
-                    } else {
-                        $prioridad = 0;
-                    }
-
-                    $aTurno->prioridad = $prioridad;
-                    $aTurno->nombre = $turno_nombre;
-                    $aTurno->telefono = $turno_telefono;
-					 $aTurno->email = $email;
-                    $aTurno = Managers\TurnoManager::getInstance()->save($aTurno);
-
-                    //noti
-                    $aNotificacion->tipo = true;
-                    $aNotificacion->cliente = $aCliente;
-                    $aNotificacion->fecha = new DateTime('now');
-
-                    if ($aCliente){
-                        $aNotificacion =  \Managers\NotificacionManager::getInstance()->save($aNotificacion);
-                    }
+                   
                 }
             }
         }

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 13:41:06
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-27 19:51:16
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\turnos\turnos.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:286325bd8b8f6e2c0d5-91185986%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd014add475cd45737d9aa3b76cf42484230ffc03' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\turnos\\turnos.tpl',
-      1 => 1542405527,
+      1 => 1543359071,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -257,7 +257,7 @@ admin/clientes/add"> <i class="icon-plus"></i> Agregar Cliente</a>
 	<?php /*  Call merged included template "admin/turnos/item-horario.tpl" */
 $_tpl_stack[] = $_smarty_tpl;
  $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate('admin/turnos/item-horario.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '286325bd8b8f6e2c0d5-91185986');
-content_5bf43922e27df7_31001367($_smarty_tpl);
+content_5bfdca64949fe0_31369365($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "admin/turnos/item-horario.tpl" */?>
 	
@@ -358,7 +358,7 @@ $_smarty_tpl->tpl_vars['sub']->_loop = true;
  <div class="modal-content">
  <div class="modal-header">
  <button type="button" class="close" data-dismiss="modal">×</button>
- <h4 class="modal-title">Event Details</h4>
+ <h4 class="modal-title">Detalle del Servicio</h4>
  </div>
  <div id="modalBody" class="modal-body">
  <h4 id="modalTitle" class="modal-title"></h4>
@@ -366,8 +366,9 @@ $_smarty_tpl->tpl_vars['sub']->_loop = true;
  </div>
  <input type="hidden" id="eventID"/>
  <div class="modal-footer">
- <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
- <button type="submit" class="btn btn-danger" id="deleteButton">Delete</button>
+ <button class="btn" data-dismiss="modal" aria-hidden="true">Salir</button>
+ <button type="submit" class="btn btn-succes" id="editButton">Editar</button>
+ <button type="submit" class="btn btn-danger" id="deleteButton">Eliminar</button>
  </div>
  </div>
 </div>
@@ -779,8 +780,31 @@ $(document).ready(function(){
 				email: email
 			},
               type: 'post',
-			dataType: 'json',
-			
+			  dataType: 'json',
+			  
+			  success: function (json){
+       			WebDialogs.doCloseLoading();
+				if (json.status == true){
+					WebDialogs.doAlert({
+						message: json.message,
+						title: json.title,
+						onConfirm: function(){
+							window.location.href = __SITEURL+'admin/turnos/turnos';
+						}
+					});
+
+				} else {
+					WebDialogs.doAlertError({
+						message: json.message,
+						title: json.title,
+						onConfirm: function(){
+							$(form).find('fieldset').attr('disabled',false);
+						}
+					});
+				}
+
+			}
+			/*
                success: function(json) {
                    $("#calendar").fullCalendar('renderEvent',
                    {
@@ -791,6 +815,7 @@ $(document).ready(function(){
                    },
                    true);
                }
+			   */
            });
            
        }
@@ -818,9 +843,9 @@ $(document).ready(function(){
 
 <!-- END BODY -->
 </html><?php }} ?>
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 13:41:06
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-27 19:51:16
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\turnos\item-horario.tpl" */ ?>
-<?php if ($_valid && !is_callable('content_5bf43922e27df7_31001367')) {function content_5bf43922e27df7_31001367($_smarty_tpl) {?><?php echo '<script'; ?>
+<?php if ($_valid && !is_callable('content_5bfdca64949fe0_31369365')) {function content_5bfdca64949fe0_31369365($_smarty_tpl) {?><?php echo '<script'; ?>
  id="template_horario" type="text/x-jsrender">
 	
 		<div class="list-group-item p-t-1">
