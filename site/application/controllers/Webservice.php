@@ -738,6 +738,7 @@ class Webservice extends Base_Controller
 						$aTurno->coiffeur = $aCoiffeur;
                    		$aTurno->servicio = $aServicio;
                    		$aTurno->fecha_hora = $fecha;
+						 $aTurno->mostrar = 0;
 					
 					 $aTurno->fecha_hora_inicio = $fecha;
 				     $aTurno->fecha_hora_final = clone $fechaInicioAux; 
@@ -754,6 +755,7 @@ class Webservice extends Base_Controller
 							$aTurno->coiffeur = $aCoiffeur;
 							$aTurno->servicio = $aServicio;
 							$aTurno->fecha_hora = $fecha;
+							 $aTurno->mostrar = 0;
 							
 							$aTurno->fecha_hora_inicio = $fecha;
 							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
@@ -769,6 +771,7 @@ class Webservice extends Base_Controller
 							$aTurno->coiffeur = $aCoiffeur;
 							$aTurno->servicio = $aServicio;
 							$aTurno->fecha_hora = $fecha;
+							 $aTurno->mostrar = 0;
 							
 							$aTurno->fecha_hora_inicio = $fecha;
 							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
@@ -786,6 +789,7 @@ class Webservice extends Base_Controller
 							 $aTurno->cliente = $aUser;
 							 $aTurno->prioridad = $prioridad;
 							 $aTurno->fecha_hora = $fecha;
+							  $aTurno->mostrar = 1;
 							
 							 $aTurno->fecha_hora_inicio = clone $fechaInicioAux; 	
 							 $aTurno->fecha_hora_inicio->modify('+ '.$aServicio->duracion_espera.' minutes');;
@@ -836,6 +840,7 @@ class Webservice extends Base_Controller
 						 $aTurno->estadoTurno = $aEstado;
 						   $aTurno->prioridad = $prioridad;
 						   $aTurno->cliente = $aUser;
+						    $aTurno->mostrar = 0;
 					
 					 $aTurno->fecha_hora_inicio = $fecha;
 				     $aTurno->fecha_hora_final = clone $fechaInicioAux; 
@@ -855,6 +860,7 @@ class Webservice extends Base_Controller
 							 $aTurno->estadoTurno = $aEstado;
 							  $aTurno->cliente = $aUser;
 							    $aTurno->prioridad = $prioridad;
+								 $aTurno->mostrar = 0;
 							
 							$aTurno->fecha_hora_inicio = $fecha;
 							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
@@ -875,6 +881,7 @@ class Webservice extends Base_Controller
 							 $aTurno->estadoTurno = $aEstado;
 							  $aTurno->cliente = $aUser;
 							    $aTurno->prioridad = $prioridad;
+								 $aTurno->mostrar = 0;
 							
 							$aTurno->fecha_hora_inicio = $fecha;
 							$aTurno->fecha_hora_final = clone $fechaInicioAux; 
@@ -892,6 +899,7 @@ class Webservice extends Base_Controller
 							 $aTurno->cliente = $aUser;
 							 $aTurno->prioridad = $prioridad;
 							 $aTurno->fecha_hora = $fecha;
+							  $aTurno->mostrar = 1;
 							
 							 $aTurno->fecha_hora_inicio = clone $fechaInicioAux; 
 							 $aSumar =  $aServicio->duracion + $aServicio->duracion_espera;	

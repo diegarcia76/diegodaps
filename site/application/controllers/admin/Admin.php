@@ -76,6 +76,8 @@ class Admin extends BaseAdmin_Controller {
 				$userDataMin['id'] = $aTurno->cliente->id;
 				$userDataMin['turnoid'] = $aTurno->id;
 				$userDataMin['hash'] = \Managers\ClienteManager::getInstance()->doHash($aTurno->cliente);
+				
+				
 
 				$userData = base64_encode(json_encode($userDataMin));
 
@@ -181,22 +183,28 @@ class Admin extends BaseAdmin_Controller {
 			}
 
 			
+			
 			$t = 0;
 			foreach ($aTurnosCliente as $tu){
 				 if ($tu->mostrar == 0){
 				  $t = $t +1;
-				 }else{
-				 $t = $t -1;
+				 	}else{
+				  $t = $t -1;
 				 }
 			}
+			
+			if ($t < 1){
+				$t=0;
+			}
+			
 			//echo $t;
 			//die();
 				
 			//if(count($aTurnosCliente)>1){
-			if($t>0){
+			if($t>1){
 				
 				
-			
+			/*
 				$turnos = array();
 				//var_dump($aProvincias->nombre);
 				foreach($aTurnosCliente as $tc){
@@ -204,6 +212,16 @@ class Admin extends BaseAdmin_Controller {
 						if ($tc->mostrar == 0){
 						 $turnos[] = Managers\TurnoManager::getInstance()->toArray($tc);	
 						}	
+				}
+				
+				*/
+				$turnos = array();
+				//var_dump($aProvincias->nombre);
+				foreach($aTurnosCliente as $tc){
+				//	var_dump($provincia);
+					if ($tc->mostrar == 0){
+						$turnos[] = Managers\TurnoManager::getInstance()->toArray($tc);	
+					}		
 				}
 				
 				
