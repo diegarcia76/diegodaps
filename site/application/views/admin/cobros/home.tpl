@@ -238,7 +238,8 @@
 		            	<input type="text" name="monto_efectivo_des_{$aPago->id}" class="form-control numeric monto_efectivo_des_{$aPago->id}" id="monto_efectivo_des_{$aPago->id}" value="" data-id-pago="{$aPago->id}">
 						
 						
-						<button class="btn btn-success green btn-confirm-no-descuento" id="btn-confirm-no-descuento" data-id-pago="{$aPago->id}">Cobrar este monto</button>
+						<button class="btn btn-success green btn-confirm-no-descuento" id="btn-confirm-no-descuento" data-id-pago="{$aPago->id}">Cobrar en $</button>
+						<button class="btn btn-success green btn-confirm-no-descuento-t" id="btn-confirm-no-descuento-t" data-id-pago="{$aPago->id}">Cobrar c/ Tarjeta</button>
 		            </p>
 		            <p>	<label><input type="checkbox" name="cb_modificar_fecha" class="cb_modificar_fecha" value="1" data-id-pago="{$aPago->id}"> Modificar Fecha de Cobro</label><br></p>
 		            <p class="wpr-fecha-cobro form-inline hidden">

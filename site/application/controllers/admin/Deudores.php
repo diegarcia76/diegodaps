@@ -83,7 +83,7 @@ class Deudores extends BaseAdmin_Controller
 
             $canje = false;
 			
-			$aPago->fecha_pago = new \DateTime('now');
+			$aPago->fecha_pago = $aPago->fecha;
 
             if($cb_modificar_fecha == 1){
                 $aPago->fecha = Datetime::createFromFormat('Y-m-d', $fecha_cobro);

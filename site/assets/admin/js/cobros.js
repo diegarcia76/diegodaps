@@ -99,6 +99,53 @@ $('.btn-confirm-no-descuento').click(function(){
 
 
 
+$('.btn-confirm-no-descuento-t').click(function(){
+			pago_id = $(this).data('id-pago');
+			total_efectivo = $('.monto_efectivo_des_'+pago_id).val();
+			cb_modificar_fecha = ($('.cb_modificar_fecha').is(':checked'))?1:0;
+			fecha_cobro = $('#fecha_cobro_'+pago_id).val();
+			var recargo = 0;
+			var tipo = 2;
+
+			//alert('combo: '+cb_modificar_fecha);
+			//alert('fecha: '+fecha_cobro);
+			//alert(total_efectivo);	
+			WebDialogs.doLoading({
+				message: 'Enviando Información al cliente',
+				title: 'Cobro'						
+			});
+			$.ajax({
+				url: __SITEURL+'admin/cobros/pagar/'+pago_id,
+				data: {
+					tipo:'noefectivo',
+					total_efectivo: total_efectivo,
+					cb_modificar_fecha:cb_modificar_fecha,
+					fecha_cobro:fecha_cobro,
+					recargo:recargo,
+					forma:tipo,
+					monto: total_efectivo
+				},
+				type: 'POST',
+				dataType: 'json',
+				success: function (jsonData){					
+					//alert(jsonData.message);
+					WebDialogs.doCloseLoading();
+					$('#confirmarCobro_'+pago_id).modal('hide');
+					WebDialogs.doAlert({
+						message: jsonData.message,
+						title: 'Éxito',
+						onConfirm: function(){
+							window.location.reload();
+						}
+					});
+				}
+			});
+		
+		});
+
+
+
+
 		$('.btn-confirm-no-efectivo').click(function(){
 			pago_id = $(this).data('id-pago');
 			total_efectivo = $('.monto-efectivo').val();
