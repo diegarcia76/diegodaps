@@ -1291,6 +1291,7 @@ class Turnos extends BaseAdmin_Controller
 
         //$this->data['turnosHoy'] = \Managers\TurnoManager::getInstance()->getByDia($diaActual);
         $this->data['aCoiffeurs'] = \Managers\CoiffeurManager::getInstance()->getActiveAll();
+		$this->data['aCategorias'] = \Managers\CategoriaManager::getInstance()->getAll();
 		
 		$this->data['servicios'] = Managers\ServicioManager::getInstance()->getAll();
             $this->data['clientes'] = Managers\ClienteManager::getInstance()->getAll();
@@ -1514,8 +1515,23 @@ class Turnos extends BaseAdmin_Controller
 							}
 							if ($cat->color == 'azul'){
 							$color = 'blue';
-							}else{
+							}
+							if ($cat->color == 'rojo'){
 							$color = 'red';
+							}
+							if ($cat->color == 'amarillo'){
+							$color = 'yellow';
+							}
+							if ($cat->color == 'negro'){
+							$color = 'black';
+							}
+							if ($cat->color == 'blanco'){
+							$color = 'while';
+							}
+							if ($cat->color == 'violeta'){
+							$color = 'violet';
+							}else{
+							$color = 'violet';
 							}
 						}
 						

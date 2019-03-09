@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-12-05 16:36:16
-         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\caja\listado.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:137275bd359d5afb0d2-27030659%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-12-05 16:17:07
+         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\usuarios\listado.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:130075c082433700901-15931279%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'c9f1161f812c04cb506bb3c7b59fe55ed983393a' => 
+    '947e4bdd8f6993061a60dd81df8dee2da8282caa' => 
     array (
-      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\caja\\listado.tpl',
-      1 => 1544038571,
+      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\usuarios\\listado.tpl',
+      1 => 1538514863,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -17,20 +17,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '137275bd359d5afb0d2-27030659',
+  'nocache_hash' => '130075c082433700901-15931279',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bd359d60628b4_38270874',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5c082433904787_76001214',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bd359d60628b4_38270874')) {function content_5bd359d60628b4_38270874($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5c082433904787_76001214')) {function content_5c082433904787_76001214($_smarty_tpl) {?><!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
 Version: 3.6.2
@@ -122,7 +122,7 @@ assets/admin/css/main.css" rel="stylesheet" type="text/css"/>-->
 
 
 	<link rel="stylesheet" type="text/css" href="<?php echo site_url();?>
-assets/common/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+assets/backend/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
@@ -209,77 +209,36 @@ assets/common/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 				<div class="col-md-12">
                 	
 
-<div id="busqueda_avanzada" class="">
-                <div class="panel-body">
- <div class="col-sm-6">
-	                    <a class="btn green" href="<?php echo site_url();?>
-admin/caja/extraccion"> <i class="icon-plus"></i> EXTRACCION DE CAJA</a>
-		            </div>
-                    <div class="form-body form-bordered form-horizontal">
-                        <div class="row">
-                            <div class="col-md-3 m-r-2">
-                                <div class="form-group">
-                                    <label class="control-label m-b-1 ">BUSQUEDA CLIENTES </label>
-                                        <select id="filtro-cliente" name="filtro-cliente" class="form-control select2 " placeholder='Seleccione Cliente'>
-                                            <option value="">Sin filtrar</option>
-                                        <?php  $_smarty_tpl->tpl_vars['aCo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aCo']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['clientes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['aCo']->key => $_smarty_tpl->tpl_vars['aCo']->value) {
-$_smarty_tpl->tpl_vars['aCo']->_loop = true;
-?>
-                                            <option value="<?php echo $_smarty_tpl->tpl_vars['aCo']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['aCo']->value->nombre;?>
-</option>
-                                        <?php } ?>
-                                        </select>
-                                </div>
-                            </div>
-							
-							
-							 <div class="col-md-3 m-r-2">
-                                <div class="form-group">
-                                    <label class="control-label m-b-1 ">BUSQUEDA FORMA DE PAGO </label>
-                                        <select id="filtro-forma" name="filtro-forma" class="form-control select2 " placeholder='Seleccione Forma'>
-                                            <option value="">Sin filtrar</option>
-                                        
-                                            <option value="1">EFECTIVO</option>
-											 <option value="2">TARJETA</option>
-											  <option value="3">CANJE</option>
-											   <option value="4">EFECTIVO / TARJETA</option>
-                                     
-                                        </select>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
+<div class="portlet-title">
+    <div class="table-toolbar">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="btn-group">
+                    <a class="btn green pull-right" href="<?php echo site_url();?>
+admin/usuarios/add"> <i class="icon-plus"></i> Agregar Usuario</a>
                 </div>
+            </div>
+        </div>
     </div>
-
+</div>
 <div class="row">
-    <div class="panel-body">
-        <table class="table table-stripped table-responsive table-hover dt-responsive" id="tblTickets">
+    <div class="panel-body tabla-responsive">
+        <table class="table table-striped" id="tblUsuarios">
             <thead>
-            	<tr>
-                    <th>Nro</th> 
-					<th>Acciones</th>
-                    <th>Fecha</th>
-                    <th>Cliente</th>
-                    <th>Estado</th>
-                    <th>Total</th>
-					<th>Total Ef</th>
-					<th>Total Tj</th>
-					<th>Pago</th>
-                   
-					
-					
-            	</tr>
+                <tr>
+                    <th>Nro</th>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                    <th>Perfil</th>
+                    <th>Acciones</th>
+                </tr>
             </thead>
             <tbody>
             </tbody>
         </table>
     </div>
 </div>
+
 
 				</div>
 			</div>
@@ -394,10 +353,10 @@ assets/common/plugins/jasny/js/jasny-bootstrap.min.js"><?php echo '</script'; ?>
 
 	<?php echo '<script'; ?>
  type="text/javascript" src="<?php echo site_url();?>
-assets/admin/js/caja.js?rnd=20180302"><?php echo '</script'; ?>
+assets/admin/js/usuarios.js"><?php echo '</script'; ?>
 >
 
-    <?php echo '<script'; ?>
+     <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo site_url();?>
 assets/common/plugins/datatables/media/js/jquery.dataTables.js"><?php echo '</script'; ?>
 >
@@ -421,7 +380,7 @@ assets/common/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"><?ph
 	<?php echo '<script'; ?>
  type="text/javascript">
     	$(function(){
-			Caja.initListado();
+			Usuarios.initListado();
 		});
     <?php echo '</script'; ?>
 >

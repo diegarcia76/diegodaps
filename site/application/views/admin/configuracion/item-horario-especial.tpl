@@ -4,13 +4,13 @@
         <td>            
             <div class="input-group bootstrap-datetimepicker">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                <input id="especial-inicio-{$ha->id}" name="fecha_desdeS[]" class="form-control datepicker fechaInicio" value="{if $ha}{$ha->fecha_desde|date_format:'Y-m-d'}{/if}" required class="required" type="text" style="z-index: 2 !important;">
+                <input id="especial-inicio-{$ha->id}" name="fecha_desdeS[]" class="form-control datepicker fechaInicio" value="{if $ha}{$ha->fecha_desde|date_format:'d-m-Y'}{/if}" required class="required" type="text" style="z-index: 2 !important;">
             </div>
         </td>
         <td>
             <div class="input-group bootstrap-datetimepicker">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                <input id="especial-fin-{$ha->id}" name="fecha_hastaS[]" class="form-control datepicker fechaFin" value="{if $ha}{$ha->fecha_hasta|date_format:'Y-m-d'}{/if}" required class="required" type="text" style="z-index: 2 !important;">
+                <input id="especial-fin-{$ha->id}" name="fecha_hastaS[]" class="form-control datepicker fechaFin" value="{if $ha}{$ha->fecha_hasta|date_format:'d-m-Y'}{/if}" required class="required" type="text" style="z-index: 2 !important;">
             </div>
         </td>
         <td>

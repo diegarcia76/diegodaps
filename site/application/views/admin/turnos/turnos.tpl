@@ -220,8 +220,13 @@ $(document).ready(function(){
 			var telefonoturno = $('#telefonoturno').val();
 			var email = $('#emailturno').val();
 		  
-		  
-		  
+		 // alert(cliente_id);
+		  if (cliente_id == ''){
+		  	if (nombreturno == ''){
+			 alert("Debe seleccionar un cliente o Generar un cliente nuevo");
+			 return false;
+			}
+		  }
 		  
 		   WebDialogs.doLoading({
 					message: 'Aguarde...',
@@ -304,14 +309,14 @@ $(document).ready(function(){
 	                    <a class="btn green" href="{site_url()}admin/clientes/add"> <i class="icon-plus"></i> Agregar Cliente</a>
 		            </div>
 		            <div class="col-sm-6 hidden-xs text-right">
+					{if $aCategorias}
 		            	<ul class="list-unstyled list-inline list-estados">
-	                    	<li><span class="label reservado "> Reservado</span></li>
-	                    	<li><span class="label recepcionado"> Recepcionado</span></li>
-	                    	<li><span class="label enservicio"> En Servicio</span></li>
-	                    	<li><span class="label cancelado"> Cancelado</span></li>
-	                    	<li><span class="label terminado"> Terminado</span></li>
-	                    	<li><span class="label cobrado"> Cobrado</span></li>
+	                    	
+							{foreach $aCategorias as $cat}
+							<li><span class="label" style={if $cat->color eq violeta}"background:violet"{/if}{if $cat->color eq negro}"background:black"{/if}{if $cat->color eq blanco}"background:white"{/if}{if $cat->color eq rojo}"background:red"{/if}{if $cat->color eq amarillo}"background:yellow"{/if}{if $cat->color eq azul}"background:blue"{/if}{if $cat->color eq verde}"background:green"{else}"background:green"{/if}"> {$cat->nombre}</span></li>
+	                    	{/foreach}	
 	                    </ul>
+					{/if}	
 		            </div>
 		        </div>
 	    </div>

@@ -24,7 +24,9 @@
 
 <div id="busqueda_avanzada" class="">
                 <div class="panel-body">
-
+ <div class="col-sm-6">
+	                    <a class="btn green" href="{site_url()}admin/caja/extraccion"> <i class="icon-plus"></i> EXTRACCION DE CAJA</a>
+		            </div>
                     <div class="form-body form-bordered form-horizontal">
                         <div class="row">
                             <div class="col-md-3 m-r-2">

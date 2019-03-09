@@ -113,7 +113,7 @@
 																					<td colspan="4" class="text-right">TOTAL</td>
 																					<th>${$aPago->total|floatval|number_format:2:",":"."}</th>
 																			</tr>
-																			 <tr><td colspan="5"> <button class="btn red pull-right eliminar_todos" type="button" id="eliminar_todos" data-id-pago="{$aPago->id}">Eliminar Seleccionados</button> </td></tr>
+																			 <tr><td colspan="5">{if $actualBackuser->perfil->id|in_array:array(1)} <button class="btn red pull-right eliminar_todos" type="button" id="eliminar_todos" data-id-pago="{$aPago->id}">Eliminar Seleccionados</button>{/if} </td></tr>
 																	</tbody>
 																	</table>
 														</div>
@@ -121,7 +121,7 @@
 														</tr>
 										{/foreach}
 										
-								<tr><td colspan="5"> <button class="btn red pull-right" type="button" id="eliminar_todos_pagos">Eliminar Seleccionados</button> </td></tr>		
+								<tr><td colspan="5"> {if $actualBackuser->perfil->id|in_array:array(1)}<button class="btn red pull-right" type="button" id="eliminar_todos_pagos">Eliminar Seleccionados</button>{/if} </td></tr>		
 									</tbody>
 								</table>
 								{else}

@@ -120,7 +120,7 @@ var Configuracion = function() {
 	var handleHorasEspeciales = function(){
 
 		$('.form-control.datepicker').datepicker({
-			  format: 'yyyy-mm-dd',
+			  format: 'dd-mm-yyyy',
 			  autoclose: true,
 			  forceParse: false,
 			  Default: true,
@@ -176,7 +176,7 @@ var Configuracion = function() {
 			$('#wpr-especial-body').append(aHorario);	
 
 			$('.form-control.datepicker').datepicker({
-				  format: 'yyyy-mm-dd',
+				  format: 'dd-mm-yyyy',
 				  autoclose: true,
 				  forceParse: false,
 				  Default: true,

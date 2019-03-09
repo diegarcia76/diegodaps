@@ -23,7 +23,7 @@ var Login = function () {
 					},
 					pass: {
 						required: true,
-						minlength: 6,
+						minlength: 5,
 						maxlength: 15,
 					}
 				 },

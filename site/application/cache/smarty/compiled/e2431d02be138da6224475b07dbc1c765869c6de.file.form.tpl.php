@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-11-20 16:30:16
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-12-05 15:57:47
          compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\categorias\form.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:238745bf45f4df334f5-26948112%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e2431d02be138da6224475b07dbc1c765869c6de' => 
     array (
       0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\categorias\\form.tpl',
-      1 => 1542742137,
+      1 => 1544036217,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -248,6 +248,7 @@ admin/categorias/save" id="frmSaveProductos" method="post">
 									<option value="amarillo" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->nombre=='amarillo') {?> selected="selected" <?php }?>>Amarillo</option>
 									<option value="violeta" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->nombre=='violeta') {?> selected="selected" <?php }?>>Violeta</option>
 									<option value="negro" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->nombre=='negro') {?> selected="selected" <?php }?>>Negro</option>
+									<option value="blanco" <?php if ($_smarty_tpl->tpl_vars['editUser']->value->nombre=='blanco') {?> selected="selected" <?php }?>>Blanco</option>
                                 	
                                 </select>
 						</div>

@@ -117,7 +117,8 @@ class Pago extends My_Models
 		$aDetallePago->cantidad = $cantidad;
 		if($tipo=='descuento'){
 			$precio = (-1)*$precio;
-		}	
+		}
+		
 		$aDetallePago->precio = $precio;	
 		$aDetallePago->coiffeur = $aCoiffeur;
 		$aDetallePago->comision = $comision;

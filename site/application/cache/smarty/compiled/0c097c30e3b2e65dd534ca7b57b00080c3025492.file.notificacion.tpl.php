@@ -1,13 +1,13 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-12-05 16:36:16
-         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\caja\listado.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:137275bd359d5afb0d2-27030659%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2018-12-05 16:20:01
+         compiled from "C:\wamp\www\daps\diegodaps\site\application\views\admin\notificaciones\notificacion.tpl" */ ?>
+<?php /*%%SmartyHeaderCode:321115c0824e14e7227-41913396%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'c9f1161f812c04cb506bb3c7b59fe55ed983393a' => 
+    '0c097c30e3b2e65dd534ca7b57b00080c3025492' => 
     array (
-      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\caja\\listado.tpl',
-      1 => 1544038571,
+      0 => 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\views\\admin\\notificaciones\\notificacion.tpl',
+      1 => 1538514863,
       2 => 'file',
     ),
     '72f6439d088a8da6474558059088296cf6d5ba24' => 
@@ -17,20 +17,22 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '137275bd359d5afb0d2-27030659',
+  'nocache_hash' => '321115c0824e14e7227-41913396',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_5bd359d60628b4_38270874',
   'variables' => 
   array (
     'pageTitle' => 0,
     'pageSubtitle' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.21-dev',
+  'unifunc' => 'content_5c0824e17a64a4_80886089',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5bd359d60628b4_38270874')) {function content_5bd359d60628b4_38270874($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_5c0824e17a64a4_80886089')) {function content_5c0824e17a64a4_80886089($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.date_format.php';
+if (!is_callable('smarty_modifier_relative_date')) include 'C:\\wamp\\www\\daps\\diegodaps\\site\\application\\third_party\\Smarty\\plugins\\modifier.relative_date.php';
+?><!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
 Version: 3.6.2
@@ -121,8 +123,8 @@ assets/common/plugins/jasny/css/jasny-bootstrap.min.css">
 assets/admin/css/main.css" rel="stylesheet" type="text/css"/>-->
 
 
-	<link rel="stylesheet" type="text/css" href="<?php echo site_url();?>
-assets/common/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+
+
 
 <!-- END THEME STYLES -->
 <link rel="shortcut icon" href="favicon.ico"/>
@@ -209,76 +211,43 @@ assets/common/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 				<div class="col-md-12">
                 	
 
-<div id="busqueda_avanzada" class="">
-                <div class="panel-body">
- <div class="col-sm-6">
-	                    <a class="btn green" href="<?php echo site_url();?>
-admin/caja/extraccion"> <i class="icon-plus"></i> EXTRACCION DE CAJA</a>
-		            </div>
-                    <div class="form-body form-bordered form-horizontal">
-                        <div class="row">
-                            <div class="col-md-3 m-r-2">
-                                <div class="form-group">
-                                    <label class="control-label m-b-1 ">BUSQUEDA CLIENTES </label>
-                                        <select id="filtro-cliente" name="filtro-cliente" class="form-control select2 " placeholder='Seleccione Cliente'>
-                                            <option value="">Sin filtrar</option>
-                                        <?php  $_smarty_tpl->tpl_vars['aCo'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aCo']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['clientes']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['aCo']->key => $_smarty_tpl->tpl_vars['aCo']->value) {
-$_smarty_tpl->tpl_vars['aCo']->_loop = true;
-?>
-                                            <option value="<?php echo $_smarty_tpl->tpl_vars['aCo']->value->id;?>
-"><?php echo $_smarty_tpl->tpl_vars['aCo']->value->nombre;?>
-</option>
-                                        <?php } ?>
-                                        </select>
-                                </div>
-                            </div>
-							
-							
-							 <div class="col-md-3 m-r-2">
-                                <div class="form-group">
-                                    <label class="control-label m-b-1 ">BUSQUEDA FORMA DE PAGO </label>
-                                        <select id="filtro-forma" name="filtro-forma" class="form-control select2 " placeholder='Seleccione Forma'>
-                                            <option value="">Sin filtrar</option>
-                                        
-                                            <option value="1">EFECTIVO</option>
-											 <option value="2">TARJETA</option>
-											  <option value="3">CANJE</option>
-											   <option value="4">EFECTIVO / TARJETA</option>
-                                     
-                                        </select>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-    </div>
+<div class="row m-t-1">
+				<div id="content" class="col-md-12 col-lg-9">
 
-<div class="row">
-    <div class="panel-body">
-        <table class="table table-stripped table-responsive table-hover dt-responsive" id="tblTickets">
-            <thead>
-            	<tr>
-                    <th>Nro</th> 
-					<th>Acciones</th>
-                    <th>Fecha</th>
-                    <th>Cliente</th>
-                    <th>Estado</th>
-                    <th>Total</th>
-					<th>Total Ef</th>
-					<th>Total Tj</th>
-					<th>Pago</th>
-                   
-					
-					
-            	</tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+
+<div class="portlet light portlet-fit p-x-0 bordered">
+
+                                        <div class="mt-element-list">
+
+                                            <div class="mt-list-container list-news">
+                                                <ul>
+                            <?php  $_smarty_tpl->tpl_vars['noti'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['noti']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['notificacionesTodos']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['noti']->key => $_smarty_tpl->tpl_vars['noti']->value) {
+$_smarty_tpl->tpl_vars['noti']->_loop = true;
+?>
+
+                                                    <li class="mt-list-item">
+                                                        <div class="list-datetime bold font-green"> <?php echo smarty_modifier_relative_date(smarty_modifier_date_format($_smarty_tpl->tpl_vars['noti']->value->fecha,'Y-m-d H:i:s'));?>
+ </div>
+                                                        <div class="list-item-content">
+                                                            <h3 class="m-y-0 p-y-0">
+                                                                <a href="javascript:;"><?php echo $_smarty_tpl->tpl_vars['noti']->value->notificacion->titulo;?>
+</a>
+                                                            </h3>
+                                                            <p class="p-y-0 m-y-0"><?php echo $_smarty_tpl->tpl_vars['noti']->value->notificacion->descripcion;?>
+</p>
+                                                        </div>
+                                                    </li>
+                            <?php } ?>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                </div>
 </div>
 
 				</div>
@@ -392,39 +361,20 @@ assets/common/plugins/jasny/js/jasny-bootstrap.min.js"><?php echo '</script'; ?>
 <?php echo $_smarty_tpl->getSubTemplate ("admin/include/js.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
+
 	<?php echo '<script'; ?>
  type="text/javascript" src="<?php echo site_url();?>
-assets/admin/js/caja.js?rnd=20180302"><?php echo '</script'; ?>
->
-
-    <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo site_url();?>
-assets/common/plugins/datatables/media/js/jquery.dataTables.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo site_url();?>
-assets/common/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo site_url();?>
-assets/common/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo site_url();?>
-assets/common/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"><?php echo '</script'; ?>
->
-    <?php echo '<script'; ?>
- type="text/javascript" src="<?php echo site_url();?>
-assets/common/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"><?php echo '</script'; ?>
+assets/admin/js/home.js"><?php echo '</script'; ?>
 >
 
 	<?php echo '<script'; ?>
  type="text/javascript">
     	$(function(){
-			Caja.initListado();
+			Home.initNoti();
 		});
     <?php echo '</script'; ?>
 >
+
 
 
 <?php echo '<script'; ?>

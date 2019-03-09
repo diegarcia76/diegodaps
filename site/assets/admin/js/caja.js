@@ -161,10 +161,11 @@ var handleDelete = function(){
 		});
 	}
 	
+	
     return {
 		initListado: function(){
 			handleSelect();
-			handleTable();
+		    handleTable();
 			handleFiltros();
 			handleDelete();
 		},

@@ -78,6 +78,54 @@ class Caja extends BaseAdmin_Controller {
 		
 		echo json_encode($result);
 	}
+	
+	public function extraccion(){
+		//die();
+		$breadcrumb = array();
+		$breadcrumb['Dashboard'] = $this->controller_url('admin');
+		//$breadcrumb['Agregar nuevo Usuario'] = $this->controller_url('admin/usuarios/add');
+		$this->data['breadcrumb'] = $breadcrumb;
+
+		//$aUsuarios = Managers\UsuarioManager::getInstance()->getAll();
+
+		
+		
+		$this->data['submenuactive'] = '';
+		$this->parser->parse($this->parsePath.'form.tpl', $this->data);
+	}
+	
+	public function extraccionSave(){
+		//die();
+	$monto = $_POST['monto'];
+	
+	$aPago = Managers\PagoManager::getInstance()->create();
+	$aPago->nombre = "Extreaccion de caja";
+	$aPago->fecha_pago = new \DateTime('now');
+	$aPago->totale = 0;
+	$aPago->totalt =0;
+	$aPago->forma =1;
+	$descuento = $monto;
+	$aPago -> cobrado = true;
+	$aPago = Managers\PagoManager::getInstance()->save($aPago);
+	
+	redirect('admin/caja/resultado');
+	
+	}
+	public function resultado(){
+		//die();
+	$breadcrumb = array();
+		$breadcrumb['Dashboard'] = $this->controller_url('admin');
+		//$breadcrumb['Agregar nuevo Usuario'] = $this->controller_url('admin/usuarios/add');
+		$this->data['breadcrumb'] = $breadcrumb;
+
+		//$aUsuarios = Managers\UsuarioManager::getInstance()->getAll();
+
+		$this->data['resultado'] = "Se ha realizado la operación que solicitó confirme en la caja si confirmó";
+		
+		$this->data['submenuactive'] = '';
+		$this->parser->parse($this->parsePath.'resultado.tpl', $this->data);
+	
+	}
 
 
 }
